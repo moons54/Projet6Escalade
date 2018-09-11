@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.topo.projetp6</groupId>
+  <artifactId>TopoP6</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+
+
+
+
+  <!-- FIXME change it to the project's website -->
+  <url>http://maven.apache.org</url>
+    <name>topo_projetP6</name>
+
+
+
+
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <jersey.version>2.26</jersey.version>
+    <spring.version>4.3.11.RELEASE</spring.version>
+    <struts.version>2.5.14.1</struts.version>
+
+  </properties>
+
+
+    <!-- les modules du projet -->
+    <modules>
+        <module>topo-batch</module>
+        <module>topo-webapp</module>
+        <module>topo-business</module>
+        <module>topo-model</module>
+        <module>topo-consumer</module>
+        <module>Topo-technical</module>
+    </modules>
+
+
+
+    <!-- Gestion des dépendance -->
+
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.topo.projetp6</groupId>
+      <artifactId>topo-batch</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.topo.projetp6</groupId>
+      <artifactId>topo-business</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.topo.projetp6</groupId>
+      <artifactId>topo-model</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.topo.projetp6</groupId>
+      <artifactId>topo-webapp</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.topo.projetp6</groupId>
+      <artifactId>topo-consumer</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+    <!-- dependance  a la bd postgres                -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.4.1212</version>
+      <scope>runtime</scope>
+    </dependency>
+
+      <!-- mise en place des dependance pour struts 2-->
+      <dependency>
+          <groupId>org.apache.struts</groupId>
+          <artifactId>struts2-bom</artifactId>
+          <version>${struts.version}</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+
+      <!--dependance pour la mise en place de spring-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-framework-bom</artifactId>
+      <version>${spring.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+
+      <!--utilisation de la JRS 250                  -->
+      <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+          <version>1.2</version>
+      </dependency>
+      <!--utilisation de la JRS 330                  -->
+      <dependency>
+          <groupId>javax.inject</groupId>
+          <artifactId>javax.inject</artifactId>
+          <version>1</version>
+      </dependency>
+      <!--utilisation de la validation des beans    -->
+      <dependency>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+          <version>2.0.1.Final</version>
+      </dependency>
+  </dependencies>
+
+
+
+</dependencyManagement>
+
+
+
+
+  <build>
+    <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+         <configuration>
+             <source>1.8</source>
+             <target>1.8</target>
+         </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.1.0</version>
+        </plugin>
+
+
+
+      </plugins>
+
+  </build>
+</project>
