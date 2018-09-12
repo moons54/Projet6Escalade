@@ -25,8 +25,8 @@ import java.util.Map;
 @Named
 public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
-   @Inject
-  private TopoDao topoDao;
+    @Inject
+    private TopoDao topoDao;
 
     @Override
     public List<Topo> affiche() {
@@ -36,14 +36,43 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        MapperTopo monmaptopo=new MapperTopo();
-
-
+        MapperTopo monmaptopo = new MapperTopo();
 
 
         List<Topo> vListStatut = vJdbcTemplate.query(vSQL, monmaptopo);
 
         return vListStatut;
+    }
+
+    @Override
+    public Topo getbyiD(int Id) {
+
+
+        //creation d'une requete avec pour resultat un parametre iD
+        String vSQL = "SELECT * FROM public.topo where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
+
+        Topo tops = (Topo) vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
+                    Topo lamtopo = new Topo();
+                    lamtopo.setNom(rs.getString("nom"));
+                    lamtopo.setDescriptiondestopo(rs.getString("description_topo"));
+                    lamtopo.setHistoriquedestopo(rs.getString("historique_topo"));
+                    lamtopo.setHauteurDuTopo(rs.getString("hauteur_global"));
+                    lamtopo.setTypeDeroche(rs.getString("type_roche"));
+                    lamtopo.setDescriptionDuRetour(rs.getString("description_du_retour"));
+                    lamtopo.setNombreDevoie(rs.getInt("nombre_voie"));
+                    lamtopo.setTypeDequipement(rs.getString("type_equipement"));
+
+
+
+
+                    return lamtopo;
+                }
+                , Id
+        );
+
+return tops;
     }
 
     @Override

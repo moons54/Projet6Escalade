@@ -9,13 +9,13 @@
 <%@taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>Détail du topo</title>
+    <%@ include file="../_include/header.jsp"%>
 </head>
 <body>
-<h2>Détail du topo</h2>
+<h2>Détail du topo <s:property value="topo.nom"/></h2>
 
 <ul>
-    <li>id : <s:property value="topo.iD"/></li>
+
     <li>nom : <s:property value="topo.nom"/></li>
     <li>description : <s:property value="topo.descriptiondestopo"/></li>
     <li>Histoire du Topo : <s:property value="topo.historiquedestopo"/></li>

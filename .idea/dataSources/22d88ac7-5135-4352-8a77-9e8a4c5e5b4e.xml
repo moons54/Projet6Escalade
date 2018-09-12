@@ -67,7 +67,10 @@
     </role>
     <role id="13" parent="1" name="root">
       <ObjectId>16512</ObjectId>
+      <SuperRole>1</SuperRole>
       <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
       <CanLogin>1</CanLogin>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
@@ -97,7 +100,7 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-09-06.16:04:02.077</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-09-12.11:20:14.056</IntrospectionTimestamp>
       <IntrospectionStateNumber>1676</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>

@@ -30,38 +30,15 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
 
     /**
      * Methode retournant un topo
-     *
      * @param Id
      * @return le topo selectionné
      *
      */
     @Override
     public Topo getTopo(int Id) {
-      //  if(Id==0){
-        //            System.out.print(" Topo non trouvé "+ Id);
-       // }
-        Topo tops = new Topo(Id);
+        Topo tops=  topoDao.getbyiD(Id);
 
-
-
-
-
-
-        tops.setNom(affichelistedestopos().get(Id).getNom());
-        tops.setDescriptiondestopo(affichelistedestopos().get(Id).getDescriptiondestopo());
-        tops.setTypeDequipement(affichelistedestopos().get(Id).getTypeDequipement());
-        tops.setHauteurDuTopo(affichelistedestopos().get(Id).getHauteurDuTopo());
-        tops.setHistoriquedestopo(affichelistedestopos().get(Id).getHistoriquedestopo());
-        tops.setNombreDevoie(affichelistedestopos().get(Id).getNombreDevoie());
-        tops.setDescriptionDuRetour(affichelistedestopos().get(Id).getDescriptionDuRetour());
-        tops.setTypeDeroche(affichelistedestopos().get(Id).getTypeDeroche());
-
-
-
-
-        return tops;
-
-
+    return tops;
     }
 
 

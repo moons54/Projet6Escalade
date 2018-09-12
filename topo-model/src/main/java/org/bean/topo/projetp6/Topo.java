@@ -26,6 +26,10 @@ public class Topo {
 		this.iD = iD;
 	}
 
+    public Topo() {
+
+    }
+
     /**
      ***************************** LES GETTERS ET LES SETTERS *************************************
      * @return

@@ -9,6 +9,10 @@
     <package name="default" extends="struts-default">
         <!-- Action par défaut -->
         <default-action-ref name="index" />
+        <!-- gestion des result error glabl-->
+        <global-results>
+            <result name="error">jsp/error.jsp</result>
+        </global-results>
 
         <!-- Action "index" -->
         <action name="index">
@@ -26,7 +30,7 @@
                 class="org.topo.projetp6.action.GestionTopoAction"
                 method="doDetail">
                 <result name="success">jsp/topo/detail.jsp</result>
-                <result name="error">jsp/error.jsp</result>
+
         </action>
 
 

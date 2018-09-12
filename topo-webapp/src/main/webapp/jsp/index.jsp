@@ -4,13 +4,15 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>TopoP6</title>
+
+    <%@ include file="_include/header.jsp"%>
+
 </head>
 
 <body>
-<h2>Bienvenue sur l'application de gestion d'escalade utilisant Apache Struts !</h2>
-<s:a action="topo_liste">Liste des Topos</s:a>
+
+<h2><s:text name="home.welcome"/></h2>
+<s:a action="topo_liste"><s:text name="nav.listtopo"/></s:a>
 
 </body>
 </html>

@@ -83,11 +83,10 @@ return ActionSupport.SUCCESS;
     public String doDetail(){
         //gestion des erreurs si id du topo null
         if(idtopo==null){
-            this.addActionError("merci d'indiquer le numéro de projet"+idtopo+ " num getid");
-
+            this.addActionError(getText("error.topo.missing.id."));
         }else topo = managerFactory.getTopoManager().getTopo(idtopo);
         {
-              this.addActionError("il n'y a pas de projet pour ce numéro "+idtopo );
+             // this.addActionError("il n'y a pas de projet pour ce numéro "+idtopo );
 
 
         }

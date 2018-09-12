@@ -9,7 +9,7 @@
 <%@taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>Topo</title>
+    <%@ include file="_include/header.jsp"%>
 </head>
 
 <body>

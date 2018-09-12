@@ -19,5 +19,10 @@ public void miseajour(Topo topo);
     public Topo ajoutopo(Topo topo);
 
 
+    //rechercher un topo par id
+
+    public Topo getbyiD(int Id);
+
+
 
 }
