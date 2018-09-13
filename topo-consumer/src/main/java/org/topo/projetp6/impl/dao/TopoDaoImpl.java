@@ -107,35 +107,36 @@ return tops;
     public Topo ajoutopo(final Topo topo) {
 
         String ajoutsql="INSERT INTO public.topo"+
-                 "  nom_topo,\n"+
-                " decription_topo,\n"+
-                " historique_topo,\n"+
-                " hauteur_global,\n"+
-                " type_roche,\n"+
-                " nombre_voie,\n"+
+                 " (nom,\n "+
+                " description_topo,\n "+
+                " historique_topo,\n "+
+                " hauteur_global,\n "+
+                " type_roche,\n "+
+                " nombre_voie,\n "+
                 " description_du_retour,\n"+
                 " type_equipement,\n"+
-                " photo_topo,\n"+
-                "VALUES\n"+
-                ":nomDutopo,:descriptionDutopo,:historiqueDutopo,:hauteurDutopo,:typeDeroche,:nombreDevoie,:descriptionDuretour," +
-                ":typeDequipement,:photoDutopo";
+                " photo_topo)"+
+                "VALUES"+
+                "(:nom,:descriptionDutopo,:historiquedestopo,:hauteurDutopo,:typeDeroche,:nombreDevoie,:descriptionDuretour," +
+                ":typeDequipement,:photoDuTopo)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
-                .addValue("nomDutopo",topo.getNom())
+                .addValue("nom",topo.getNom())
                 .addValue("descriptionDutopo",topo.getDescriptiondestopo())
-                .addValue("historiqueDutopo",topo.getHistoriquedestopo())
+                .addValue("historiquedestopo",topo.getHistoriquedestopo())
                 .addValue("hauteurDutopo",topo.getHauteurDuTopo())
                 .addValue("typeDeroche",topo.getTypeDeroche())
                 .addValue("nombreDevoie",topo.getNombreDevoie())
                 .addValue("descriptionDuretour",topo.getDescriptionDuRetour())
                 .addValue("typeDequipement",topo.getTypeDequipement())
-                .addValue("photoDutopo",topo.getPhotoDuTopo());
+                .addValue("photoDuTopo",topo.getPhotoDuTopo());
 
 
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        vJdbcTemplate.update(ajoutsql, ajoutparam, holder, new String[]{"id_topo+1"});
         topo.setiD(holder.getKey().intValue());
         return topo;
 

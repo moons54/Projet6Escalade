@@ -12,13 +12,14 @@
     <%@ include file="../_include/header.jsp"%>
 </head>
 <body>
+<s:actionmessage/>
 <h2>Détail du topo <s:property value="topo.nom"/></h2>
 
 <ul>
 
     <li>nom : <s:property value="topo.nom"/></li>
     <li>description : <s:property value="topo.descriptiondestopo"/></li>
-    <li>Histoire du Topo : <s:property value="topo.historiquedestopo"/></li>
+    <li>Histoire du Topo : <s:property value="topo.descriptiondestopo"/></li>
     <li>Hauteur du Topo : <s:property value="topo.hauteurDuTopo"/></li>
     <li>Type de Roche : <s:property value="topo.typeDeroche"/></li>
     <li>Nombre de Voie : <s:property value="topo.nombreDevoie"/></li>

@@ -15,7 +15,7 @@ import javax.inject.Inject;
 public class GestionTopoAction extends ActionSupport {
 
 
-    private Map<String, Object> session;
+
 
     @Inject
     private ManagerFactory managerFactory;
@@ -65,8 +65,11 @@ public class GestionTopoAction extends ActionSupport {
         this.idtopo = idtopo;
     }
 
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
 
-    //Les Methodes
+//Les Methodes
 
     /**
      * création des classes d'actions
@@ -79,6 +82,28 @@ public class GestionTopoAction extends ActionSupport {
 
 return ActionSupport.SUCCESS;
     };
+
+    //methode permettant de crée un nouveau TOPO
+    public String doCreate(){
+     String vresult = ActionSupport.INPUT;
+
+    if (this.topo !=null){
+
+
+     //}
+  //  if (this.hasErrors()){
+         try {
+             managerFactory.getTopoManager().ajoutopo(this.topo);
+             vresult = ActionSupport.SUCCESS;
+             this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
+         } catch (Exception e) {
+
+             vresult=ActionSupport.ERROR;
+         }
+     }
+     return vresult;
+    };
+
 
     public String doDetail(){
         //gestion des erreurs si id du topo null

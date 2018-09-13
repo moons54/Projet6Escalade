@@ -19,17 +19,37 @@
             <!-- gestion de la vue -->
             <result>/jsp/index.jsp</result>
         </action>
-    <!-- action listant la liste des topo-->
+        <!-- action listant la liste des topo-->
         <action name="topo_liste"
                 class="org.topo.projetp6.action.GestionTopoAction"
                 method="doList">
                 <result>jsp/topo/list.jsp</result>
         </action>
-
+        <!-- action permettant d'afficher le détail d'un topo-->
         <action name="topo_detail"
                 class="org.topo.projetp6.action.GestionTopoAction"
                 method="doDetail">
-                <result name="success">jsp/topo/detail.jsp</result>
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detail.jsp</result>
+        </action>
+
+        <!-- action permettant de creer un nouveau Topo-->
+        <action name="topo_new"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+                <result name="input">jsp/topo/new.jsp</result>
+                <result name="success" type="redirectAction">
+                    <param name="actionName">topo_detail</param>
+                    <param name="iD">${topo.id}</param>
+                </result>
 
         </action>
 

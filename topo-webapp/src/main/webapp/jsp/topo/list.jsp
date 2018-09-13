@@ -26,6 +26,7 @@
 
         </li>
     </s:iterator>
+    <s:a action="topo_new">creer un nouveau topo</s:a>
 </ul>
 </body>
 </html>
