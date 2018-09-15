@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="topo-batch" />
         <module name="topo-business" />
         <module name="topo-consumer" />
         <module name="topo-model" />
@@ -14,5 +13,8 @@
         <module name="topo-webapp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="topo-batch" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

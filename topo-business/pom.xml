@@ -30,6 +30,11 @@
             <groupId>org.topo.projetp6</groupId>
             <artifactId>topo-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.6</version>
+        </dependency>
 
         <!-- bibliotheque tierce -->
         <dependency>
