@@ -10,7 +10,7 @@ public interface TopoManager {
 
     Topo getTopo(int Id);
 
-    public Topo ajoutopo(Topo topo);
+    public void ajoutopo(final Topo topo);
 
 
 }

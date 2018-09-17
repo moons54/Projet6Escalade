@@ -55,20 +55,20 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
 
     /**
      * ajout d'un nouveau topo
-     * @param topo
+     * @param ntopo
      */
 
     @Override
-    public Topo ajoutopo(final Topo topo){
+    public void ajoutopo(final Topo ntopo){
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
-                topoDao.ajoutopo(topo);
+                topoDao.ajoutopo(ntopo);
             }
         });
 
-        return topo;
+        //return ntopo;
     }
 
 

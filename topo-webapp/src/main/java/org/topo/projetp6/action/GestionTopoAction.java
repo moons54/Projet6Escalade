@@ -85,22 +85,34 @@ return ActionSupport.SUCCESS;
 
     //methode permettant de crée un nouveau TOPO
     public String doCreate(){
-     String vresult = ActionSupport.INPUT;
+        String vresult = ActionSupport.INPUT;
 
-    if (this.topo !=null){
+     //condition validant l'ajout de formulaire
+
+        if (this.topo !=null) {
+
+            if (this.topo.getNom() == null) {
+                this.addFieldError(" topo.nom", "ne peut pas etre vide");
+
+            } else {
+                System.out.println("ok");
+            }
 
 
-     //}
-  //  if (this.hasErrors()){
-         try {
-             managerFactory.getTopoManager().ajoutopo(this.topo);
-             vresult = ActionSupport.SUCCESS;
-             this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
-         } catch (Exception e) {
+            if (!this.hasErrors()) {
+                try {
+                    managerFactory.getTopoManager().ajoutopo(this.topo);
+                    System.out.println("je suis la");
+                    vresult = ActionSupport.SUCCESS;
+                    this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
+                } catch (Exception e) {
 
-             vresult=ActionSupport.ERROR;
-         }
-     }
+                    vresult = ActionSupport.ERROR;
+                }
+
+            }
+        }
+
      return vresult;
     };
 

@@ -44,11 +44,11 @@
             <interceptor-ref name="store">
                 <param name="operationMode">STORE</param>
             </interceptor-ref>
-            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
                 <result name="input">jsp/topo/new.jsp</result>
                 <result name="success" type="redirectAction">
                     <param name="actionName">topo_detail</param>
-                    <param name="iD">${topo.id}</param>
+                  <param name="idtopo">${topo.id}</param>
                 </result>
 
         </action>

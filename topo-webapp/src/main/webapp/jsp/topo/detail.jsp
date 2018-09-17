@@ -17,7 +17,7 @@
 
 <ul>
 
-    <li>nom : <s:property value="topo.nom"/></li>
+    <li>nom : <s:property value="idtopo"/></li>
     <li>description : <s:property value="topo.descriptiondestopo"/></li>
     <li>Histoire du Topo : <s:property value="topo.descriptiondestopo"/></li>
     <li>Hauteur du Topo : <s:property value="topo.hauteurDuTopo"/></li>

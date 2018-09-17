@@ -35,3 +35,4 @@
     <s:submit value="OK"/>
 </s:form>
 </body>
+</html>
