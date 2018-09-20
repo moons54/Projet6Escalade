@@ -2,9 +2,7 @@ package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Topo;
 
-import javax.inject.Inject;
 import java.util.List;
-import org.bean.topo.projetp6.Topo;
 
 public interface TopoDao  {
 
@@ -22,6 +20,10 @@ public void miseajour(Topo topo);
     //rechercher un topo par id
 
     public Topo getbyiD(int Id);
+
+
+    //Supprimer un topo
+    public Topo supprimetopo(int Id);
 
 
 

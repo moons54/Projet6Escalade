@@ -131,4 +131,18 @@ return (this.hasErrors())? ActionSupport.ERROR : ActionSupport.SUCCESS;
 
     };
 
+
+
+    public String doSupp(){
+String vresult=ActionSupport.INPUT;
+        if (idtopo == null) {
+            this.addActionError(getText("error.topo.missing.id"));
+        }else  managerFactory.getTopoManager().supprimetopo(this.idtopo);
+        vresult= ActionSupport.SUCCESS;
+        this.addActionMessage("topo a bien été supprimé avec succes");
+
+        {
+    }
+return vresult;
+};
 }

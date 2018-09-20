@@ -12,5 +12,9 @@ public interface TopoManager {
 
     public void ajoutopo(final Topo topo);
 
+    public void miseajour(final Topo topo);
+
+    public Topo supprimetopo(final int Id);
+
 
 }

@@ -26,5 +26,15 @@
     <li>Description du retour: <s:property value="topo.descriptionDuRetour"/></li>
     <li>Type d'equipement  : <s:property value="topo.typeDequipement"/></li>
 </ul>
+
+
+<s:a action="topo_supp">bon pour suppression
+    <s:param name="idtopo" value="idtopo"/>
+    <s:property value="idtopo"/>
+</s:a>
+
+
+
+
 </body>
 </html>

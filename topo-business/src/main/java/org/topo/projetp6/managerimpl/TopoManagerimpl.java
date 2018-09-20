@@ -1,5 +1,6 @@
 package org.topo.projetp6.managerimpl;
 
+
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
@@ -68,11 +69,33 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
             }
         });
 
-        //return ntopo;
+
     }
 
+    public void miseajour(final Topo ntopo){
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                topoDao.miseajour(ntopo);
+            }
+        });
 
 
+    }
 
+    public Topo supprimetopo(final int Id) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                topoDao.supprimetopo(Id);
+            }
+        });
+        //  Topo tops=  topoDao.supprimetopo(Id);
 
+        //return tops;
+        //}
+        return null;
+    }
 }

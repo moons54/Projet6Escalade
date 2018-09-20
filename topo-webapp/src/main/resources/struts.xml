@@ -36,6 +36,17 @@
              <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detail.jsp</result>
         </action>
+        <action name="topo_supp"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doSupp">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/index.jsp</result>
+        </action>
 
         <!-- action permettant de creer un nouveau Topo-->
         <action name="topo_new"
@@ -48,7 +59,7 @@
                 <result name="input">jsp/topo/new.jsp</result>
                 <result name="success" type="redirectAction">
                     <param name="actionName">topo_detail</param>
-                  <param name="idtopo">${topo.id}</param>
+                    <param name="idtopo">${topo.id}</param>
                 </result>
 
         </action>

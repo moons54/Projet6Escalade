@@ -11,7 +11,7 @@ import javax.inject.Named;
 public class DaoFactoryImpl implements DaoFactory {
 
 
-    public TopoDao topoDao;
+    private TopoDao topoDao;
 
   //private JndiObjectFactoryBean dataSourceTopo;
 
