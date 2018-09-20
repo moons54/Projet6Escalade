@@ -14,7 +14,7 @@
 <body>
 <s:actionmessage/>
 <h2>Détail du topo <s:property value="topo.nom"/></h2>
-
+<s:actionmessage name="topo_supp"/>
 <ul>
 
     <li>nom : <s:property value="idtopo"/></li>

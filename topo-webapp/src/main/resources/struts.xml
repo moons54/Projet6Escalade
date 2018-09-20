@@ -45,7 +45,7 @@
             <interceptor-ref name="defaultStack"></interceptor-ref>
 
             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
-            <result>jsp/index.jsp</result>
+            <result>jsp/topo/detail.jsp</result>
         </action>
 
         <!-- action permettant de creer un nouveau Topo-->
