@@ -14,15 +14,28 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private TopoManager topomanager;
 
+    @Inject
+    private SiteManager siteManager;
+
 
     @Override
     public TopoManager getTopoManager() {
         return this.topomanager;
     }
 
-    public void setTopoManager(TopoManager pTopoManager) {
-        topomanager = pTopoManager;
+    public void setTopoManager(TopoManager TopoManager) {
+        topomanager = TopoManager;
+    }
+
+
+    public SiteManager getSiteManager() {
+        return this.siteManager;
+    }
+
+    public void setSiteManager(SiteManager siteManager) {
+        this.siteManager = siteManager;
     }
 }
+
 
 

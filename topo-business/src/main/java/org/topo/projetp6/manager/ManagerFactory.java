@@ -8,4 +8,6 @@ public interface ManagerFactory {
 
    TopoManager getTopoManager();
 
+   SiteManager getSiteManager();
+
 }
