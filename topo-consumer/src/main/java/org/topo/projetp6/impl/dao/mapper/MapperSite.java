@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class MapperSite implements RowMapper<Site> {
 
 
- Topo tops = new Topo();
+ Site site = new Site();
         @Override
         public Site mapRow(ResultSet rs, int rowNum) throws SQLException {
 
@@ -18,7 +18,8 @@ public class MapperSite implements RowMapper<Site> {
             nmap.setIdentifiant(rs.getInt("identifiant"));
             nmap.setNom(rs.getString("nom"));
             nmap.setCoordonnees_gps(rs.getString("coordonnees_gps"));
-           nmap.setTopo((Topo) rs.getObject(5));
+
+
 
             return nmap;
         }
