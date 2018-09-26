@@ -71,7 +71,7 @@
         </action>
         <!-- action permettant d'afficher le détail d'un site-->
         <action name="site_detail"
-                class="org.topo.projetp6.action.GestionTopoAction"
+                class="org.topo.projetp6.action.GestionSiteAction"
                 method="doDetail">
             <interceptor-ref name="store">
                 <param name="operationMode">RETRIEVE</param>

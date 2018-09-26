@@ -25,8 +25,15 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
     private PlatformTransactionManager platformTransactionManager;
 
     @Override
-    public List<Site> affichelessite() {
-        return siteDao.affiche();
+    public List<Site> affichelessite(int idtopo) {
+        return siteDao.affiche(idtopo);
+    }
+
+    @Override
+    public Site getbyID(int Id) {
+        Site site= siteDao.getbyiD(Id);
+
+        return site;
     }
 
 }

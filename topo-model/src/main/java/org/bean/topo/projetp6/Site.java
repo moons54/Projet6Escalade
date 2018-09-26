@@ -6,7 +6,7 @@ public class Site extends Topo {
 	private int iD;
 	private Integer identifiant;
 	private String nom;
-	private String coordonnees_gps;
+	private String coordonneesGps;
 	public Topo topo;
 	public Secteur[] secteurs = new Secteur[0];
 
@@ -41,12 +41,12 @@ public class Site extends Topo {
 		this.nom = nom;
 	}
 
-	public String getCoordonnees_gps() {
-		return coordonnees_gps;
+	public String getCoordonneesGps() {
+		return coordonneesGps;
 	}
 
-	public void setCoordonnees_gps(String coordonnees_gps) {
-		this.coordonnees_gps = coordonnees_gps;
+	public void setCoordonneesGps(String coordonneesGps) {
+		this.coordonneesGps = coordonneesGps;
 	}
 
 	public Topo getTopo() {
@@ -65,7 +65,9 @@ public class Site extends Topo {
 		this.secteurs = secteurs;
 	}
 
-	public Site() {
+	public Site()  {
 	}
+
+
 
 }

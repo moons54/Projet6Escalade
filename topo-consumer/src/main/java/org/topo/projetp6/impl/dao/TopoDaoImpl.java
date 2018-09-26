@@ -133,33 +133,10 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
     }
 
     public Topo supprimetopo(int Id) {
-       // String supsql = "DELETE FROM public.topo where id = ?";
+
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
-        //  vJdbcTemplate.update(supsql);
-
-/**
- Topo tops = (Topo) vJdbcTemplate.queryForObject(supsql, (rs, rowNum) -> {
- Topo lamtopo = new Topo();
- lamtopo.setiD(rs.getInt("id"));
- lamtopo.setNom(rs.getString("nom"));
- lamtopo.setDescriptiondestopo(rs.getString("description_topo"));
- lamtopo.setHistoriquedestopo(rs.getString("historique_topo"));
- lamtopo.setHauteurDuTopo(rs.getString("hauteur_global"));
- lamtopo.setTypeDeroche(rs.getString("type_roche"));
- lamtopo.setDescriptionDuRetour(rs.getString("description_du_retour"));
- lamtopo.setNombreDevoie(rs.getInt("nombre_voie"));
- lamtopo.setTypeDequipement(rs.getString("type_equipement"));
 
 
- return lamtopo;
- }
- , Id
- );
-
- return null;
-
- */
-      //  vJdbcTemplate.execute(supsql);
 vJdbcTemplate.update("delete from topo where id = ?",Id);
         return null;
     }

@@ -7,5 +7,9 @@ import java.util.List;
 public interface SiteManager {
 
 
-    List<Site> affichelessite();
+    List<Site> affichelessite(int idtopo);
+
+
+    Site getbyID(int Id);
+
 }

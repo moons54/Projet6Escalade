@@ -19,6 +19,14 @@ public class GestionSiteAction extends ActionSupport {
     private ManagerFactory managerFactory;
 
 
+    public Integer getIdtopo() {
+        return idtopo;
+    }
+
+    public void setIdtopo(Integer idtopo) {
+        this.idtopo = idtopo;
+    }
+
     /**
      * Lien entre les actions et la bd
      */
@@ -36,6 +44,15 @@ public class GestionSiteAction extends ActionSupport {
 
 
     private Topo topo;
+
+    public Site getSite() {
+        return site;
+    }
+
+    public void setSite(Site site) {
+        this.site = site;
+    }
+
     private Site site;
 
     private TopoDaoImpl tpdao;
@@ -54,25 +71,22 @@ public class GestionSiteAction extends ActionSupport {
         this.affichelistesite = affichelistesite;
     }
 
-    //affiche les détail d'un topo
-    public Topo getTopo() {
-        return topo;
-    }
+
+
+
 
         //recherche par id
 
-    public Integer getIdtopo() {
-        return idtopo;
+
+
+
+    public Integer getIdsite() {
+        return idsite;
     }
 
-    public void setIdtopo(Integer idtopo) {
-        this.idtopo = idtopo;
+    public void setIdsite(Integer idsite) {
+        this.idsite = idsite;
     }
-
-    public void setTopo(Topo topo) {
-        this.topo = topo;
-    }
-
 //Les Methodes
 
     /**
@@ -82,7 +96,7 @@ public class GestionSiteAction extends ActionSupport {
      */
     public String doList(){
 
-        affichelistesite= managerFactory.getSiteManager().affichelessite();
+        affichelistesite= managerFactory.getSiteManager().affichelessite(getIdtopo());
 
 return ActionSupport.SUCCESS;
     };
@@ -123,9 +137,9 @@ return ActionSupport.SUCCESS;
 
     public String doDetail(){
         //gestion des erreurs si id du topo null
-        if(idtopo==null){
+        if(idsite==null){
             this.addActionError(getText("error.topo.missing.id."));
-        }else topo = managerFactory.getTopoManager().getTopo(idtopo);
+        }else site = managerFactory.getSiteManager().getbyID(idsite);
         {
              // this.addActionError("il n'y a pas de projet pour ce numéro "+idtopo );
 

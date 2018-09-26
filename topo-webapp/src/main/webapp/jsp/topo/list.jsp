@@ -14,19 +14,41 @@
 
 
 </head>
+
+
+
+<div class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li class="active"> <a href="#">Accueil</a> </li>
+
+
+    </ul>
+</div>
+
+</nav>
 <body>
-<H2>Liste des Topos</H2>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">La liste des Topos disponibles</h3>
+    </div>
+
+
 <ul>
     <s:iterator value="affichelistetopo">
+
         <li>
             <s:a action="topo_detail">
             <s:param name="idtopo" value="iD"/>
-                <s:property value="nom" />
+           <s:property value="nom" />
+                <s:property value="descriptiondestopo"/>
             </s:a>
 
         </li>
+
     </s:iterator>
     <s:a action="topo_new">creer un nouveau topo</s:a>
 </ul>
+
+</div>
 </body>
 </html>

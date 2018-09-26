@@ -11,7 +11,7 @@ public interface SiteDao {
 
 
     //afficher la liste des topos
-    public List<Site> affiche();
+    public List<Site> affiche(int idtopo);
 
     //faire une mise a jour du nom des topos
     public void miseajour(Site site);

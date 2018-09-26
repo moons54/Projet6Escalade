@@ -13,8 +13,7 @@
 </head>
 <div class="navbar navbar-default">
     <ul class="nav navbar-nav">
-        <li class="active"> <a href="#"> <s:a action="index">Accueil</s:a> </li>
-        <li> <a href="#">Consulter les différents Sites</a> </li>
+        <li class="active"> <a href="#"> <s:a action="index">Retour</s:a> </li>
         <li> <a href="#">Quelques commentaires</a> </li>
         <li class="disabled"> <a href="#">Références</a> </li>
     </ul>
@@ -22,18 +21,19 @@
 </nav>
 
 <s:actionmessage/>
-<h2>Détail du topo <s:property value="topo.nom"/></h2>
+<h2>Détail du site<s:property value="site.iD"/></h2>
 <s:actionmessage name="topo_supp"/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><s:property value="topo.nom"/></h3>
+    </div>
 <ul>
+<li>numéro d'enregistrement :<s:property value="idsite"/></li>
+    <li>identifiant : <s:property value="site.identifiant"/></li>
+    <li>nom : <s:property value="site.nom"/></li>
+    <li>coordonnées gps : <s:property value="site.coordonneesGps"/></li>
 
-    <li>nom : <s:property value="idtopo"/></li>
-    <li>description : <s:property value="topo.descriptiondestopo"/></li>
-    <li>Histoire du Topo : <s:property value="topo.descriptiondestopo"/></li>
-    <li>Hauteur du Topo : <s:property value="topo.hauteurDuTopo"/></li>
-    <li>Type de Roche : <s:property value="topo.typeDeroche"/></li>
-    <li>Nombre de Voie : <s:property value="topo.nombreDevoie"/></li>
-    <li>Description du retour: <s:property value="topo.descriptionDuRetour"/></li>
-    <li>Type d'equipement  : <s:property value="topo.typeDequipement"/></li>
+
 </ul>
-
+</div></div>
 </html>

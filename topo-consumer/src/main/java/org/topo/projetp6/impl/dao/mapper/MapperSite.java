@@ -9,15 +9,16 @@ import java.sql.SQLException;
 
 public class MapperSite implements RowMapper<Site> {
 
+    Site site = new Site();
 
- Site site = new Site();
         @Override
         public Site mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-            Site nmap = new Site(rs.getInt("id"));
+            Site nmap = new Site(rs.getInt("topoid"));
             nmap.setIdentifiant(rs.getInt("identifiant"));
             nmap.setNom(rs.getString("nom"));
-            nmap.setCoordonnees_gps(rs.getString("coordonnees_gps"));
+            nmap.setCoordonneesGps(rs.getString("coordonnees_gps"));
+        nmap.setiD(rs.getInt("id"));
 
 
 

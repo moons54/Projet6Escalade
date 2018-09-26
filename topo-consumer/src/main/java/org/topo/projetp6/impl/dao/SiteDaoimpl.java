@@ -23,16 +23,16 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao  {
     SiteDao siteDao;
 
     @Override
-    public List<Site> affiche() {
+    public List<Site> affiche(int idtopo) {
         //requete SQL dans bd pour recupperer liste des sites
-        String vSQL = "SELECT * FROM public.site";
+        String vSQL = "SELECT * FROM public.site where topoid= ?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
         MapperSite monmapsite = new MapperSite();
         
         
-        List<Site> vlistesite = vJdbcTemplate.query(vSQL, monmapsite);
+        List<Site> vlistesite = vJdbcTemplate.query(vSQL, monmapsite,idtopo);
         
         return vlistesite;
     }
@@ -49,8 +49,32 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao  {
 
     @Override
     public Site getbyiD(int Id) {
-        return null;
+        //creation d'une requete avec pour resultat un parametre iD
+        String vSQL = "SELECT * FROM public.site where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
+
+        Site site = (Site) vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
+                    Site gsite = new Site();
+                    gsite.setiD(rs.getInt("id"));
+
+
+                    gsite.setNom(rs.getString("nom"));
+                    gsite.setCoordonneesGps(rs.getString("coordonnees_gps"));
+                    gsite.setIdentifiant(rs.getInt("identifiant"));
+
+
+
+
+                    return gsite;
+                }
+                , Id
+        );
+
+        return site;
     }
+
+
 
     @Override
     public Site supprimetopo(int Id) {

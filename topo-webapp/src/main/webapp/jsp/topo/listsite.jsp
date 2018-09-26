@@ -14,19 +14,39 @@
 
 
 </head>
+
+<div class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li class="active"> <a href="#">Accueil</a> </li>
+
+
+    </ul>
+</div>
 <body>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">La Liste des Sites Disponibles</h3>
+    </div>
+
 <H2>Liste des Topos</H2>
 <ul>
     <s:iterator value="affichelistesite">
         <li>
             <s:a action="site_detail">
-            <s:param name="idtopo" value="iD"/>
+            <s:param name="idsite" value="iD"/>
                 <s:property value="nom" />
+
+                <s:property value="coordonneesGps"/>
+                <s:property value="iD"/>
+
             </s:a>
 
         </li>
     </s:iterator>
+
     <s:a action="topo_new">creer un nouveau Site</s:a>
 </ul>
+</div>
 </body>
 </html>
