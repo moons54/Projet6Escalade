@@ -21,14 +21,14 @@
 </nav>
 
 <s:actionmessage/>
-<h2>Détail du site<s:property value="site.iD"/></h2>
+
 <s:actionmessage name="topo_supp"/>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title"><s:property value="topo.nom"/></h3>
+        <h3 class="panel-title"><s:property value="site.nom"/></h3>
     </div>
 <ul>
-<li>numéro d'enregistrement :<s:property value="idsite"/></li>
+<li>numéro d'enregistrement :  <s:property value="idsite"/></li>
     <li>identifiant : <s:property value="site.identifiant"/></li>
     <li>nom : <s:property value="site.nom"/></li>
     <li>coordonnées gps : <s:property value="site.coordonneesGps"/></li>

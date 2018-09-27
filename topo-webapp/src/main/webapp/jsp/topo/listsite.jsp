@@ -45,8 +45,9 @@
         </li>
     </s:iterator>
 
-    <s:a action="topo_new">creer un nouveau Site</s:a>
+
 </ul>
 </div>
+<s:a action="topo_new">creer un nouveau Site</s:a>
 </body>
 </html>

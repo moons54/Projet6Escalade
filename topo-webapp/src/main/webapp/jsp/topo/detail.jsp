@@ -16,15 +16,9 @@
 <div class="navbar navbar-default">
     <ul class="nav navbar-nav">
         <li class="active"> <a href="#"> <s:a action="index">Accueil</s:a> </li>
-        <li> <a href="#"><s:a action="site_list">Consulter les différents Sites<s:param name="idtopo" value="idtopo"/>  <s:property value="idtopo"/></s:a></a></li>
+        <li> <s:a href="#"><s:a action="site_list">Consulter les différents Sites <s:param name="idtopo" value="idtopo"/></s:a></s:a></li>
 
     </ul>
-</div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">4 colonnes</div>
-            <div class="col-lg-8">8 colonnes</div>
-        </div>
 </div>
 </nav>
 <s:actionmessage/>
@@ -63,6 +57,7 @@
 
                 </tbody>
             </table>
+            <!--
         <ul>
 
         <li>nom : <s:property value="idtopo"/></li>
@@ -74,12 +69,13 @@
     <li>Description du retour: <s:property value="topo.descriptionDuRetour"/></li>
     <li>Type d'equipement  : <s:property value="topo.typeDequipement"/></li>
     </ul>
+    -->
         </div></div>
 
 
-<s:a action="topo_supp">bon pour suppression
+<s:a action="topo_supp">Supprimer
     <s:param name="idtopo" value="idtopo"/>
-    <s:property value="idtopo"/>
+
 </s:a>
 
 </body>
