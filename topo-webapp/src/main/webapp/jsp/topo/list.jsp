@@ -27,12 +27,30 @@
 
 </nav>
 <body>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">La liste des Topos disponibles</h3>
-    </div>
+
+    <ul class="list-group">
 
 
+            <li class="list-group-item active">LISTE DES TOPO DISPONIBLES</li>
+
+
+            <s:iterator value="affichelistetopo">
+
+                <li>
+                    <s:a class="list-group-item list-group-item" action="topo_detail"><s:param name="idtopo" value="iD"/>
+                    <s:property value="nom" />
+                    <s:property value="descriptiondestopo"/>
+                </s:a>
+
+
+                </li>
+
+
+            </s:iterator>
+
+    </ul>
+
+<!--
 <ul>
     <s:iterator value="affichelistetopo">
 
@@ -48,7 +66,7 @@
     </s:iterator>
 
 </ul>
-
+-->
 </div>
 <s:a action="topo_new">creer un nouveau topo</s:a>
 </body>
