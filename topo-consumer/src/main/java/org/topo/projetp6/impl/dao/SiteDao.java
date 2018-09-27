@@ -12,11 +12,11 @@ public interface SiteDao {
 
     //afficher la liste des topos
     public List<Site> affiche(int idtopo);
-
+//TODO faire la mise a jour du site des que l'ensemble de la dépendance est terminé
     //faire une mise a jour du nom des topos
     public void miseajour(Site site);
 
-
+//TODO faire l'ajout de site des que l'ensemble de la dépendance est terminé
     //ajouter un topo
     public Site ajoutopo(Site site);
 
@@ -25,7 +25,7 @@ public interface SiteDao {
 
     public Site getbyiD(int Id);
 
-
+//TODO mettre en place la suppression du site des que l'ensemble de la dépendance est terminé
     //Supprimer un topo
     public Site supprimetopo(int Id);
 }
