@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+    <package name="default" extends="struts-default">
+        <!-- Action par défaut -->
+        <default-action-ref name="index" />
+        <!-- gestion des result error glabl-->
+        <global-results>
+            <result name="error">jsp/error.jsp</result>
+        </global-results>
+
+        <!-- Action "index" -->
+        <action name="index">
+            <!-- gestion de la vue -->
+            <result>/jsp/index.jsp</result>
+        </action>
+        <!-- action listant la liste des topo-->
+        <action name="topo_liste"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doList">
+                <result>jsp/topo/list.jsp</result>
+        </action>
+        <!-- action permettant d'afficher le détail d'un topo-->
+        <action name="topo_detail"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detail.jsp</result>
+        </action>
+        <action name="topo_supp"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doSupp">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detail.jsp</result>
+        </action>
+
+        <!-- action permettant de creer un nouveau Topo-->
+        <action name="topo_new"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+                <result name="input">jsp/topo/new.jsp</result>
+                <result name="success" type="redirectAction">
+                    <param name="actionName">topo_detail</param>
+                    <param name="idtopo">${topo.id}</param>
+                </result>
+
+        </action>
+        <!-- action listant la liste des site-->
+        <action name="site_list"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doList">
+            <result>jsp/topo/listsite.jsp</result>
+        </action>
+        <!-- action permettant d'afficher le détail d'un site-->
+        <action name="site_detail"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailsite.jsp</result>
+        </action>
+
+
+        </package>
+</struts>
