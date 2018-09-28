@@ -12,21 +12,14 @@
     <%@ include file="../_include/header.jsp"%>
 </head>
 
-
-<div class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li class="active"> <a href="#"> <s:a action="index">Accueil</s:a> </li>
-        <li> <s:a href="#"><s:a action="site_list">Consulter les différents Sites <s:param name="idtopo" value="idtopo"/></s:a></s:a></li>
-
-    </ul>
-</div>
-</nav>
+<body>
 <s:actionmessage/>
 
 <s:actionmessage name="topo_supp"/>
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title"><s:property value="topo.nom"/></h3>
+            <li class="list-group-item active"><s:property value="topo.nom"/></li>
+           <!-- <h3 class="panel-title"><s:property value="topo.nom"/></h3> -->
         </div>
 
         <div class="panel-body">
@@ -57,26 +50,18 @@
 
                 </tbody>
             </table>
-            <!--
-        <ul>
 
-        <li>nom : <s:property value="idtopo"/></li>
-    <li>description : <s:property value="topo.descriptiondestopo"/></li>
-    <li>Histoire du Topo : <s:property value="topo.historiquedestopo"/></li>
-    <li>Hauteur du Topo : <s:property value="topo.hauteurDuTopo"/></li>
-    <li>Type de Roche : <s:property value="topo.typeDeroche"/></li>
-    <li>Nombre de Voie : <s:property value="topo.nombreDevoie"/></li>
-    <li>Description du retour: <s:property value="topo.descriptionDuRetour"/></li>
-    <li>Type d'equipement  : <s:property value="topo.typeDequipement"/></li>
-    </ul>
-    -->
         </div></div>
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
 
-<s:a action="topo_supp">Supprimer
-    <s:param name="idtopo" value="idtopo"/>
+        <li class="breadcrumb-item"><s:a action="site_list">consulter les sites<s:param name="idtopo" value="idtopo"/><</s:a></li>
+        <li class="breadcrumb-item"><s:a action="topo_supp">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
 
-</s:a>
+
+    </ol>
+</nav>
 
 </body>
 

@@ -11,23 +11,43 @@
 <head>
     <%@ include file="../_include/header.jsp"%>
 </head>
-<div class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li class="active"> <a href="#"> <s:a action="index">Retour</s:a> </li>
-        <li> <a href="#">Quelques commentaires</a> </li>
-        <li class="disabled"> <a href="#">Références</a> </li>
-    </ul>
-</div>
-</nav>
 
 <s:actionmessage/>
 
 <s:actionmessage name="topo_supp"/>
+
+
+
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title"><s:property value="site.nom"/></h3>
+        <li class="list-group-item active"><s:property value="site.nom"/></li>
+
     </div>
+
+    <div class="panel-body">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>numéro d'enregistrement</th>
+                <th>identifiant</th>
+                <th>nom</th>
+                <th>coordonnées gps/glonass</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td><s:property value="idsite"/></td>
+                <td><s:property value="site.identifiant"/></td>
+                <td><s:property value="site.nom"/></td>
+                <td><s:property value="site.coordonneesGps"/></td>
+
+            </tr>
+
+            </tbody>
+        </table>
 <ul>
+
 <li>numéro d'enregistrement :  <s:property value="idsite"/></li>
     <li>identifiant : <s:property value="site.identifiant"/></li>
     <li>nom : <s:property value="site.nom"/></li>
@@ -35,5 +55,5 @@
 
 
 </ul>
-</div></div>
+    </div></div>
 </html>

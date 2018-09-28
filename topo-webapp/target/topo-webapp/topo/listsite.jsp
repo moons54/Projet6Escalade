@@ -24,12 +24,14 @@
 </div>
 <body>
 
+
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">La Liste des Sites Disponibles</h3>
+        <li class="list-group-item active">Liste des Sites Disponibles</li>
+
     </div>
 
-<H2>Liste des Topos</H2>
+
 <ul>
     <s:iterator value="affichelistesite">
         <li>
