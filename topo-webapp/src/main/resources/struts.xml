@@ -81,6 +81,23 @@
             <result>jsp/topo/detailsite.jsp</result>
         </action>
 
+        <!-- action listant les operations concernant les secteurs -->
+        <action name="secteur_list"
+                class="org.topo.projetp6.action.GestionSecteurAction"
+                method="doList">
+            <result>jsp/topo/listsecteur.jsp</result>
+        </action>
+        <!-- action permettant d'afficher le détail d'un site-->
+        <action name="secteur_detail"
+                class="org.topo.projetp6.action.GestionSecteurAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailsecteur.jsp</result>
+        </action>
 
         </package>
 </struts>

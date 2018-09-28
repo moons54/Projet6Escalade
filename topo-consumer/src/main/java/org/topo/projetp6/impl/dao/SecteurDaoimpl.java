@@ -5,7 +5,6 @@ import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.topo.projetp6.impl.dao.mapper.MapperSecteur;
-import org.topo.projetp6.impl.dao.mapper.MapperSite;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,6 +15,9 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
     @Inject
     SecteurDAO secteurDAO;
+
+    @Inject
+    SiteDao siteDao;
 
     @Override
     public List<Secteur> affiche(int idsite) {
@@ -43,20 +45,20 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
     }
 
 
-    public Site getbyiD(int Id) {
+    public Secteur getbyiD(int Id) {
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.secteur where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        Secteur secteur = (Secteur) vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
+        Secteur secteur = vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
                     Secteur gsecteur = new Secteur(Id);
                   //  gsecteur.setiD(rs.getInt("id"));
 
 
-                    gsecteur.setNom(rs.getString("nomsecteur"));
-                    gsecteur.setCoordonneesGps(rs.getString("nombrevoie"));
-                    gsecteur.setIdentifiant(rs.getInt("siteid"));
+                    gsecteur.setNomsecteur(rs.getString("nomsecteur"));
+                    gsecteur.setNombreVoie(rs.getInt("nombrevoie"));
+                 //   gsecteur.setIdentifiant(rs.getInt("siteid"));
 
 
 
@@ -71,7 +73,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
 
 
-
+//TODO faire l'implementation de supprimesecteur DAO
     public Site supprimetopo(int Id) {
         return null;
     }

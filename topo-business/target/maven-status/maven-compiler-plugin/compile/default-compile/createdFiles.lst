@@ -1,3 +1,4 @@
+org/topo/projetp6/manager/SecteurManager.class
 org/topo/projetp6/managerimpl/SecteurManagerimpl.class
 org/topo/projetp6/manager/Topo_reservableManager.class
 org/topo/projetp6/manager/ManagerFactory.class
@@ -9,7 +10,6 @@ org/topo/projetp6/manager/AbstractManager.class
 org/topo/projetp6/managerimpl/TopoManagerimpl$1.class
 org/topo/projetp6/manager/SiteManager.class
 org/topo/projetp6/managerimpl/TopoManagerimpl$2.class
-org/topo/projetp6/managerimpl/SecteurManager.class
 org/topo/projetp6/managerimpl/TopoManagerimpl.class
 org/topo/projetp6/managerimpl/UtilisateurManagerimpl.class
 org/topo/projetp6/managerimpl/ManagerFactoryimpl.class

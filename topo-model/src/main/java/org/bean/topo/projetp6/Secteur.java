@@ -4,7 +4,7 @@ package org.bean.topo.projetp6;
 
 public class Secteur extends Site {
 	private int iD;
-	private String nomsecteur;
+	private String nomSecteur;
 	private Integer nombreVoie;
 	public Voie[] voies = new Voie[0];
 
@@ -21,11 +21,11 @@ public class Secteur extends Site {
 	}
 
 	public String getNomsecteur() {
-		return nomsecteur;
+		return nomSecteur;
 	}
 
 	public void setNomsecteur(String nomsecteur) {
-		this.nomsecteur = nomsecteur;
+		this.nomSecteur = nomsecteur;
 	}
 
 	public Integer getNombreVoie() {

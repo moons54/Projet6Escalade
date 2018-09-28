@@ -10,4 +10,6 @@ public interface ManagerFactory {
 
    SiteManager getSiteManager();
 
+   SecteurManager getSecteurManager();
+
 }

@@ -17,6 +17,9 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private SiteManager siteManager;
 
+    @Inject
+    private SecteurManager secteurManager;
+
 
     @Override
     public TopoManager getTopoManager() {
@@ -30,6 +33,11 @@ public class ManagerFactoryimpl implements ManagerFactory {
 
     public SiteManager getSiteManager() {
         return this.siteManager;
+    }
+
+    @Override
+    public SecteurManager getSecteurManager() {
+        return this.secteurManager;
     }
 
     public void setSiteManager(SiteManager siteManager) {

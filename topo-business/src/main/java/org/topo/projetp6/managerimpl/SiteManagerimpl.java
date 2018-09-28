@@ -14,7 +14,7 @@ import java.util.List;
 public class SiteManagerimpl extends AbstractManager implements SiteManager {
 
     /**
-     * insertion de l'objet dao des topos
+     * insertion de l'objet dao des Sites
      */
 
     @Inject

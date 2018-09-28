@@ -56,7 +56,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
 
-        <li class="breadcrumb-item"><s:a action="site_list">consulter les sites<s:param name="idtopo" value="idtopo"/><</s:a></li>
+        <li class="breadcrumb-item"><s:a action="site_list">consulter les sites<s:param name="idtopo" value="idtopo"/></s:a></li>
         <li class="breadcrumb-item"><s:a action="topo_supp">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
 
 
