@@ -20,12 +20,12 @@ public class Secteur extends Site {
 		this.iD = iD;
 	}
 
-	public String getNomsecteur() {
+	public String getNomSecteur() {
 		return nomSecteur;
 	}
 
-	public void setNomsecteur(String nomsecteur) {
-		this.nomSecteur = nomsecteur;
+	public void setNomSecteur(String nomSecteur) {
+		this.nomSecteur = nomSecteur;
 	}
 
 	public Integer getNombreVoie() {
@@ -42,5 +42,8 @@ public class Secteur extends Site {
 
 	public void setVoies(Voie[] voies) {
 		this.voies = voies;
+	}
+
+	public Secteur() {
 	}
 }

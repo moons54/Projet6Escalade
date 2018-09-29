@@ -36,6 +36,11 @@ public class SecteurManagerimpl extends AbstractManager implements SecteurManage
        return secteur;
     }
 
+    @Override
+    public Secteur getbynid(int idsecteur) {
+        //Secteur secteur= secteurDAO.getnid(idsecteur);
+        return secteurDAO.getnid(idsecteur);
+    }
 
 
 }

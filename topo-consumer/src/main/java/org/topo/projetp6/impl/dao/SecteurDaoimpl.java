@@ -16,8 +16,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
     @Inject
     SecteurDAO secteurDAO;
 
-    @Inject
-    SiteDao siteDao;
+
 
     @Override
     public List<Secteur> affiche(int idsite) {
@@ -44,7 +43,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
         return null;
     }
 
-
+    @Override
     public Secteur getbyiD(int Id) {
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.secteur where id= ?";
@@ -56,7 +55,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
                   //  gsecteur.setiD(rs.getInt("id"));
 
 
-                    gsecteur.setNomsecteur(rs.getString("nomsecteur"));
+                    gsecteur.setNomSecteur(rs.getString("nomsecteur"));
                     gsecteur.setNombreVoie(rs.getInt("nombrevoie"));
                  //   gsecteur.setIdentifiant(rs.getInt("siteid"));
 
@@ -71,9 +70,18 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
         return secteur;
     }
 
+    @Override
+    public Secteur getnid(int idsecteur) {
+        String vSQL = "SELECT * FROM public.secteur where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+        MapperSecteur monmapsecteur = new MapperSecteur();
+        Secteur vvlistesecteur = vJdbcTemplate.queryForObject(vSQL, monmapsecteur,idsecteur);
+
+        return vvlistesecteur;
+    }
 
 
-//TODO faire l'implementation de supprimesecteur DAO
+    //TODO faire l'implementation de supprimesecteur DAO
     public Site supprimetopo(int Id) {
         return null;
     }

@@ -11,15 +11,14 @@ import java.sql.SQLException;
 
 public class MapperSecteur implements RowMapper<Secteur> {
 
-    //Secteur secteur = new Secteur(id);
-    @Inject
-    SiteDaoimpl site;
+    Secteur secteur = new Secteur();
+
 
         @Override
         public Secteur mapRow(ResultSet rs, int rowNum) throws SQLException {
 
             Secteur nmap = new Secteur(rs.getInt("siteid"));
-            nmap.setNomsecteur(rs.getString("nomsecteur"));
+            nmap.setNomSecteur(rs.getString("nomsecteur"));
             nmap.setNombreVoie(rs.getInt("nombrevoie"));
             nmap.setiD(rs.getInt("id"));
           //  nmap.setSite(rs.getObject(site.affiche(site.getbyiD(Id))));
