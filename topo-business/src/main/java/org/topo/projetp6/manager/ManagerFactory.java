@@ -12,4 +12,6 @@ public interface ManagerFactory {
 
    SecteurManager getSecteurManager();
 
+   VoieManager getVoieManager();
+
 }

@@ -20,6 +20,16 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private SecteurManager secteurManager;
 
+    @Inject
+    private VoieManager VoieManager;
+
+    public org.topo.projetp6.manager.VoieManager getVoieManager() {
+        return VoieManager;
+    }
+
+    public void setVoieManager(org.topo.projetp6.manager.VoieManager voieManager) {
+        VoieManager = voieManager;
+    }
 
     @Override
     public TopoManager getTopoManager() {
