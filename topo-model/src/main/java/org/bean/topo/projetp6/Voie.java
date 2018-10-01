@@ -2,37 +2,43 @@ package org.bean.topo.projetp6;
 
 
 
-public class Voie extends Secteur{
+public class Voie extends Secteur {
 	private int iD;
-	private String nom;
+	private String nomvoie;
 	private String cotation;
 	private String longueur;
 	private String niveau;
 	public Topo_reservable[] voie_reservable = new Topo_reservable[0];
 	public Message_voie[] Message_voie = new Message_voie[0];
 
-	public Voie(int iD) {
-		super(iD);
-	}
 
-	@Override
+public Voie(){
+
+}
+
+public Voie(int iD){
+	this.iD=iD;
+}
+
 	public int getiD() {
 		return iD;
 	}
 
-	@Override
+	public void setMessage_voie(org.bean.topo.projetp6.Message_voie[] message_voie) {
+		Message_voie = message_voie;
+	}
+
 	public void setiD(int iD) {
 		this.iD = iD;
 	}
 
-	@Override
-	public String getNom() {
-		return nom;
+
+	public String getNomvoie() {
+		return nomvoie;
 	}
 
-	@Override
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setNomvoie(String nomvoie) {
+		this.nomvoie = nomvoie;
 	}
 
 	public String getCotation() {
@@ -69,9 +75,5 @@ public class Voie extends Secteur{
 
 	public org.bean.topo.projetp6.Message_voie[] getMessage_voie() {
 		return Message_voie;
-	}
-
-	public void setMessage_voie(org.bean.topo.projetp6.Message_voie[] message_voie) {
-		Message_voie = message_voie;
 	}
 }
