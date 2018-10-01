@@ -136,7 +136,7 @@ return ActionSupport.SUCCESS;
 
 
     public String doDetail(){
-        //gestion des erreurs si id du topo null
+        //gestion des erreurs si id du site null
         if(idsite==null){
             this.addActionError(getText("error.topo.missing.id."));
         }else site = managerFactory.getSiteManager().getbyID(idsite);
