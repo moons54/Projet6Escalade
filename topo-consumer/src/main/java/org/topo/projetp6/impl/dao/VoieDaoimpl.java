@@ -21,16 +21,16 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
 
 
     @Override
-    public List<Voie> affiche(int idsite) {
+    public List<Voie> affiche(int idsecteur) {
         //requete SQL dans bd pour recupperer liste des sites
-     //   String vSQL = "SELECT * FROM public.voie where siteid= ?";
-        String vSQL = "SELECT * FROM public.voie";
+        String vSQL = "SELECT * FROM public.voie where secteurid= ?";
+       // String vSQL = "SELECT * FROM public.voie";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
         MapperVoie monmapvoie = new MapperVoie();
         
         
-        List<Voie> vlistesecteur = vJdbcTemplate.query(vSQL,monmapvoie ,idsite);
+        List<Voie> vlistesecteur = vJdbcTemplate.query(vSQL,monmapvoie ,idsecteur);
         
         return vlistesecteur;
     }

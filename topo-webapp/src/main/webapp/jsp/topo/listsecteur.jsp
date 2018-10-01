@@ -38,9 +38,9 @@
             <s:a action="secteur_detail">
             <s:param name="idsecteur" value="iD"/>
                 <s:property value="nomSecteur" />
-                <s:property value="iD" />
 
-                <s:property value="siteid" />
+
+                <s:property value="iD" />
 
 
 

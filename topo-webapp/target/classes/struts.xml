@@ -87,7 +87,7 @@
                 method="doList">
             <result>jsp/topo/listsecteur.jsp</result>
         </action>
-        <!-- action permettant d'afficher le détail d'un site-->
+        <!-- action permettant d'afficher le détail d'un secteur-->
         <action name="secteur_detail"
                 class="org.topo.projetp6.action.GestionSecteurAction"
                 method="doDetail">
@@ -97,6 +97,23 @@
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detailsecteur.jsp</result>
+        </action>
+        <!-- action permettant d'afficher le détail d'une voie-->
+        <action name="voie_detail"
+                class="org.topo.projetp6.action.GestionVoieAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailvoie.jsp</result>
+        </action>
+        <!-- action listant les operations concernant les voies -->
+        <action name="voie_list"
+                class="org.topo.projetp6.action.GestionVoieAction"
+                method="doList">
+            <result>jsp/topo/listvoie.jsp</result>
         </action>
 
         </package>

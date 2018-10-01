@@ -142,7 +142,7 @@ return ActionSupport.SUCCESS;
     public String doDetail(){
         //gestion des erreurs si id du topo null
         if(idsecteur==null){
-         //   System.out.println("valeur "+getIdsecteur() +"  "+ getIdsite()+"  3 eme val" + getIdtopo());
+          System.out.println("valeur "+getIdsecteur() +"  "+ getIdsite()+"  3 eme val" );
             this.addActionError(getText("error.topo.missing.id."));
         }else secteur = managerFactory.getSecteurManager().getbynid(idsecteur);
       // System.out.println(secteur.getNomSecteur().toString());
@@ -154,7 +154,7 @@ return ActionSupport.SUCCESS;
         }
 return (this.hasErrors())? ActionSupport.ERROR : ActionSupport.SUCCESS;
 
-    };
+    }
 
 
 
