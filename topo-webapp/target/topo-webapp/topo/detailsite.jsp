@@ -15,47 +15,35 @@
 <s:actionmessage/>
 
 <s:actionmessage name="topo_supp"/>
+<!-- //TODO a revoir les action messages pour la suppression  -->
 
 
 
-<div class="panel panel-primary">
     <div class="panel-heading">
-        <li class="list-group-item active"><s:property value="site.nom"/></li>
+        <li class="list-group-item active">
+            <div class="text-uppercase"><h1><s:property value="site.nom"/></h1></div></li>
 
     </div>
 
     <div class="panel-body">
-        <table class="table table-striped table-sm">
-            <thead>
-            <tr>
-                <th>numéro d'enregistrement</th>
-                <th>identifiant</th>
-                <th>nom</th>
-                <th>coordonnées gps/glonass</th>
-            </tr>
-            </thead>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <p class="lead">
+                <div class="d-flex bd-highlight mb-1">
 
-            <tbody>
-            <tr>
-                <td><s:property value="idsite"/></td>
-                <td><s:property value="site.identifiant"/></td>
-                <td><s:property value="site.nom"/></td>
-                <td><s:property value="site.coordonneesGps"/></td>
+                <div class="d-flex p-2 bd-highlight">Nom : <s:property value="site.nom"/></div>
+                </div>
 
-            </tr>
-
-            </tbody>
-        </table>
-<ul>
-
-<li>numéro d'enregistrement :  <s:property value="idsite"/></li>
-    <li>identifiant : <s:property value="site.identifiant"/></li>
-    <li>nom : <s:property value="site.nom"/></li>
-    <li>coordonnées gps : <s:property value="site.coordonneesGps"/></li>
+                <hr class="my-4">
+                <p>
+                <div class="d-flex bd-highlight mb-1">
+                <div class="d-flex p-2 bd-highlight">Coordonnées GPS/GLONASS :<s:property value="site.coordonneesGps"/></div>
 
 
-</ul>
-    </div></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">

@@ -19,28 +19,48 @@
 
 <!-- //TODO a revoir les action messages pour la suppression  -->
 
-<div class="panel panel-primary">
+<p class="panel panel-primary">
     <div class="panel-heading">
-        <li class="list-group-item active"><s:property value="secteur.nomSecteur"/></li>
+        <li class="list-group-item active">
+            <div class="text-uppercase">
+                <h1><s:property value="voie.nom"/></h1></div></li>
 
     </div>
 
-    <div class="panel-body">
+    <p class="panel-body">
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <p class="lead">
+                    <p class="d-flex bd-highlight mb-1">
 
+                        <p class="d-flex p-2 bd-highlight">Nom : <s:property value="voie.nom"/></p>
+                    </p>
 
-<h2>num <s:property value="idvoie"/></h2>
-<h4>Nom  <s:property value="voie.nom"/></h4>
-    <h4>Cotation <s:property value="voie.cotation"/></h4>
-        <h4>Longueur : <s:property value="voie.longueur"/> </h4>
+                <hr class="my-4">
+                <p>
 
-        <h4>Niveau : <s:property value="voie.niveau"/> </h4>
+                <div class="d-flex bd-highlight mb-2">
+                <p class="d-flex p-2 bd-highlight">Cotation <s:property value="voie.cotation"/></p>
+                    <p class="d-flex p-2 bd-highlight">Longueur<s:property value="voie.longueur"/></p>
+                </div>
 
-    </div></div>
+                <hr class="my-4">
+                <p>
+                <div class="d-flex bd-highlight mb-1">
+                <div class="d-flex p-2 bd-highlight">Niveau :<s:property value="voie.niveau"/></div>
+                </div>
+            </div>
+          </div>
+
+                 </div>
+            </div>
+        </div>
+    </div>
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
 
-        <li class="breadcrumb-item"><s:a action="voie_list">consulter les Voies<s:param name="idsecteur" value="idsecteur"/></s:a></li>
+
         <li class="breadcrumb-item"><s:a action="topo_supp">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
 
 

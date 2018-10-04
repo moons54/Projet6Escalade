@@ -12,20 +12,8 @@
 
 <body>
 
-<!--
-<nav>
-<div class="navbar navbar-inverse">
-    <ul class="nav navbar-nav">
-        <li class="active"> <a href="#">Accueil</a> </li>
-        <li> <a href="#"></a><s:a action="topo_liste"><s:text name="nav.listtopo"/></s:a> </li>
 
-    </ul>
-</div>
-</nav>
--->
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Topo OC Projet 6</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,5 +47,10 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>
+</div>
+
+
+
+
+
 </body>

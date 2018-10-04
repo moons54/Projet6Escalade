@@ -19,22 +19,34 @@
 
 <!-- //TODO a revoir les action messages pour la suppression  -->
 
-<div class="panel panel-primary">
+
     <div class="panel-heading">
-        <li class="list-group-item active"><s:property value="secteur.nomSecteur"/></li>
+        <li class="list-group-item active">
+            <div class="text-uppercase"><h1><s:property value="secteur.nomSecteur"/></h1></div></li>
 
     </div>
 
     <div class="panel-body">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <p class="lead">
+                <div class="d-flex bd-highlight mb-1">
+
+                <div class="d-flex p-2 bd-highlight">Nom du secteur : <s:property value="secteur.nomSecteur"/></div>
+
+                </div>
+
+                <hr class="my-4">
+                <p>
+                <div class="d-flex bd-highlight mb-1">
+                    <div class="d-flex p-2 bd-highlight">Nombre de Voie : <s:property value="secteur.nombreVoie"/></div>
+            </div>
 
 
-<h2>num <s:property value="idsecteur"/></h2>
-<h3>Nom du  secteur  <s:property value="secteur.nomSecteur"/></h3>
-    <h3>Nombre de Voie <s:property value="secteur.nombreVoie"/></h3>
 
-
-
-    </div></div>
+            </div>
+        </div>
+    </div>
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">

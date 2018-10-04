@@ -44,62 +44,13 @@
 
 </ul>
                 </div>
-                <!--
-                <div class="col">
-                  <s:iterator value="affichelistetopo">
-
-        <li>
-
-                <s:param name="idtopo" value="iD"/>
-
-                <s:property value="descriptiondestopo"/>
-
-
-        </li>
-
-                  </s:iterator>
-                </div>
-                -->
             </div>
-        </div></span>
-            <s:iterator value="affichelistetopo">
-
-                <li>
-                    <div class="alert alert-info" role="alert">
-                        <s:a action="topo_detail">
-                        <s:param name="idtopo" value="iD"/>
-                            <s:property value="nom" /><a class="alert-link"></a></s:a>
-                    </div>
-           <!--         <s:a class="list-group-item list-group-item" action="topo_detail"><s:param name="idtopo" value="iD"/>
-                    <s:property value="nom" />
-                    <s:property value="descriptiondestopo"/>
-                </s:a>
--->
-
-                </li>
+        </div>
 
 
-            </s:iterator>
 
+</span>
     </ul>
-
-<!--
-<ul>
-    <s:iterator value="affichelistetopo">
-
-        <li>
-            <s:a action="topo_detail">
-            <s:param name="idtopo" value="iD"/>
-           <s:property value="nom" />
-                <s:property value="descriptiondestopo"/>
-            </s:a>
-
-        </li>
-
-    </s:iterator>
-
-</ul>
--->
 
 </div>
 <s:a action="topo_new">creer un nouveau topo</s:a>
