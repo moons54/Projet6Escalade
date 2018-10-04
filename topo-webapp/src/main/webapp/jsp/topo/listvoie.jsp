@@ -15,46 +15,33 @@
 
 </head>
 
-<div class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li class="active"> <a href="#">Accueil</a> </li>
 
-
-    </ul>
-</div>
 <body>
 
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <li class="list-group-item active">Liste des Voies Disponibles</li>
-
-    </div>
+<ul class="list-group">
 
 
-<ul>
-    <s:iterator value="affichelesvoies">
-        <li>
-            <s:a action="voie_detail">
-            <s:param name="idvoie" value="iD"/>
-               <s:property value="nom" />
-                <s:property value="iD" />
+    <li class="list-group-item active">Liste des Voies Disponibles</li>
+    <span class="border border-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <s:iterator value="affichelesvoies">
+                              <li>
+                                  <s:a action="voie_detail">
+                                 <s:param name="idvoie" value="iD"/>
+                                  <s:property value="nom" />
+                                  <s:property value="iD" />
+                                </s:a>
+                             </li>
+                             </s:iterator>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </span>
 
-
-
-
-
-
-
-
-            </s:a>
-
-        </li>
-    </s:iterator>
-
-
-</ul>
-</div>
 <s:a action="topo_new">creer un nouveau Site</s:a>
 </body>
 </html>

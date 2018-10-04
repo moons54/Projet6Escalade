@@ -25,32 +25,29 @@
 <body>
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <li class="list-group-item active">Liste des Secteurs Disponibles</li>
-
-    </div>
+<ul class="list-group">
 
 
-<ul>
+    <li class="list-group-item active">iste des Secteurs Disponibles</li>
+    <span class="border border-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul>
     <s:iterator value="affichelistsecteurs">
         <li>
             <s:a action="secteur_detail">
             <s:param name="idsecteur" value="iD"/>
                 <s:property value="nomSecteur" />
-
-
                 <s:property value="iD" />
-
-
-
-
-
             </s:a>
-
         </li>
     </s:iterator>
-
+        </ul>
+                    </div>
+                </div>
+            </div>
+        </span>
 
 </ul>
 </div>

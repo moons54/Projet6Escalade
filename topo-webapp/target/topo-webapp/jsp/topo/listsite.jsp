@@ -15,41 +15,32 @@
 
 </head>
 
-<div class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li class="active"> <a href="#">Accueil</a> </li>
 
-
-    </ul>
-</div>
 <body>
 
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <li class="list-group-item active">Liste des Sites Disponibles</li>
-
-    </div>
+        <ul class="list-group">
 
 
-<ul>
-    <s:iterator value="affichelistesite">
-        <li>
-            <s:a action="site_detail">
-            <s:param name="idsite" value="iD"/>
-                <s:property value="nom" />
-
-                <s:property value="coordonneesGps"/>
-                <s:property value="iD"/>
-
-            </s:a>
-
-        </li>
-    </s:iterator>
-
-
-</ul>
-</div>
+    <li class="list-group-item active">Liste des Sites Disponibles</li>
+            <span class="border border-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <s:iterator value="affichelistesite">
+                                 <li>
+                                         <s:a action="site_detail"><s:param name="idsite" value="iD"/>
+                                             <s:property value="nom" />
+                                             <s:property value="coordonneesGps"/>
+                                             <s:property value="iD"/>
+                                          </s:a>
+                                 </li>
+                             </s:iterator>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </span>
 <s:a action="topo_new">creer un nouveau Site</s:a>
 </body>
 </html>
