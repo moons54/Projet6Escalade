@@ -2,11 +2,6 @@ package org.topo.projetp6.impl.dao;
 
 
 import org.bean.topo.projetp6.Site;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.List;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -14,6 +9,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.List;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.topo.projetp6.impl.dao.mapper.MapperSite;
 
 @Named
@@ -25,8 +24,8 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao  {
     @Override
     public List<Site> affiche(int idtopo) {
         //requete SQL dans bd pour recupperer liste des sites
-        String vSQL = "SELECT * FROM public.site where topoid= ?";
-
+       String vSQL = "SELECT * FROM public.site where topoid= ?";
+       // String vSQL = "SELECT * FROM public.site ";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
         MapperSite monmapsite = new MapperSite();
@@ -72,6 +71,17 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao  {
         );
 
         return site;
+    }
+
+    @Override
+    public Site recherche(int Id ){
+        String vsql ="SELECT * FROM public.site WHERE id= ?";
+
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
+        Site site = vJdbcTemplate.queryForObject(vsql, new Object[]{Id}, new MapperSite());
+        return site;
+
     }
 
 

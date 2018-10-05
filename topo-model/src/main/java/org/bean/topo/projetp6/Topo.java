@@ -2,6 +2,7 @@ package org.bean.topo.projetp6;
 
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Topo {
 	private int iD;
@@ -13,8 +14,16 @@ public class Topo {
 	private Integer nombreDevoie;
 	private String descriptionDuRetour;
 	private String typeDequipement;
-	private int photoDuTopo;
-	public Site[] site = new Site[0];
+
+    public Site[] site = new Site[0];
+    private int photoDuTopo;
+
+
+
+   // private Site sitev2;
+//	public List Sirte;
+//	public Site stt;
+
 	public Topo_reservable[] topo_reservable = new Topo_reservable[0];
 
 	/**
@@ -45,6 +54,7 @@ public class Topo {
     public String getNom() {
         return nom;
     }
+
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -122,6 +132,19 @@ public class Topo {
         this.site = site;
     }
 
+    /**
+   public Site getStt() {
+        return stt;
+    }
+
+    public void setStt(Site stt) {
+        this.stt = stt;
+    }
+
+*/
+
+
+
     public Topo_reservable[] getTopo_reservable() {
         return topo_reservable;
     }
@@ -134,6 +157,7 @@ public class Topo {
 	 *********************************** La méthode to string *****************************************
 	 * @return
 	 */
+
     @Override
     public String toString() {
         return "Topo{" +
@@ -147,7 +171,7 @@ public class Topo {
                 ", descriptionDuRetour='" + descriptionDuRetour + '\'' +
                 ", typeDequipement='" + typeDequipement + '\'' +
                 ", photoDuTopo=" + photoDuTopo +
-                ", site=" + Arrays.toString(site) +
+               // ", site=" + stt +
                 ", topo_reservable=" + Arrays.toString(topo_reservable) +
                 '}';
     }

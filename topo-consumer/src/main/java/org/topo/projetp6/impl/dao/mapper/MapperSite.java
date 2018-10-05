@@ -4,6 +4,7 @@ import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
 import org.springframework.jdbc.core.RowMapper;
 import org.topo.projetp6.impl.dao.TopoDaoImpl;
+import org.topo.projetp6.impl.dao.SiteDaoimpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class MapperSite implements RowMapper<Site> {
             nmap.setNom(rs.getString("nom"));
             nmap.setCoordonneesGps(rs.getString("coordonnees_gps"));
         nmap.setiD(rs.getInt("id"));
-      // nmap.setTopo(rs.getObject);
+
 
 
 
