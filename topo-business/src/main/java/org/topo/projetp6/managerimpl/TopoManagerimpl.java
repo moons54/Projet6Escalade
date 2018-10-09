@@ -19,6 +19,7 @@ import org.topo.projetp6.managerimpl.SiteManagerimpl;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -28,6 +29,8 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
     /**
      * insertion de l'objet dao des topos
      */
+
+    private List<Topo> listtopo=new ArrayList<Topo>();
 
     @Inject
     private TopoDao topoDao;
@@ -56,10 +59,6 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
 
         Topo tops=  topoDao.getbyiD(Id);
 
-    //   List <Site> site= siteManagerimpl.affichelessite(Id);
-
-      //  tops.setSite(site);
-
 
     return tops;
     }
@@ -73,8 +72,9 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
     @Override
     public List<Topo> affichelistedestopos(){
 
+listtopo=getDaoFactory().getTopoDao().affiche();
 
-     return topoDao.affiche();
+     return this.listtopo;
 
     }
 

@@ -2,12 +2,13 @@ package org.bean.topo.projetp6;
 
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Secteur extends Site {
 	private int iD;
 	private String nomSecteur;
 	private Integer nombreVoie;
-	public Voie[] voies = new Voie[0];
+	private List<Voie> voies;
 
 	public Secteur(int iD) {
 		super(iD);
@@ -37,11 +38,11 @@ public class Secteur extends Site {
 		this.nombreVoie = nombreVoie;
 	}
 
-	public Voie[] getVoies() {
+	public List<Voie> getVoies() {
 		return voies;
 	}
 
-	public void setVoies(Voie[] voies) {
+	public void setVoies(List<Voie> voies) {
 		this.voies = voies;
 	}
 
@@ -54,7 +55,9 @@ public class Secteur extends Site {
 				"iD=" + iD +
 				", nomSecteur='" + nomSecteur + '\'' +
 				", nombreVoie=" + nombreVoie +
-				", voies=" + Arrays.toString(voies) +
+				", voies=" + voies +
+				", topo=" + topo +
+				", site=" + site +
 				'}';
 	}
 }

@@ -2,6 +2,7 @@ package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -22,6 +23,9 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
     @Inject
     private TopoDao topoDao;
 
+    @Inject
+    private SiteDao siteDao;
+
     @Override
     public List<Topo> affiche() {
 
@@ -29,11 +33,11 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         String vSQL = "SELECT * FROM public.topo";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
+RowMapper<Topo> montops = new MapperTopo(this.siteDao);
+     //   MapperTopo monmaptopo = new MapperTopo(siteDao);
 
-        MapperTopo monmaptopo = new MapperTopo();
-
-         List<Topo> vListStatut = vJdbcTemplate.query(vSQL, monmaptopo);
-
+         List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
+        System.out.println("valeur de vliste "+vListStatut);
         return vListStatut;
     }
 
@@ -46,7 +50,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        MapperTopo monmaptopo = new MapperTopo();
+        MapperTopo monmaptopo = new MapperTopo(this.siteDao);
 
         Topo topo = vJdbcTemplate.queryForObject(vSQL, monmaptopo, Id);
 

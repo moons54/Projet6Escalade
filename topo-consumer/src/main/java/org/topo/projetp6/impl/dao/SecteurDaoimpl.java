@@ -14,9 +14,10 @@ import java.util.List;
 public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
     @Inject
-    SecteurDAO secteurDAO;
+    private SecteurDAO secteurDAO;
 
-
+    @Inject
+    VoieDao voieDao;
 
     @Override
     public List<Secteur> affiche(int idsite) {
@@ -25,7 +26,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
         //String vSQL = "SELECT * FROM public.secteur";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-        MapperSecteur monmapsecteur = new MapperSecteur();
+        MapperSecteur monmapsecteur = new MapperSecteur(this.voieDao);
         
         
         List<Secteur> vlistesecteur = vJdbcTemplate.query(vSQL, monmapsecteur,idsite);
@@ -50,7 +51,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        MapperSecteur monmapsecteur = new MapperSecteur();
+        MapperSecteur monmapsecteur = new MapperSecteur(this.voieDao);
 
 
         Secteur secteur = vJdbcTemplate.queryForObject(vSQL, monmapsecteur,Id);
@@ -64,7 +65,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
     public Secteur getnid(int idsecteur) {
         String vSQL = "SELECT * FROM public.secteur where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
-        MapperSecteur monmapsecteur = new MapperSecteur();
+        MapperSecteur monmapsecteur = new MapperSecteur(this.voieDao);
         Secteur vvlistesecteur = vJdbcTemplate.queryForObject(vSQL, monmapsecteur,idsecteur);
 
         return vvlistesecteur;

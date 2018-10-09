@@ -40,7 +40,7 @@ public class ManagerFactoryimpl implements ManagerFactory {
         topomanager = TopoManager;
     }
 
-
+    @Override
     public SiteManager getSiteManager() {
         return this.siteManager;
     }
@@ -53,6 +53,11 @@ public class ManagerFactoryimpl implements ManagerFactory {
     public void setSiteManager(SiteManager siteManager) {
         this.siteManager = siteManager;
     }
+
+    public void setSecteurManager(SecteurManager secteurManager) {
+        this.secteurManager = secteurManager;
+    }
+    
 }
 
 

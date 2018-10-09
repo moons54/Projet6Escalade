@@ -17,7 +17,7 @@ public class Topo {
 
     //public Site[] site = new Site[0];
     private int photoDuTopo;
-    public List <Site> site;
+    public List<Site> site;
 
 
    // private Site sitev2;
@@ -134,15 +134,18 @@ public class Topo {
     }
 
      */
+    public List<Site> getSite() {
+        return site;
+    }
 
-
+    /**
     public List<Site> getSite() {
         if ( site==null){
             return null;
         }else
         return site;
     }
-
+*/
     public void setSite(List<Site> site) {
         this.site = site;
     }
@@ -169,9 +172,10 @@ public class Topo {
     }
 
     /**
-	 *********************************** La méthode to string *****************************************
-	 * @return
-	 */
+     * ********************************** La méthode to string *****************************************
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Topo{" +

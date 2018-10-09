@@ -17,10 +17,12 @@ import java.util.List;
 public class MapperSite implements RowMapper<Site> {
 
 
+private SecteurDAO secteurDAO;
 
 
-    Site site = new Site();
-
+    public MapperSite(SecteurDAO secteurDAO){
+        this.secteurDAO=secteurDAO;
+    }
 
         @Override
         public Site mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -31,8 +33,9 @@ public class MapperSite implements RowMapper<Site> {
             nmap.setCoordonneesGps(rs.getString("coordonnees_gps"));
         nmap.setiD(rs.getInt("id"));
 
-      ;
-     //       List<Secteur> secteurs=secteurDAO.affiche(rs.getInt("id"));
+        nmap.setSecteurs(secteurDAO.affiche(rs.getInt("topoid")));
+
+    //      List<Secteur> secteurs=secteurDAO.affiche(rs.getInt("id"));
     //nmap.setSecteurs(secteurs);
 
 

@@ -80,6 +80,8 @@ public class Site extends Topo {
 				", coordonneesGps='" + coordonneesGps + '\'' +
 				", topo=" + topo +
 				", secteurs=" + secteurs +
+				", sites=" + sites +
+				", site=" + site +
 				'}';
 	}
 

@@ -3,8 +3,9 @@ package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -16,20 +17,20 @@ import javax.inject.Named;
 import javax.sql.DataSource;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.topo.projetp6.DaoFactoryImpl;
+import org.topo.projetp6.impl.DaoFactory;
 import org.topo.projetp6.impl.dao.mapper.MapperSite;
 
 @Named
 public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Inject
-    SiteDao siteDao;
+    private SiteDao siteDao;
 
     @Inject
     SecteurDAO secteurDAO;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+  //  @Autowired
+   // JdbcTemplate jdbcTemplate;
 
 
     @Override
@@ -39,12 +40,12 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         // String vSQL = "SELECT * FROM public.site ";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-        MapperSite monmapsite = new MapperSite();
+        RowMapper<Site> monmapsite = new MapperSite(this.secteurDAO);
           List<Site> vlistesite = vJdbcTemplate.query(vSQL, monmapsite, idtopo);
 
-      // List <Secteur> secteurs=secteurDAO.affiche(idtopo);
+    //  List <Secteur> secteurs=secteurDAO.affiche(idtopo);
 
-
+        System.out.println("valeur de vlistsite" + vlistesite);
 
 
         return vlistesite;
@@ -68,7 +69,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         // String vSQL = "SELECT * FROM public.site ";
 
 
-        MapperSite monmapsite = new MapperSite();
+       RowMapper<Site>  monmapsite = new MapperSite(this.secteurDAO);
 
 
        Site site = vJdbcTemplate.queryForObject(vSQL, monmapsite, Id);
@@ -89,7 +90,8 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         // String vSQL = "SELECT * FROM public.site ";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-        MapperSite monmapsite = new MapperSite();
+
+        RowMapper<Site>  monmapsite = new MapperSite(this.secteurDAO);
 
 
         List<Site> vlistesite = vJdbcTemplate.query(vsql, monmapsite,Id);
