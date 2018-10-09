@@ -1,6 +1,8 @@
 package org.bean.topo.projetp6;
 
 
+import java.util.Arrays;
+import java.util.List;
 
 public class Site extends Topo {
 	private int iD;
@@ -8,7 +10,7 @@ public class Site extends Topo {
 	private String nom;
 	private String coordonneesGps;
 	public Topo topo;
-	public Secteur[] secteurs = new Secteur[0];
+	private List <Secteur> secteurs;
 
 	public Site(int iD) {
 		super(iD);
@@ -57,17 +59,26 @@ public class Site extends Topo {
 		this.topo = topo;
 	}
 
-	public Secteur[] getSecteurs() {
+	public List<Secteur> getSecteurs() {
 		return secteurs;
 	}
 
-	public void setSecteurs(Secteur[] secteurs) {
+	public void setSecteurs(List<Secteur> secteurs) {
 		this.secteurs = secteurs;
 	}
 
 	public Site()  {
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Site{" +
+				"iD=" + iD +
+				", identifiant=" + identifiant +
+				", nom='" + nom + '\'' +
+				", coordonneesGps='" + coordonneesGps + '\'' +
+				", topo=" + topo +
+				", secteurs=" + secteurs +
+				'}';
+	}
 }

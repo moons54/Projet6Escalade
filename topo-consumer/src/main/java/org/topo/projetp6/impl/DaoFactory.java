@@ -12,4 +12,7 @@ public interface DaoFactory {
     SiteDao getSiteDao();
 
     SecteurDAO getSecteurDao();
+
+
+
 }

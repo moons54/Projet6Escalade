@@ -2,6 +2,7 @@ package org.topo.projetp6.impl.dao;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,12 +21,17 @@ public abstract class AbstractDaoImpl {
 
 
 
-     DataSource getDatasource() {
+    public DataSource getDatasource() {
 
         return datasource;
     }
 
 
+    @Inject
+    @Named("jdbcTemplate")
+    private JdbcTemplate jdbcTemplate;
 
-
+    public JdbcTemplate getJdbcTemplate() {
+        return jdbcTemplate;
+    }
 }

@@ -29,6 +29,6 @@ public interface SiteDao {
     //Supprimer un topo
     public Site supprimetopo(int Id);
 
-    public Site recherche(int Id );
+    public List <Site> recherche(int Id );
 
 }

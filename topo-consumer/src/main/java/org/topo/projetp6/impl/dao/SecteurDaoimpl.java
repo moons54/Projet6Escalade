@@ -50,22 +50,12 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        Secteur secteur = vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
-                    Secteur gsecteur = new Secteur(Id);
-                  //  gsecteur.setiD(rs.getInt("id"));
+        MapperSecteur monmapsecteur = new MapperSecteur();
 
 
-                    gsecteur.setNomSecteur(rs.getString("nomsecteur"));
-                    gsecteur.setNombreVoie(rs.getInt("nombrevoie"));
-                 //   gsecteur.setIdentifiant(rs.getInt("siteid"));
+        Secteur secteur = vJdbcTemplate.queryForObject(vSQL, monmapsecteur,Id);
 
 
-
-
-                    return gsecteur;
-                }
-                , Id
-        );
 
         return secteur;
     }

@@ -1,6 +1,7 @@
 package org.bean.topo.projetp6;
 
 
+import java.util.Arrays;
 
 public class Secteur extends Site {
 	private int iD;
@@ -45,5 +46,15 @@ public class Secteur extends Site {
 	}
 
 	public Secteur() {
+	}
+
+	@Override
+	public String toString() {
+		return "Secteur{" +
+				"iD=" + iD +
+				", nomSecteur='" + nomSecteur + '\'' +
+				", nombreVoie=" + nombreVoie +
+				", voies=" + Arrays.toString(voies) +
+				'}';
 	}
 }

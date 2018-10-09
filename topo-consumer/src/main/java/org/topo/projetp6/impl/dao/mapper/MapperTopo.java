@@ -4,6 +4,7 @@ import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
 
 import org.springframework.jdbc.core.RowMapper;
+import org.topo.projetp6.impl.dao.SiteDao;
 import org.topo.projetp6.impl.dao.SiteDaoimpl;
 
 import java.sql.Array;
@@ -30,18 +31,26 @@ public class MapperTopo implements RowMapper<Topo> {
             montopo.setPhotoDuTopo(rs.getInt("photo_topo"));
             System.out.println("valeur de topo"+montopo);
 
+         //   montopo.setSite(new Site[]{rs.getArray("id")});
+/**
             Site[] tabl={};
-            Site site=new Site();
-            tabl[0] = site;
+            Site site;
+            site = new Site();
+
+*/
+
+
+        //  SiteDaoimpl sitedao = new SiteDaoimpl();
+         //   System.out.println("voila l'objet sitedao" + sitedao.getbyiD(1));
 
 
 
-
-            SiteDaoimpl sitedao = new SiteDaoimpl();
-            tabl[1]=sitedao.getbyiD(rs.getInt("id"));
-            System.out.println("valeur apres declaration "+montopo);
-            System.out.println("valeur du tableau"+ tabl[1]);
-            montopo.setSite(tabl);
+     //     System.out.println(sitedao.recherche(rs.getInt("id")));
+      //    System.out.println(sitedao.getbyiD(montopo.getiD()));
+           // site=sitedao.getbyiD(rs.getInt("id"));
+      //      System.out.println("valeur apres declaration "+montopo);
+           // System.out.println("valeur du tableau"+ site);
+            //montopo.setSite(tabl);
           //  montopo.setSite(sitedao.getbyiD(rs.getArray("id")));
            // montopo.setStt(sitedao.getbyiD(rs.getInt("id")));
        //     montopo.setStt(sitedao.affiche(rs.getInt()));

@@ -1,5 +1,6 @@
 package org.topo.projetp6.impl.dao;
 
+import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -12,6 +13,7 @@ import org.topo.projetp6.impl.dao.mapper.MapperTopo;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.lang.reflect.Array;
 import java.util.List;
 
 @Named
@@ -30,8 +32,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
         MapperTopo monmaptopo = new MapperTopo();
 
-
-        List<Topo> vListStatut = vJdbcTemplate.query(vSQL, monmaptopo);
+         List<Topo> vListStatut = vJdbcTemplate.query(vSQL, monmaptopo);
 
         return vListStatut;
     }
@@ -45,25 +46,17 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        Topo tops = (Topo) vJdbcTemplate.queryForObject(vSQL, (rs, rowNum) -> {
-                    Topo lamtopo = new Topo();
-                    lamtopo.setNom(rs.getString("nom"));
-                    lamtopo.setDescriptiondestopo(rs.getString("description_topo"));
-                    lamtopo.setHistoriquedestopo(rs.getString("historique_topo"));
-                    lamtopo.setHauteurDuTopo(rs.getString("hauteur_global"));
-                    lamtopo.setTypeDeroche(rs.getString("type_roche"));
-                    lamtopo.setDescriptionDuRetour(rs.getString("description_du_retour"));
-                    lamtopo.setNombreDevoie(rs.getInt("nombre_voie"));
-                    lamtopo.setTypeDequipement(rs.getString("type_equipement"));
+        MapperTopo monmaptopo = new MapperTopo();
+
+        Topo topo = vJdbcTemplate.queryForObject(vSQL, monmaptopo, Id);
+
+        return topo;
 
 
-                    return lamtopo;
-                }
-                , Id
-        );
-
-        return tops;
     }
+
+
+
 
     @Override
     public void miseajour(final Topo topo) {

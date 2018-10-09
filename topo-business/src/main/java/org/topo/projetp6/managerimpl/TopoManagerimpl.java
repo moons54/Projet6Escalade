@@ -1,14 +1,21 @@
 package org.topo.projetp6.managerimpl;
 
 
+import org.bean.topo.projetp6.Secteur;
+import org.bean.topo.projetp6.Site;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
+import org.topo.projetp6.impl.dao.SecteurDAO;
 import org.topo.projetp6.impl.dao.TopoDao;
+import org.topo.projetp6.impl.dao.SiteDao;
 import org.topo.projetp6.manager.AbstractManager;
 import org.topo.projetp6.manager.TopoManager;
 import org.bean.topo.projetp6.Topo;
+
+import org.topo.projetp6.managerimpl.SiteManagerimpl;
+
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,6 +33,15 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
     private TopoDao topoDao;
 
     @Inject
+    private SiteDao siteDao;
+
+    @Inject
+    private SecteurDAO secteurDAO;
+
+   @Inject
+   private SiteManagerimpl siteManagerimpl;
+
+    @Inject
     @Named("TXtransactionTOPO")
     private PlatformTransactionManager platformTransactionManager;
 
@@ -37,7 +53,13 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
      */
     @Override
     public Topo getTopo(int Id) {
+
         Topo tops=  topoDao.getbyiD(Id);
+
+       List <Site> site= siteManagerimpl.affichelessite(Id);
+
+        tops.setSite(site);
+
 
     return tops;
     }
@@ -50,6 +72,8 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
      */
     @Override
     public List<Topo> affichelistedestopos(){
+
+
      return topoDao.affiche();
 
     }
