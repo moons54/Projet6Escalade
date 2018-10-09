@@ -42,13 +42,9 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         MapperSite monmapsite = new MapperSite();
           List<Site> vlistesite = vJdbcTemplate.query(vSQL, monmapsite, idtopo);
 
-        List <Secteur> secteurs=secteurDAO.affiche(idtopo);
+      // List <Secteur> secteurs=secteurDAO.affiche(idtopo);
 
 
-        for (int i=0;i<=secteurs.size();i++){
-
-
-        }
 
 
         return vlistesite;

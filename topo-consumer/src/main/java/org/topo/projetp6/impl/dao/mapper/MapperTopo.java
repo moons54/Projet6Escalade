@@ -3,6 +3,7 @@ package org.topo.projetp6.impl.dao.mapper;
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.topo.projetp6.impl.dao.SiteDao;
 import org.topo.projetp6.impl.dao.SiteDaoimpl;
@@ -14,7 +15,8 @@ import java.util.List;
 
 public class MapperTopo implements RowMapper<Topo> {
 
-
+@Autowired
+SiteDaoimpl siteDaoimpl;
 
         @Override
         public Topo mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -34,20 +36,21 @@ public class MapperTopo implements RowMapper<Topo> {
          //   montopo.setSite(new Site[]{rs.getArray("id")});
 /**
             Site[] tabl={};
-            Site site;
+
             site = new Site();
 
 */
 
 
-        //  SiteDaoimpl sitedao = new SiteDaoimpl();
-         //   System.out.println("voila l'objet sitedao" + sitedao.getbyiD(1));
 
+         //   System.out.println("voila l'objet sitedao" + sitedao.getbyiD(1));
+            Site site;
 
 
      //     System.out.println(sitedao.recherche(rs.getInt("id")));
-      //    System.out.println(sitedao.getbyiD(montopo.getiD()));
-           // site=sitedao.getbyiD(rs.getInt("id"));
+      //   System.out.println(sitedao.getbyiD(montopo.getiD()));
+            site=siteDaoimpl.getbyiD(rs.getInt("id"));
+            montopo.setSite(site.getSite());
       //      System.out.println("valeur apres declaration "+montopo);
            // System.out.println("valeur du tableau"+ site);
             //montopo.setSite(tabl);

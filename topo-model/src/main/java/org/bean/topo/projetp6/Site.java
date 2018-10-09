@@ -11,6 +11,7 @@ public class Site extends Topo {
 	private String coordonneesGps;
 	public Topo topo;
 	private List <Secteur> secteurs;
+	private List <Site> sites;
 
 	public Site(int iD) {
 		super(iD);
@@ -80,5 +81,9 @@ public class Site extends Topo {
 				", topo=" + topo +
 				", secteurs=" + secteurs +
 				'}';
+	}
+
+	public List<Site> getSites() {
+		return sites;
 	}
 }

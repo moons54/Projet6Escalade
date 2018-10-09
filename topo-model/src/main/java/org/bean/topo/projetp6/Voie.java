@@ -10,6 +10,7 @@ public class Voie extends Secteur {
 	private String longueur;
 	private String niveau;
 	private List secteur;
+	private List voie;
 	public Topo_reservable[] voie_reservable = new Topo_reservable[0];
 	public Message_voie[] Message_voie = new Message_voie[0];
 

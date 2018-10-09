@@ -135,7 +135,11 @@ public class Topo {
 
      */
 
+
     public List<Site> getSite() {
+        if ( site==null){
+            return null;
+        }else
         return site;
     }
 

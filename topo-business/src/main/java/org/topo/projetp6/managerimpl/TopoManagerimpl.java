@@ -56,9 +56,9 @@ public class TopoManagerimpl extends AbstractManager implements TopoManager {
 
         Topo tops=  topoDao.getbyiD(Id);
 
-       List <Site> site= siteManagerimpl.affichelessite(Id);
+    //   List <Site> site= siteManagerimpl.affichelessite(Id);
 
-        tops.setSite(site);
+      //  tops.setSite(site);
 
 
     return tops;

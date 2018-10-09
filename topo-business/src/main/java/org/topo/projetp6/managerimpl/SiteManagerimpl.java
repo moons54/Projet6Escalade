@@ -38,10 +38,10 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
     @Override
     public Site getbyID(int Id) {
         Site site= siteDao.getbyiD(Id);
-        List <Secteur> secteurs=secteurDAO.affiche(Id);
+   //     List <Secteur> secteurs=secteurDAO.affiche(Id);
 
-        site.setSecteurs(secteurs);
-        System.out.println("valeur de secteur dans site"+site.toString());
+     //   site.setSecteurs(secteurs);
+     //   System.out.println("valeur de secteur dans site"+site.toString());
         return site;
     }
 
