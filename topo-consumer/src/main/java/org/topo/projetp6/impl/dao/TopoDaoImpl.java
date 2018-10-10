@@ -11,6 +11,9 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.topo.projetp6.impl.dao.mapper.MapperTopo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,6 +29,9 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
     @Inject
     private SiteDao siteDao;
 
+
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
+
     @Override
     public List<Topo> affiche() {
 
@@ -33,11 +39,9 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         String vSQL = "SELECT * FROM public.topo";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-RowMapper<Topo> montops = new MapperTopo(this.siteDao);
-     //   MapperTopo monmaptopo = new MapperTopo(siteDao);
+        RowMapper<Topo> montops = new MapperTopo(this.siteDao);
+       List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
 
-         List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
-        System.out.println("valeur de vliste "+vListStatut);
         return vListStatut;
     }
 
@@ -50,10 +54,10 @@ RowMapper<Topo> montops = new MapperTopo(this.siteDao);
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-        MapperTopo monmaptopo = new MapperTopo(this.siteDao);
+        RowMapper<Topo> montops = new MapperTopo(this.siteDao);
 
-        Topo topo = vJdbcTemplate.queryForObject(vSQL, monmaptopo, Id);
-
+        Topo topo = vJdbcTemplate.queryForObject(vSQL, montops, Id);
+        LOGGER.info("recherche de la liste de topo ");
         return topo;
 
 
@@ -130,11 +134,16 @@ RowMapper<Topo> montops = new MapperTopo(this.siteDao);
     }
 
     public Topo supprimetopo(int Id) {
-
+        LOGGER.info("suppression d'un topo");
+        String vSQL = "DELETE FROM public.topo where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
+    //    RowMapper<Topo> montops = new MapperTopo(this.siteDao);
 
-vJdbcTemplate.update("delete from topo where id = ?",Id);
+     //   Topo tops = vJdbcTemplate.queryForObject(vSQL, montops,Id);
+vJdbcTemplate.update(vSQL,Id);
+
+//vJdbcTemplate.update("delete from topo where id = ?",Id);
         return null;
     }
 }

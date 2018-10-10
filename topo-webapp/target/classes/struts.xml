@@ -81,6 +81,21 @@
             <result>jsp/topo/detailsite.jsp</result>
         </action>
 
+        <!-- action permettant de creer un nouveau Topo-->
+        <action name="site_new"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doCreate">
+        <interceptor-ref name="store">
+            <param name="operationMode">STORE</param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack"/>
+        <result name="input">jsp/topo/newsite.jsp</result>
+        <result name="success" type="redirectAction">
+            <param name="actionName">site_detail</param>
+            <param name="idtopo">${topo.id}</param>
+        </result>
+        </action>
+
         <!-- action listant les operations concernant les secteurs -->
         <action name="secteur_list"
                 class="org.topo.projetp6.action.GestionSecteurAction"
@@ -115,6 +130,8 @@
                 method="doList">
             <result>jsp/topo/listvoie.jsp</result>
         </action>
+
+
 
         </package>
 </struts>

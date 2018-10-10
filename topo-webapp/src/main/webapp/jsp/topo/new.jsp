@@ -32,7 +32,21 @@
     <s:textfield name="topo.typeDequipement" label="type d'equipement" requiredLabel="true" ></s:textfield>
     <s:textfield name="topo.photoDuTopo" label="photo du topo" requiredLabel="false" ></s:textfield>
 
+
+
     <s:submit value="OK"/>
 </s:form>
+.
+<div class="container-fluid">
+    <div class="form-group">
+        <label for=""></label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+
+
+        <button type="button" class="btn btn-primary|secondary|success|info|warning|danger|link"></button>
+    </div>
+</div>
+
 </body>
 </html>
