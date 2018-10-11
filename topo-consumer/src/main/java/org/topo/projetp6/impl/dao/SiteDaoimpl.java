@@ -46,9 +46,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         RowMapper<Site> monmapsite = new MapperSite(this.secteurDAO);
           List<Site> vlistesite = vJdbcTemplate.query(vSQL, monmapsite, idtopo);
 
-    //  List <Secteur> secteurs=secteurDAO.affiche(idtopo);
 
-        System.out.println("valeur de vlistsite" + vlistesite);
 
 
         return vlistesite;
@@ -60,8 +58,13 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
     }
 
     @Override
-    public Site ajoutopo(Site site) {
-        return null;
+    public Site ajoutesite(Site site) {
+        String vsql = "INSERT INTO public.site (identifiant,nom,coordonnees_gps,topoid) VALUES (?,?,?,?)";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+        System.out.println("valeur de id  =" +site.topo.getiD());
+        vJdbcTemplate.update(vsql,site.getIdentifiant(),site.getNom(),site.getCoordonneesGps(),site.topo.getiD());
+
+        return site;
     }
 
     @Override

@@ -16,9 +16,9 @@ public interface SiteDao {
     //faire une mise a jour du nom des topos
     public void miseajour(Site site);
 
-//TODO faire l'ajout de site des que l'ensemble de la dépendance est terminé
+
     //ajouter un topo
-    public Site ajoutopo(Site site);
+    public Site ajoutesite(Site site);
 
 
     //rechercher un topo par id

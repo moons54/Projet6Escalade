@@ -57,5 +57,15 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
         return null;
     }
 
+    @Override
+    public void ajoutsite(final Site nsite) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                siteDao.ajoutesite(nsite);
+            }
+        });
 
+    }
 }

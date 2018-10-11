@@ -19,11 +19,15 @@
 <s:actionmessage/>
 <s:actionerror/>
 <h2>Creation d'un nouveau Site</h2>
-<s form action="site_new">
-    <s:textfield name="site.identifiant" label="nom du Secteur" requiredLabel="true" ></s:textfield>
+<s:form action="site_new">
+    <s:textfield name="site.identifiant" label="Identifiant" requiredLabel="true" ></s:textfield>
     <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" ></s:textfield>
     <s:textfield name="site.coordonneesGps" label="=Coordonnées GPS" requiredLabel="true" ></s:textfield>
 
-</s>
+
+
+    <s:submit value="OK"/>
+</s:form>
+
 </body>
 </html>

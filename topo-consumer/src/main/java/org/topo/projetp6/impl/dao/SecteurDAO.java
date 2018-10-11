@@ -16,4 +16,6 @@ public interface SecteurDAO {
     public Secteur getnid(int idsecteur);
 
     public Secteur supprimesecteur(int Id);
+
+
 }

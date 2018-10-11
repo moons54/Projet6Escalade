@@ -41,6 +41,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
         RowMapper<Topo> montops = new MapperTopo(this.siteDao);
        List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
+        System.out.println("valeur de vlist" + vListStatut);
 
         return vListStatut;
     }

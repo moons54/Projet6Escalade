@@ -14,4 +14,5 @@ public interface SiteManager {
 
     public Site supprimesite(final int Id);
 
+    public void ajoutsite(final Site nsite);
 }

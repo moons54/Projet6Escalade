@@ -104,12 +104,13 @@ return ActionSupport.SUCCESS;
     //methode permettant de crée un nouveau TOPO
     public String doCreate(){
         String vresult = ActionSupport.INPUT;
-
+        System.out.println("renre dans la methode");
      //condition validant l'ajout de formulaire
 
-        if (this.topo !=null) {
-
-            if (this.topo.getNom() == null) {
+        if (this.site !=null) {
+            System.out.println("est ce que ca vient la ?");
+            if (this.site.getNom() == null) {
+                System.out.println("valauer de this.site.getnom" + this.site.getNom());
                 this.addFieldError(" topo.nom", "ne peut pas etre vide");
 
             } else {
@@ -119,10 +120,11 @@ return ActionSupport.SUCCESS;
 
             if (!this.hasErrors()) {
                 try {
-                    managerFactory.getTopoManager().ajoutopo(this.topo);
+                    System.out.println("valeur de site avt manage " +site.toString());
+                    managerFactory.getSiteManager().ajoutsite(this.site);
                     System.out.println("je suis la");
                     vresult = ActionSupport.SUCCESS;
-                    this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
+                    this.addActionMessage("Nouveau site consultable et pret a l'emploi");
                 } catch (Exception e) {
 
                     vresult = ActionSupport.ERROR;

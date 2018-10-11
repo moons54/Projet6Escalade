@@ -36,7 +36,7 @@
 
     <s:submit value="OK"/>
 </s:form>
-.
+
 <div class="container-fluid">
     <div class="form-group">
         <label for=""></label>
