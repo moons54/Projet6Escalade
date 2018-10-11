@@ -13,4 +13,7 @@ public interface VoieManager {
 
     public List<Voie> affichelesvoies(int idsecteur);
 
+
+    public Voie supprimevoie(final int Id);
+
 }

@@ -12,4 +12,6 @@ public interface SiteManager {
 
     Site getbyID(int Id);
 
+    public Site supprimesite(final int Id);
+
 }

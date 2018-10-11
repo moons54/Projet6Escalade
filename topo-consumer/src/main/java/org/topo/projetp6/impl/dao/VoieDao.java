@@ -13,5 +13,5 @@ public interface VoieDao {
 
     public Voie getnid(int idvoie);
 
-
+    public Voie supprimevoie(int idvoie);
 }

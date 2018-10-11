@@ -37,6 +37,11 @@ public class DaoFactoryImpl implements DaoFactory {
         return secteurDAO;
     }
 
+    @Override
+    public VoieDao getvoieDao() {
+        return voieDao;
+    }
+
     public void setSiteDao(SiteDao siteDao) {
         this.siteDao = siteDao;
     }

@@ -25,9 +25,8 @@ public interface SiteDao {
 
     public Site getbyiD(int Id);
 
-//TODO mettre en place la suppression du site des que l'ensemble de la dépendance est terminé
-    //Supprimer un topo
-    public Site supprimetopo(int Id);
+
+    public Site supprimesite(int Id);
 
     public List <Site> recherche(int Id );
 

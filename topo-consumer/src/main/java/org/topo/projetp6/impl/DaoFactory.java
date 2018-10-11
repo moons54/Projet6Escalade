@@ -14,7 +14,7 @@ public interface DaoFactory {
 
     SecteurDAO getSecteurDao();
 
-    //VoieDao getvoieDao();
+    VoieDao getvoieDao();
 
 
 

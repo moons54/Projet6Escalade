@@ -1,6 +1,8 @@
 package org.topo.projetp6.impl.dao;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.jdbc.core.RowMapper;
@@ -22,6 +24,7 @@ import org.topo.projetp6.impl.dao.mapper.MapperSite;
 
 @Named
 public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
 
     @Inject
     private SiteDao siteDao;
@@ -102,7 +105,11 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
 
     @Override
-    public Site supprimetopo(int Id) {
+    public Site supprimesite(int Id) {
+        LOGGER.info("suppression d'un site");
+        String vSQL = "DELETE FROM public.site where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+vJdbcTemplate.update(vSQL);
         return null;
     }
 }

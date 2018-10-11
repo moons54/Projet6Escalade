@@ -15,4 +15,7 @@ public interface SecteurManager {
     public Secteur getbyID(int Idsite);
 
     public Secteur getbynid(int idsecteur);
+
+    public Secteur supprimesecteur(final int Id);
+
 }

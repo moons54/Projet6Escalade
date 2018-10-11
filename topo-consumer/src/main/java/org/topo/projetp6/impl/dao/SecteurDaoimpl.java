@@ -1,6 +1,8 @@
 package org.topo.projetp6.impl.dao;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @Named
 public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
 
     @Inject
     private SecteurDAO secteurDAO;
@@ -72,8 +75,12 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
     }
 
 
-    //TODO faire l'implementation de supprimesecteur DAO
-    public Site supprimetopo(int Id) {
+
+    public Secteur supprimesecteur(int Id) {
+        LOGGER.info("suppression d'un secteur");
+        String vSQL = "DELETE FROM public.secteur where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
         return null;
     }
 

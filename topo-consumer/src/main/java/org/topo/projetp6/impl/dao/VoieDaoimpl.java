@@ -1,6 +1,8 @@
 package org.topo.projetp6.impl.dao;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Voie;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @Named
 public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
 
    // @Inject
    // VoieDAO VoieDAO;
@@ -57,8 +60,13 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
     }
 
 
-    //TODO faire l'implementation de supprimesecteur DAO
-    public Site supprimetopo(int Id) {
+
+    public Voie supprimevoie(int Id) {
+        LOGGER.info("suppression d'une voie");
+        String vSQL = "DELETE FROM public.voie where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+        vJdbcTemplate.update(vSQL,Id);
+
         return null;
     }
 }

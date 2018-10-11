@@ -23,6 +23,7 @@
 <div class="row">
 
 
+
 <s form action="voie_new">
     <s:textfield name="voie.nomSecteur" label="Nom de la Voie" requiredLabel="true" ></s:textfield>
     <s:textfield name="voie.cotation" label="Cotation connue" requiredLabel="true" ></s:textfield>

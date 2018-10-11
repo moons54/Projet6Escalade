@@ -3,6 +3,9 @@ package org.topo.projetp6.managerimpl;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.topo.projetp6.impl.dao.SecteurDAO;
 import org.topo.projetp6.impl.dao.SiteDao;
 import org.topo.projetp6.manager.AbstractManager;
@@ -38,11 +41,21 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
     @Override
     public Site getbyID(int Id) {
         Site site= siteDao.getbyiD(Id);
-   //     List <Secteur> secteurs=secteurDAO.affiche(Id);
-
-     //   site.setSecteurs(secteurs);
-     //   System.out.println("valeur de secteur dans site"+site.toString());
-        return site;
+     return site;
     }
+
+    @Override
+    public Site supprimesite(final int Id) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                siteDao.supprimesite(Id);
+            }
+
+        });
+        return null;
+    }
+
 
 }

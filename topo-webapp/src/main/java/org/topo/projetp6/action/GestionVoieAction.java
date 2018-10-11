@@ -72,11 +72,14 @@ public class GestionVoieAction extends ActionSupport {
         affichelesvoies = managerFactory.getVoieManager().affichelesvoies(idsecteur);
 
         return ActionSupport.SUCCESS;
-    };
+    }
+
+    ;
 
 
     /**
      * Methode do detail renvoie l'enregistrement de la voie dependant du secteur selectionné
+     *
      * @return
      */
     public String doDetail() {
@@ -100,32 +103,39 @@ public class GestionVoieAction extends ActionSupport {
             this.addActionMessage("la voie a bien été supprimée");
         }
         return vresult;
-    };
+    }
+
+    ;
 
 
     //TODO reste a creer l'action creer une voie
-    public String doCreate(){
-        String vresult =ActionSupport.INPUT;
+    public String doCreate() {
+        String vresult = ActionSupport.INPUT;
 
-        if (this.voie != null){
-            if(this.voie.getNomvoie()==null){
-            this.addFieldError("topo.nom","ne peut pas etre vide");
-        } else {
+        if (this.voie != null) {
+            if (this.voie.getNomvoie() == null) {
+                this.addFieldError("topo.nom", "ne peut pas etre vide");
+            } else {
                 System.out.println("ok pour voie");
             }
-            if (!this.hasErrors()){
+            if (!this.hasErrors()) {
                 try {
                     //TODO il manque la creation de la methode creer a appeler
                     managerFactory.getVoieManager();
-                    vresult=ActionSupport.SUCCESS;
+                    vresult = ActionSupport.SUCCESS;
                     this.addActionMessage("nouvelle voie consultable");
-                } catch (Exception e){
+                } catch (Exception e) {
                     vresult = ActionSupport.ERROR;
 //                    this.addActionError("probleme technique d'enregistrement");
                 }
 
-                }
             }
-            return vresult;
-    };
+        }
+        return vresult;
+    }
+
+    ;
+
+
+
 }
