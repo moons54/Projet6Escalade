@@ -160,11 +160,11 @@ return (this.hasErrors())? ActionSupport.ERROR : ActionSupport.SUCCESS;
 
     public String doSupp(){
 String vresult=ActionSupport.INPUT;
-        if (idsite == null) {
+        if (idsecteur == null) {
             this.addActionError(getText("error.topo.missing.id"));
-        }else  managerFactory.getTopoManager().supprimetopo(this.idsite);
+        }else  managerFactory.getSecteurManager().supprimesecteur(this.idsecteur);
         vresult= ActionSupport.SUCCESS;
-        this.addActionMessage("topo a bien été supprimé avec succes");
+        this.addActionMessage("le secteur a bien été supprimé avec succes");
 
         {
     }

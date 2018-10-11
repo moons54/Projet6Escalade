@@ -49,7 +49,7 @@
     <ol class="breadcrumb">
 
         <li class="breadcrumb-item"><s:a action="secteur_list">Consulter les Secteurs<s:param name="idsite" value="idsite"/></s:a></li>
-        <li class="breadcrumb-item"><s:a action="">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="site_supp">Supprimer Ce site<s:param name="idsite" value="idsite"/></s:a></li>
 
 
     </ol>

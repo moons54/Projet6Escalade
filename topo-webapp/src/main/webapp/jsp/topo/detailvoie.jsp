@@ -61,7 +61,7 @@
     <ol class="breadcrumb">
 
 
-        <li class="breadcrumb-item"><s:a action="topo_supp">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="topo_supp">supprimer la Voie<s:param name="idtopo" value="idtopo"/></s:a></li>
 
 
     </ol>

@@ -51,8 +51,8 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
 
-        <li class="breadcrumb-item"><s:a action="voie_list">consulter les Voies<s:param name="idsecteur" value="idsecteur"/></s:a></li>
-        <li class="breadcrumb-item"><s:a action="topo_supp">supprimer<s:param name="idtopo" value="idtopo"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="voie_list">Consulter les Voies<s:param name="idsecteur" value="idsecteur"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="secteur_supp">Supprimer ce Secteur<s:param name="idsecteur" value="idsecteur"/></s:a></li>
 
 
     </ol>
