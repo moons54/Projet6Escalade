@@ -42,6 +42,6 @@
             </div>
         </span>
 
-<s:a action="topo_new">creer un nouveau Site</s:a>
+<s:a action="voie_new">creer un nouveau Site</s:a>
 </body>
 </html>

@@ -81,7 +81,7 @@
             <result>jsp/topo/detailsite.jsp</result>
         </action>
 
-        <!-- action permettant de creer un nouveau Topo-->
+        <!-- action permettant de creer un nouveau Site-->
         <action name="site_new"
                 class="org.topo.projetp6.action.GestionSiteAction"
                 method="doCreate">
@@ -113,7 +113,35 @@
             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detailsecteur.jsp</result>
         </action>
+        <!-- action permettant de creer un nouveau Site-->
+        <action name="secteur_new"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newsecteur.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">secteur_detail</param>
+                <param name="idtopo">${topo.id}</param>
+            </result>
+        </action>
         <!-- action permettant d'afficher le détail d'une voie-->
+        <!-- action permettant de creer un nouveau Site-->
+        <action name="voie_new"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newvoie.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">voie_detail</param>
+                <param name="idtopo">${topo.id}</param>
+            </result>
+        </action>
         <action name="voie_detail"
                 class="org.topo.projetp6.action.GestionVoieAction"
                 method="doDetail">

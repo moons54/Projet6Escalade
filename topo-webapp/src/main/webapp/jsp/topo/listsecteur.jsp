@@ -51,6 +51,6 @@
 
 </ul>
 </div>
-<s:a action="topo_new">creer un nouveau Site</s:a>
+<s:a action="secteur_new">creer un nouveau Secteur</s:a>
 </body>
 </html>

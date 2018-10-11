@@ -7,24 +7,23 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
 
     <%@ include file="../_include/header.jsp"%>
 
-    <title>insertion nouveau site</title>
+
 </head>
 <body>
-<div class="jumbotron">
-    <h1 class="display-3">Jumbo heading</h1>
-    <p class="lead">Jumbo helper text</p>
-    <hr class="my-2">
-    <p>More info</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-    </p>
-</div>
+<s:actionmessage/>
+<s:actionerror/>
+<h2>Creation d'un nouveau Site</h2>
+<s form action="site_new">
+    <s:textfield name="site.identifiant" label="nom du Secteur" requiredLabel="true" ></s:textfield>
+    <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" ></s:textfield>
+    <s:textfield name="site.coordonneesGps" label="=Coordonnées GPS" requiredLabel="true" ></s:textfield>
 
-
+</s>
 </body>
 </html>
