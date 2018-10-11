@@ -109,7 +109,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         LOGGER.info("suppression d'un site");
         String vSQL = "DELETE FROM public.site where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
-vJdbcTemplate.update(vSQL);
+vJdbcTemplate.update(vSQL,Id);
         return null;
     }
 }

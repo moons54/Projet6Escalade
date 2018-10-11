@@ -95,11 +95,12 @@ public class GestionVoieAction extends ActionSupport {
 
     public String doSupp() {
         String vresult = ActionSupport.INPUT;
-        if (idvoie == null) {
+        if (this.idvoie == null) {
             this.addActionError(getText("error.topo.missing.id"));
         } else {
 
             managerFactory.getVoieManager().supprimevoie(idvoie);
+            vresult= ActionSupport.SUCCESS;
             this.addActionMessage("la voie a bien été supprimée");
         }
         return vresult;

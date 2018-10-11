@@ -155,9 +155,9 @@ return (this.hasErrors())? ActionSupport.ERROR : ActionSupport.SUCCESS;
 String vresult=ActionSupport.INPUT;
         if (idsite == null) {
             this.addActionError(getText("error.topo.missing.id"));
-        }else  managerFactory.getSiteManager().supprimesite(this.idsite);
+        }else  managerFactory.getSiteManager().supprimesite(idsite);
         vresult= ActionSupport.SUCCESS;
-        this.addActionMessage("topo a bien été supprimé avec succes");
+        this.addActionMessage("Les site a bien été supprimé avec succes");
 
         {
     }

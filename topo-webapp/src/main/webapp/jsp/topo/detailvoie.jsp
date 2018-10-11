@@ -14,7 +14,7 @@
 
 <s:actionmessage/>
 
-<s:actionmessage name="topo_supp"/>
+<s:actionmessage name="site_supp"/>
 
 
 <!-- //TODO a revoir les action messages pour la suppression  -->
@@ -61,7 +61,7 @@
     <ol class="breadcrumb">
 
 
-        <li class="breadcrumb-item"><s:a action="topo_supp">supprimer la Voie<s:param name="idtopo" value="idtopo"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="voie_supp">supprimer la Voie<s:param name="idvoie" value="idvoie"/></s:a></li>
 
 
     </ol>
