@@ -36,6 +36,17 @@
              <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detail.jsp</result>
         </action>
+        <!-- action permettant d'afficher le détail d'un topo-->
+        <action name="topo_modif"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/modiftopo.jsp</result>
+        </action>
         <action name="topo_supp"
                 class="org.topo.projetp6.action.GestionTopoAction"
                 method="doSupp">
