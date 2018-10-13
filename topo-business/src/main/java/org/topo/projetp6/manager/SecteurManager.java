@@ -18,4 +18,7 @@ public interface SecteurManager {
 
     public Secteur supprimesecteur(final int Id);
 
+    public void ajoutesecteur(final Secteur secteur,Integer idsite );
+
+
 }

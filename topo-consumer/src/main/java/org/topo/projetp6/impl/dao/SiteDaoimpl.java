@@ -66,7 +66,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public Site ajoutesite(Site site,Integer idtopo) {
-        System.out.println("val avt requete "+site.getiD());
+
       String ajoutsql = "INSERT INTO public.site " +
                 " (identifiant,\n " +
                 " nom,\n " +

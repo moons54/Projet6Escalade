@@ -6,6 +6,11 @@ import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.topo.projetp6.impl.dao.mapper.MapperSecteur;
 
 import javax.inject.Inject;
@@ -43,7 +48,25 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
     }
 
 
-    public Site ajoutopo(Site site) {
+    public Secteur ajoutesecteur(Secteur secteur,Integer idsite) {
+        String ajoutsql = "INSERT INTO public.secteur " +
+                " (nomsecteur,\n " +
+                " nombrevoie,\n " +
+                " siteid) " +
+                "VALUES" +
+                "(:nomsecteur,:nombrevoie,:siteid)";
+
+        SqlParameterSource ajoutparam = new MapSqlParameterSource()
+                .addValue("nomsecteur", secteur.getNomSecteur())
+                .addValue("nombrevoie", secteur.getNombreVoie());
+
+        //Gestion de la clé primaire
+        KeyHolder holder = new GeneratedKeyHolder();
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        vJdbcTemplate.update(ajoutsql, ajoutparam, holder, new String[]{"id"});
+        secteur.setiD(holder.getKey().intValue());
+
+
         return null;
     }
 

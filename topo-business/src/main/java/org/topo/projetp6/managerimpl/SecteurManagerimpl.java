@@ -27,7 +27,7 @@ public class SecteurManagerimpl extends AbstractManager implements SecteurManage
     @Named("TXtransactionTOPO")
     private PlatformTransactionManager platformTransactionManager;
 
-   @Override
+    @Override
     public List<Secteur> affichelesecteur(int idsite) {
         return secteurDAO.affiche(idsite);
     }
@@ -35,8 +35,8 @@ public class SecteurManagerimpl extends AbstractManager implements SecteurManage
     @Override
     public Secteur getbyID(int Id) {
 
-       Secteur secteur=  secteurDAO.getbyiD(Id);
-       return secteur;
+        Secteur secteur = secteurDAO.getbyiD(Id);
+        return secteur;
     }
 
     @Override
@@ -58,6 +58,15 @@ public class SecteurManagerimpl extends AbstractManager implements SecteurManage
         return null;
     }
 
+    @Override
+    public void ajoutesecteur(final Secteur secteur, final Integer idsite) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                secteurDAO.ajoutesecteur(secteur, idsite);
 
-
+            }
+        });
+    }
 }
