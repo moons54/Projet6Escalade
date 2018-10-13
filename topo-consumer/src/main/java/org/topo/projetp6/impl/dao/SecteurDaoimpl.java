@@ -58,7 +58,8 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
                 .addValue("nomsecteur", secteur.getNomSecteur())
-                .addValue("nombrevoie", secteur.getNombreVoie());
+                .addValue("nombrevoie", secteur.getNombreVoie())
+                .addValue("siteid",secteur.getiD());
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();

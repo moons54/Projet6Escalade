@@ -2,6 +2,7 @@ package org.topo.projetp6.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.bean.topo.projetp6.Secteur;
+import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
 import org.topo.projetp6.impl.dao.SecteurDaoimpl;
 import org.topo.projetp6.impl.dao.SiteDaoimpl;
@@ -32,7 +33,7 @@ public class GestionSecteurAction extends ActionSupport {
     private Integer idsite;
     private Integer idsecteur;
 
-
+    public Site site;
 
 
 
@@ -104,49 +105,50 @@ public class GestionSecteurAction extends ActionSupport {
 
 return ActionSupport.SUCCESS;
     };
-/**
     //methode permettant de crée un nouveau TOPO
     public String doCreate(){
+
         String vresult = ActionSupport.INPUT;
 
-     //condition validant l'ajout de formulaire
+        //condition validant l'ajout de formulaire
 
-        if (this.topo !=null) {
-
-            if (this.topo.getNom() == null) {
+        if (this.secteur !=null)
+        {
+            if (this.secteur.getNomSecteur() == null)
+            {
                 this.addFieldError(" topo.nom", "ne peut pas etre vide");
+            } else
+                System.out.println("val de secrid"+idsecteur);
+            {
 
-            } else {
-                System.out.println("ok");
+
+                this.secteur.setiD(idsecteur);
+            }if (!this.hasErrors())
+
+        {
+            try
+            {
+                managerFactory.getSecteurManager().ajoutesecteur(this.secteur,idsecteur);
+                vresult = ActionSupport.SUCCESS;
+                this.addActionMessage("Nouveau Secteur consultable et pret a l'emploi");
+            } catch (Exception e)
+            {
+
+                vresult = ActionSupport.ERROR;
             }
 
-
-            if (!this.hasErrors()) {
-                try {
-                    managerFactory.getTopoManager().ajoutopo(this.topo);
-                    System.out.println("je suis la");
-                    vresult = ActionSupport.SUCCESS;
-                    this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
-                } catch (Exception e) {
-
-                    vresult = ActionSupport.ERROR;
-                }
-
-            }
+        }
         }
 
-     return vresult;
+        return vresult;
     };
 
-*/
+
     public String doDetail(){
         //gestion des erreurs si id du topo null
         if(idsecteur==null){
-          System.out.println("valeur "+getIdsecteur() +"  "+ getIdsite()+"  3 eme val" );
             this.addActionError(getText("error.topo.missing.id."));
         }else secteur = managerFactory.getSecteurManager().getbynid(idsecteur);
-      // System.out.println(secteur.getNomSecteur().toString());
-     //   System.out.println("valeur "+getIdsecteur() +"  "+ getIdsite()+"  3 eme val" + getIdtopo()+secteur.toString());
         {
              // this.addActionError("il n'y a pas de projet pour ce numéro "+idtopo );
 

@@ -51,6 +51,14 @@
 
 </ul>
 </div>
-<s:a action="secteur_new">creer un nouveau Secteur</s:a>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+        <li class="breadcrumb-item"><s:a action="secteur_new">creer un nouveau Secteur<s:param name="idsecteur" value="idsite"/></s:a></li>
+
+    </ol>
+
+</nav>
 </body>
 </html>

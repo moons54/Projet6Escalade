@@ -48,9 +48,6 @@
                 <ol class="breadcrumb">
 
                     <li class="breadcrumb-item"><s:a action="site_new">creer un nx<s:param name="idsite" value="idtopo"/></s:a></li>
-                    <li class="breadcrumb-item"><s:a action="site_new">creer un nx<s:param name="idtopo" value="idtopo"/></s:a></li>
-
-                    <li class="breadcrumb-item"><s:a action="site_new">creer un nx<s:param name="idtopo" value="idsite"/></s:a></li>
 
                 </ol>
 

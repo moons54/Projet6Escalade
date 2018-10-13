@@ -19,10 +19,18 @@
 <s:actionmessage/>
 <s:actionerror/>
 <h2>Creation d'un nouveau Secteur</h2>
-<s form action="secteur_new">
+<s:form action="secteur_new">
     <s:textfield name="secteur.nomSecteur" label="nom du Secteur" requiredLabel="true" ></s:textfield>
     <s:textfield name="secteur.nombreVoie" label="Nombre de Voie" requiredLabel="true" ></s:textfield>
 
-</s>
+    <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idsecteur -->
+    <s:hidden name="idsecteur"  label="numéro interne" requiredLabel="true"><s:property value="idsecteur"/></s:hidden>
+
+    <s:submit value="OK"/>
+
+
+    </s:form>
+
+
 </body>
 </html>
