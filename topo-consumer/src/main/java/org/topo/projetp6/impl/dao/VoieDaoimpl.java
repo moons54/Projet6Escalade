@@ -7,6 +7,11 @@ import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Voie;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.topo.projetp6.impl.dao.mapper.MapperSecteur;
 import org.topo.projetp6.impl.dao.mapper.MapperVoie;
 
@@ -66,6 +71,34 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
         String vSQL = "DELETE FROM public.voie where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
         vJdbcTemplate.update(vSQL,Id);
+
+        return null;
+    }
+
+    @Override
+    public Voie ajoutevoie(Voie voie, Integer idsecteur) {
+        String ajoutsql = "INSERT INTO public.voie " +
+                " (nom,\n " +
+                " cotation,\n " +
+                " longueur,\n " +
+                " secteurid,\n " +
+                " niveau) " +
+                "VALUES" +
+                "(:nom,:cotation,:longueur,:secteurid,:niveau)";
+
+        SqlParameterSource ajoutparam = new MapSqlParameterSource()
+                .addValue("nom", voie.getNomvoie())
+                .addValue("cotation", voie.getCotation())
+                .addValue("longueur",voie.getLongueur())
+                .addValue("secteurid",voie.getiD())
+                .addValue("niveau",voie.getNiveau());
+
+        //Gestion de la clé primaire
+        KeyHolder holder = new GeneratedKeyHolder();
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        vJdbcTemplate.update(ajoutsql, ajoutparam, holder, new String[]{"id"});
+        voie.setiD(holder.getKey().intValue());
+
 
         return null;
     }

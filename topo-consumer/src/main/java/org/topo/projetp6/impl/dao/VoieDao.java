@@ -14,4 +14,7 @@ public interface VoieDao {
     public Voie getnid(int idvoie);
 
     public Voie supprimevoie(int idvoie);
+
+
+    public Voie ajoutevoie(Voie voie,Integer idsecteur);
 }

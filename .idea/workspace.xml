@@ -8,17 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b38e6557-af69-4720-8ae6-8bb484188af8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-business/target/classes/org/topo/projetp6/managerimpl/SecteurManagerimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/topo-business/target/classes/org/topo/projetp6/managerimpl/SecteurManagerimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SecteurDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SecteurDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SecteurDaoimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SecteurDaoimpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SiteDaoimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/topo-consumer/target/classes/org/topo/projetp6/impl/dao/SiteDaoimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSiteAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSiteAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/resources/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/resources/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsecteur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsecteur.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsite.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-webapp/target/classes/org/topo/projetp6/action/GestionSiteAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/target/classes/org/topo/projetp6/action/GestionSiteAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-webapp/target/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/target/classes/struts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/topo-webapp/target/topo-webapp.war" beforeDir="false" afterPath="$PROJECT_DIR$/topo-webapp/target/topo-webapp.war" afterDir="false" />
@@ -106,12 +103,12 @@
           <entry key="dummy" value="1" />
           <entry key="html" value="3" />
           <entry key="iml" value="24" />
-          <entry key="java" value="24219" />
+          <entry key="java" value="24441" />
           <entry key="jsp" value="8160" />
           <entry key="properties" value="208" />
           <entry key="sql" value="208" />
           <entry key="topo_pkey" value="2" />
-          <entry key="txt" value="2787" />
+          <entry key="txt" value="2834" />
           <entry key="xml" value="3828" />
         </counts>
       </usages-collector>
@@ -119,9 +116,9 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="IDEA_MODULE" value="24" />
-          <entry key="JAVA" value="24217" />
+          <entry key="JAVA" value="24439" />
           <entry key="JSP" value="8160" />
-          <entry key="PLAIN_TEXT" value="2788" />
+          <entry key="PLAIN_TEXT" value="2835" />
           <entry key="Properties" value="208" />
           <entry key="SQL" value="212" />
           <entry key="Scratch" value="526" />
@@ -149,7 +146,7 @@
           <entry key="diag" value="1" />
           <entry key="html" value="2" />
           <entry key="iml" value="8" />
-          <entry key="java" value="816" />
+          <entry key="java" value="822" />
           <entry key="jpeg" value="3" />
           <entry key="js" value="2" />
           <entry key="json" value="1" />
@@ -183,7 +180,7 @@
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="8" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="816" />
+          <entry key="JAVA" value="822" />
           <entry key="JSON" value="1" />
           <entry key="JSP" value="210" />
           <entry key="JavaScript" value="2" />
@@ -208,112 +205,42 @@
     <favorites_list name="TopoP6" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/new.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/resources/struts.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="304">
-                  <caret line="137" column="49" selection-start-line="137" selection-start-column="49" selection-end-line="137" selection-end-column="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDaoimpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="93">
-                  <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSiteAction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="213">
-                  <caret line="125" column="85" selection-start-line="125" selection-start-column="85" selection-end-line="125" selection-end-column="85" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsecteur.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="518">
-                  <caret line="57" column="125" selection-start-line="57" selection-start-column="119" selection-end-line="57" selection-end-column="125" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/detailsecteur.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="825">
-                  <caret line="55" selection-start-line="55" selection-end-line="55" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listsite.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="53" column="18" selection-start-line="46" selection-start-column="11" selection-end-line="53" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="213">
-                  <caret line="120" column="60" selection-start-line="120" selection-start-column="60" selection-end-line="120" selection-end-column="60" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/resources/struts.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="137" column="49" selection-start-line="137" selection-start-column="49" selection-end-line="137" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/SecteurManagerimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="61" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="e#1649#1858#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -371,11 +298,7 @@
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/new.html" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/_include/header.jsp" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/listvoie.jsp" />
-        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java" />
-        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newvoie.jsp" />
-        <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java" />
-        <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java" />
         <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/DaoFactory.java" />
         <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/DaoFactoryImpl.java" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/detail.jsp" />
@@ -389,7 +312,6 @@
         <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/SiteManager.java" />
         <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/SiteManagerimpl.java" />
         <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SiteDaoimpl.java" />
-        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDaoimpl.java" />
         <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDAO.java" />
         <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/SecteurManager.java" />
         <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/SecteurManagerimpl.java" />
@@ -401,6 +323,11 @@
         <option value="$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java" />
         <option value="$PROJECT_DIR$/topo-webapp/src/main/resources/struts.xml" />
+        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDaoimpl.java" />
+        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java" />
+        <option value="$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java" />
+        <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java" />
+        <option value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java" />
       </list>
     </option>
   </component>
@@ -633,6 +560,24 @@
             <path>
               <item name="TopoP6" type="b2602c69:ProjectViewProjectNode" />
               <item name="TopoP6" type="462c0819:PsiDirectoryNode" />
+              <item name="topo-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TopoP6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TopoP6" type="462c0819:PsiDirectoryNode" />
+              <item name="topo-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="managerimpl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TopoP6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TopoP6" type="462c0819:PsiDirectoryNode" />
               <item name="topo-consumer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -844,9 +789,9 @@
     <property name="SearchEverywhereHistoryKey" value="plu&#9;PSI&#9;JAVA://jdk.tools.jlink.resources.plugins&#10;github&#9;ACTION&#9;Github.Share&#10;java&#9;FILE&#9;file:///Users/aurelienmimouni/wk1/TopoP6/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/AbstractDaoImpl.java&#10;topodaoim&#9;FILE&#9;file:///Users/aurelienmimouni/wk1/TopoP6/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/TopoDaoImpl.java&#10;org.po&#9;FILE&#9;jar:///Users/aurelienmimouni/.m2/repository/org/postgresql/postgresql/9.4.1212/postgresql-9.4.1212.jar!/META-INF/maven/org.postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539463325966" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539463387420" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect" value="PostgreSQL" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1299,7 +1244,7 @@
       <workItem from="1539171027187" duration="4792000" />
       <workItem from="1539207353454" duration="310000" />
       <workItem from="1539207672253" duration="28840000" />
-      <workItem from="1539330144141" duration="42592000" />
+      <workItem from="1539330144141" duration="43527000" />
     </task>
     <task id="LOCAL-00001" summary="mise en place du projet">
       <created>1536684039262</created>
@@ -1588,11 +1533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539447357293</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="feat (struts): modification pour l ajout des secteur dans struts et gestionnaire action finalise #3">
+      <created>1539463464021</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1539463464021</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="523070000" />
+    <option name="totallyTimeSpent" value="524005000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1605,9 +1557,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4929006" visible="true" weight="0.19027181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4929006" visible="true" weight="0.27682403" />
       <window_info id="Structure" order="1" sideWeight="0.5020464" side_tool="true" weight="0.43919885" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1619,7 +1570,49 @@
       <window_info id="Properties Pane" order="9" weight="0.3297568" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
-      <window_info active="true" anchor="bottom" content_ui="combo" x="13" y="45" width="1440" height="803" id="Run" order="2" sideWeight="0.48855507" visible="true" weight="0.34819278" />
+      <window_info anchor="bottom" content_ui="combo" x="13" y="45" width="1440" height="803" id="Run" order="2" sideWeight="0.48855507" weight="0.34819278" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972714" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32742155" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49570817" weight="0.7585266" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5114449" side_tool="true" weight="0.2796726" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4985694" weight="0.32469305" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3287858" />
+      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32742155" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.35941646" />
+      <window_info anchor="bottom" id="Spring" order="13" sideWeight="0.53576535" weight="0.32605729" />
+      <window_info anchor="bottom" id="Message Pane" order="14" />
+      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32469305" />
+      <window_info anchor="bottom" id="Database Console" order="16" sideWeight="0.49713877" visible="true" weight="0.36626506" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32742155" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="18" weight="0.3287858" />
+      <window_info anchor="bottom" id="SQL Generator" order="19" sideWeight="0.49570817" weight="0.5961801" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.16380544" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3297568" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4929006" visible="true" weight="0.27682403" />
+      <window_info id="Structure" order="1" sideWeight="0.5020464" side_tool="true" weight="0.43919885" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.5020464" side_tool="true" weight="0.43919885" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.5070994" side_tool="true" weight="0.19599427" />
+      <window_info id="Project Explorer" order="8" weight="0.3297568" />
+      <window_info id="Properties Pane" order="9" weight="0.3297568" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
+      <window_info anchor="bottom" content_ui="combo" x="13" y="45" width="1440" height="803" id="Run" order="2" sideWeight="0.48855507" weight="0.34819278" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39972714" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1634,48 +1627,6 @@
       <window_info anchor="bottom" id="Message Pane" order="14" />
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32469305" />
       <window_info anchor="bottom" id="Database Console" order="16" sideWeight="0.49713877" weight="0.36626506" />
-      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32742155" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="18" weight="0.3287858" />
-      <window_info anchor="bottom" id="SQL Generator" order="19" sideWeight="0.49570817" weight="0.5961801" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.16380544" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3297568" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4929006" visible="true" weight="0.19027181" />
-      <window_info id="Structure" order="1" sideWeight="0.5020464" side_tool="true" weight="0.43919885" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.5020464" side_tool="true" weight="0.43919885" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.5070994" side_tool="true" weight="0.19599427" />
-      <window_info id="Project Explorer" order="8" weight="0.3297568" />
-      <window_info id="Properties Pane" order="9" weight="0.3297568" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
-      <window_info anchor="bottom" content_ui="combo" x="13" y="45" width="1440" height="803" id="Run" order="2" sideWeight="0.48855507" visible="true" weight="0.24457832" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972714" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32742155" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49570817" weight="0.7585266" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5114449" side_tool="true" weight="0.2796726" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4985694" weight="0.32469305" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3287858" />
-      <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32742155" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.35941646" />
-      <window_info anchor="bottom" id="Spring" order="13" sideWeight="0.53576535" weight="0.32605729" />
-      <window_info anchor="bottom" id="Message Pane" order="14" />
-      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32469305" />
-      <window_info anchor="bottom" id="Database Console" order="16" sideWeight="0.49713877" weight="0.366985" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32742155" />
       <window_info anchor="bottom" id="Dependency Viewer" order="18" weight="0.3287858" />
       <window_info anchor="bottom" id="SQL Generator" order="19" sideWeight="0.49570817" weight="0.5961801" />
@@ -1737,7 +1688,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat (SecteurDAO.java): ajout du bean secteurdao et interface    #2" />
     <MESSAGE value="feat (SecteurDAO.java): ajout du bean secteurdao et interface  #2" />
     <MESSAGE value="refactor (boostrap): modification des comportement du formulaire liste topo     #3" />
     <MESSAGE value="refactor (boostrap): modification des comportement du formulaire detail site     #3" />
@@ -1762,7 +1712,8 @@
     <MESSAGE value="feat (struts): extension  des fonctionnnalités ajout site en cours de mise en place  #3" />
     <MESSAGE value="feat (struts): extension  des fonctionnnalités ajout site finalisé et rattache a topo  #3" />
     <MESSAGE value="feat (secteurdaoimpl.java): modification pour l ajout des secteur dans la dao et dans le manager #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat (secteurdaoimpl.java): modification pour l ajout des secteur dans la dao et dans le manager #2" />
+    <MESSAGE value="feat (struts): modification pour l ajout des secteur dans struts et gestionnaire action finalise #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat (struts): modification pour l ajout des secteur dans struts et gestionnaire action finalise #3" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointLogExpression">
@@ -1829,36 +1780,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/resources/struts.properties">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/UtilisateurManagerimpl.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1966,16 +1889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/SecteurManagerimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/SecteurManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1987,16 +1900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SiteDaoimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2042,13 +1945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/new.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/detailsite.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
@@ -2077,6 +1973,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="120" column="60" selection-start-line="120" selection-start-column="60" selection-end-line="120" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SiteDaoimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/VoieDaoimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDaoimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/newsecteur.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -2094,13 +2031,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/java/org/topo/projetp6/action/GestionSecteurAction.java">
+    <entry file="file://$PROJECT_DIR$/topo-webapp/src/main/webapp/jsp/topo/new.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="120" column="60" selection-start-line="120" selection-start-column="60" selection-end-line="120" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="465">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -2112,10 +2046,31 @@
       </provider>
       <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/topo/projetp6/impl/dao/SecteurDaoimpl.java">
+    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/manager/VoieManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/SecteurManagerimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="61" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topo-business/src/main/java/org/topo/projetp6/managerimpl/VoieManagerimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#1649#1858#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

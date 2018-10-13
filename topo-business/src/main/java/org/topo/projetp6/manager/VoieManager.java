@@ -16,4 +16,7 @@ public interface VoieManager {
 
     public Voie supprimevoie(final int Id);
 
+
+    public void ajoutevoie(final Voie voie, final Integer idsecteur);
+
 }

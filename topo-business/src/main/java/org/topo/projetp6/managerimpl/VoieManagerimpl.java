@@ -48,6 +48,19 @@ public class VoieManagerimpl extends AbstractManager implements VoieManager {
         return null;
     }
 
+    @Override
+    public void ajoutevoie(final Voie voie, final Integer idsecteur) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                voieDao.ajoutevoie(voie,idsecteur);
+            }
+
+        });
+
+    }
+
 
     @Override
     public Voie getbynid(int id) {
