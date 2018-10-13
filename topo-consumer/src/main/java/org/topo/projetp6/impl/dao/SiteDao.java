@@ -12,9 +12,9 @@ public interface SiteDao {
 
     //afficher la liste des topos
     public List<Site> affiche(int idtopo);
-//TODO faire la mise a jour du site des que l'ensemble de la dépendance est terminé
+
     //faire une mise a jour du nom des topos
-    public void miseajour(Site site);
+    public void miseajour(final Site site);
 
 
     //ajouter un topo

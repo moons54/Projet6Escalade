@@ -17,4 +17,8 @@ public interface VoieDao {
 
 
     public Voie ajoutevoie(Voie voie,Integer idsecteur);
+
+
+    public void misajour(final Voie voie);
+
 }

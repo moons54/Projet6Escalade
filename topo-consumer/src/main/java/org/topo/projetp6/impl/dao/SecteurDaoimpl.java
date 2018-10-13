@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -69,6 +70,21 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
 
         return null;
+    }
+
+    @Override
+    public void misajour(Secteur secteur) {
+        String maj = "UPDATE public.secteur SET " +
+                "nomsecteur = :nomSecteur, \n" +
+                "nombrevoie = :nombreVoie, \n" +
+                "siteid = :siteid" +
+                " WHERE id = :id";
+
+        SqlParameterSource vParams = new BeanPropertySqlParameterSource(secteur);
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        int vNbrLigneMaJ = vJdbcTemplate.update(maj, vParams);
+
     }
 
     @Override

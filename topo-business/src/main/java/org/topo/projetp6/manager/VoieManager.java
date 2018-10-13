@@ -19,4 +19,6 @@ public interface VoieManager {
 
     public void ajoutevoie(final Voie voie, final Integer idsecteur);
 
+    void miseajour(final Voie voie);
+
 }

@@ -20,5 +20,7 @@ public interface SecteurManager {
 
     public void ajoutesecteur(final Secteur secteur,Integer idsite );
 
+    void miseajour(final Secteur secteur);
+
 
 }

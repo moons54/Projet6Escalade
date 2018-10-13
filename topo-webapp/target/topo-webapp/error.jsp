@@ -13,7 +13,10 @@
 </head>
 
 <body>
-<h2>Une erreur s'est produite</h2>
+<div class="alert alert-info" role="alert">
+    <strong> Une erreur s'est produite!</strong>}
+</div>
+
 <s:actionerror/>
 
 </body>

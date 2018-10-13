@@ -60,7 +60,19 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
     }
 
     @Override
-    public void miseajour(Site site) {
+    public void miseajour(final Site site) {
+        String maj = "UPDATE public.site SET " +
+                "identifiant = :identifiant, \n" +
+                "nom = :nom, \n" +
+                "coordonnees_gps = :coordonneesGps, \n" +
+                "topoid = :topoid" +
+                " WHERE id = :id";
+
+        SqlParameterSource vParams = new BeanPropertySqlParameterSource(site);
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        int vNbrLigneMaJ = vJdbcTemplate.update(maj, vParams);
+
 
     }
 

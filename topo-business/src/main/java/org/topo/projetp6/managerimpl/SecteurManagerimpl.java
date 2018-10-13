@@ -69,4 +69,16 @@ public class SecteurManagerimpl extends AbstractManager implements SecteurManage
             }
         });
     }
+
+    @Override
+    public void miseajour(final Secteur secteur) {
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                secteurDAO.misajour(secteur);
+            }
+        });
+    }
+
 }

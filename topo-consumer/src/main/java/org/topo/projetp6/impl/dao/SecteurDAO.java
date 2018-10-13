@@ -18,4 +18,8 @@ public interface SecteurDAO {
     public Secteur supprimesecteur(int Id);
 
     public Secteur ajoutesecteur(Secteur secteur, Integer idsite);
+
+    public void misajour(final Secteur secteur);
+
+
 }

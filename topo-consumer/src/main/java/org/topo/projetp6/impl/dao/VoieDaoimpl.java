@@ -7,6 +7,7 @@ import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Voie;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -77,6 +78,7 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
 
     @Override
     public Voie ajoutevoie(Voie voie, Integer idsecteur) {
+        LOGGER.debug("essais sur methode mise a jour");
         String ajoutsql = "INSERT INTO public.voie " +
                 " (nom,\n " +
                 " cotation,\n " +
@@ -101,5 +103,22 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
 
 
         return null;
+    }
+
+    @Override
+    public void misajour(Voie voie) {
+        String maj = "UPDATE public.voie SET " +
+                "nom = :nomVoie, \n" +
+                "cotation = :cotation, \n" +
+                "longueur = :longueur, \n" +
+                "secteurid = :secteurid, \n" +
+                "niveau = :niveau" +
+                " WHERE id = :id";
+
+        SqlParameterSource vParams = new BeanPropertySqlParameterSource(voie);
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        int vNbrLigneMaJ = vJdbcTemplate.update(maj, vParams);
+
     }
 }
