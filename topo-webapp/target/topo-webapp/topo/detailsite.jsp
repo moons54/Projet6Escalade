@@ -50,6 +50,7 @@
 
         <li class="breadcrumb-item"><s:a action="secteur_list">Consulter les Secteurs<s:param name="idsite" value="idsite"/></s:a></li>
         <li class="breadcrumb-item"><s:a action="site_supp">Supprimer Ce site<s:param name="idtopo" value="idtopo"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="site_modif">Modifier ce site<s:param name="idtopo" value="idtopo"/></s:a></li>
 
 
     </ol>

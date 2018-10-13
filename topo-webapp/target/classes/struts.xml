@@ -91,7 +91,16 @@
             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detailsite.jsp</result>
         </action>
-
+        <action name="site_modif"
+                class="org.topo.projetp6.action.GestionSiteAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/modifsite.jsp</result>
+        </action>
         <!-- action permettant de creer un nouveau Site-->
         <action name="site_new"
                 class="org.topo.projetp6.action.GestionSiteAction"
@@ -135,6 +144,17 @@
             <!--   <result name="success">jsp/topo/detail.jsp</result> -->
             <result>jsp/topo/detailsecteur.jsp</result>
         </action>
+        <!-- action permettant de modifier un secteur-->
+        <action name="secteur_modif"
+                class="org.topo.projetp6.action.GestionSecteurAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/modifsecteur.jsp</result>
+        </action>
         <!-- action permettant de creer un nouveau secteur-->
         <action name="secteur_new"
                 class="org.topo.projetp6.action.GestionSecteurAction"
@@ -160,7 +180,7 @@
 
             <result>jsp/topo/detailsecteur.jsp</result>
         </action>
-        <!-- action permettant d'afficher le détail d'une voie-->
+        <!-- action permettant de creer une voie-->
         <action name="voie_new"
                 class="org.topo.projetp6.action.GestionVoieAction"
                 method="doCreate">
@@ -174,6 +194,7 @@
                 <param name="idvoie">${voie.id}</param>
             </result>
         </action>
+        <!-- action permettant de d'afficher le détail d'une voie-->
         <action name="voie_detail"
                 class="org.topo.projetp6.action.GestionVoieAction"
                 method="doDetail">
@@ -203,7 +224,16 @@
             <result>jsp/topo/detailvoie.jsp</result>
         </action>
 
-
+        <action name="voie_modif"
+                class="org.topo.projetp6.action.GestionVoieAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/modifvoie.jsp</result>
+        </action>
 
         </package>
 </struts>

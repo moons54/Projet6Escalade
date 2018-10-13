@@ -21,7 +21,7 @@
 
 
 <h2>modification d'un topo</h2>
-<s:form action="topo_new">
+<s:form action="topo_modif">
     <s:textfield name="topo.nom" label="nom" requiredLabel="true" ><s:property value="topo.nom"/></s:textfield>
     <s:textfield name="topo.descriptiondestopo" label="description du topo" requiredLabel="true"><s:property value="topo.descriptiondestopo"/></s:textfield>
     <s:textfield name="topo.historiquedestopo" label="historique du topo" requiredLabel="false" ><s:property value="topo.historiquedestopo"/></s:textfield>

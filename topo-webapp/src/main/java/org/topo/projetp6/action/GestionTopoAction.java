@@ -145,4 +145,16 @@ String vresult=ActionSupport.INPUT;
     }
 return vresult;
 };
+    public String doModif(){
+        String vresult=ActionSupport.INPUT;
+        if (topo.getNom() == null) {
+            this.addActionError(getText("error.topo.missing.id"));
+        }else  managerFactory.getTopoManager().miseajour(this.topo);
+        vresult= ActionSupport.SUCCESS;
+        this.addActionMessage("topo a bien été supprimé avec succes");
+
+        {
+        }
+        return vresult;
+    };
 }
