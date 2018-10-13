@@ -36,14 +36,24 @@ public class GestionSiteAction extends ActionSupport {
     // les entrées
     private Integer idtopo;
     private Integer idsite;
+    private String name;
+    private Integer identifiant;
+    private String coordonnesgps;
 
 
      //Les sorties
     private List<Site> affichelistesite;
+    private List<Topo> listtop;
 
+    public List<Topo> getListtop() {
+        return listtop;
+    }
 
+    public void setListtop(List<Topo> listtop) {
+        this.listtop = listtop;
+    }
 
-    private Topo topo;
+    public Topo topo;
 
     public Site getSite() {
         return site;
@@ -103,28 +113,56 @@ return ActionSupport.SUCCESS;
 
     //methode permettant de crée un nouveau TOPO
     public String doCreate(){
+  /**      String result=ActionSupport.INPUT;
+        System.out.println(this.idtopo);
+       topo= managerFactory.getTopoManager().getTopo(this.idtopo);
+
+        if(name != null && identifiant !=null && coordonnesgps !=null){
+            site.setNom(name);
+            site.setIdentifiant(identifiant);
+            site.setCoordonneesGps(coordonnesgps);
+            managerFactory.getSiteManager().ajoutsite(site,this.idtopo);
+            result=ActionSupport.SUCCESS;
+        }
+
+
+
+
+        return result;
+    }
+*/
+
+
         String vresult = ActionSupport.INPUT;
-        System.out.println("renre dans la methode");
-     //condition validant l'ajout de formulaire
+
+        //condition validant l'ajout de formulaire
 
         if (this.site !=null) {
-            System.out.println("est ce que ca vient la ?");
-            if (this.site.getNom() == null) {
-                System.out.println("valauer de this.site.getnom" + this.site.getNom());
-                this.addFieldError(" topo.nom", "ne peut pas etre vide");
 
-            } else {
-                System.out.println("ok");
+            if (this.site.getNom() == null) {
+                this.addFieldError(" topo.nom", "ne peut pas etre vide");
+//if (this.site.getiD() == 0){
+
+   // System.out.println("val de top"+topo);
+//}
+           } else {
+
+                List <Topo> topoList = managerFactory.getTopoManager().affichelistedestopos();
+//          this.site.setiD(idsite);
+                setListtop(topoList);
+            this.site.setiD(idsite);
+                System.out.println("val de top"+topo);
             }
 
 
             if (!this.hasErrors()) {
                 try {
-                    System.out.println("valeur de site avt manage " +site.toString());
-                    managerFactory.getSiteManager().ajoutsite(this.site);
+
+
+                    managerFactory.getSiteManager().ajoutsite(this.site,idsite);
                     System.out.println("je suis la");
                     vresult = ActionSupport.SUCCESS;
-                    this.addActionMessage("Nouveau site consultable et pret a l'emploi");
+                    this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
                 } catch (Exception e) {
 
                     vresult = ActionSupport.ERROR;
@@ -133,9 +171,11 @@ return ActionSupport.SUCCESS;
             }
         }
 
-     return vresult;
+       return vresult;
     };
 
+      //  return vresult;
+   //}
 
     public String doDetail(){
         //gestion des erreurs si id du site null

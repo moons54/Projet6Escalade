@@ -18,12 +18,15 @@
 <body>
 <s:actionmessage/>
 <s:actionerror/>
-<h2>Creation d'un nouveau Site</h2>
+<h2>Creation d'un nouveau Site pour le topo num</h2>
 <s:form action="site_new">
+    <s:property value="idsite"/>
     <s:textfield name="site.identifiant" label="Identifiant" requiredLabel="true" ></s:textfield>
     <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" ></s:textfield>
-    <s:textfield name="site.coordonneesGps" label="=Coordonnées GPS" requiredLabel="true" ></s:textfield>
+    <s:textfield name="site.coordonneesGps" label="Coordonnées GPS" requiredLabel="true" ></s:textfield>
 
+ <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
+   <s:hidden name="idsite" label="numéro interne" requiredLabel="true"  ><s:property value="idsite"/></s:hidden>
 
 
     <s:submit value="OK"/>

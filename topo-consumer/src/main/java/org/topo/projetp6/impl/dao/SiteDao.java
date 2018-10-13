@@ -18,7 +18,7 @@ public interface SiteDao {
 
 
     //ajouter un topo
-    public Site ajoutesite(Site site);
+    public Site ajoutesite(Site site,Integer idtopo);
 
 
     //rechercher un topo par id

@@ -20,7 +20,7 @@
 <s:actionerror/>
 
 
-<h2>Creation d'un nouveau Topo</h2>
+<h2>Creation d'un nouveau Topo </h2>
 <s:form action="topo_new">
     <s:textfield name="topo.nom" label="nom" requiredLabel="true" ></s:textfield>
     <s:textfield name="topo.descriptiondestopo" label="description du topo" requiredLabel="true" ></s:textfield>

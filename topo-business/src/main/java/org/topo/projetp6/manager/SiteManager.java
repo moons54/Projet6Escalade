@@ -14,5 +14,5 @@ public interface SiteManager {
 
     public Site supprimesite(final int Id);
 
-    public void ajoutsite(final Site nsite);
+    public void ajoutsite(final Site nsite,Integer topoid);
 }

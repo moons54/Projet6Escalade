@@ -63,7 +63,7 @@
                 </result>
 
         </action>
-        <!-- action listant la liste des site-->
+        <!-- action listant les site-->
         <action name="site_list"
                 class="org.topo.projetp6.action.GestionSiteAction"
                 method="doList">
@@ -85,14 +85,14 @@
         <action name="site_new"
                 class="org.topo.projetp6.action.GestionSiteAction"
                 method="doCreate">
-        <interceptor-ref name="store">
+              <interceptor-ref name="store">
             <param name="operationMode">STORE</param>
         </interceptor-ref>
         <interceptor-ref name="defaultStack"/>
         <result name="input">jsp/topo/newsite.jsp</result>
         <result name="success" type="redirectAction">
             <param name="actionName">site_detail</param>
-            <param name="idtopo">${topo.id}</param>
+            <param name="idsite">${site.id}</param>
         </result>
         </action>
         <!-- action permettant de supprimer un Site-->
