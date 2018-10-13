@@ -151,7 +151,7 @@
         </action>
         <!-- action permettant d'afficher le détail d'une voie-->
         <action name="voie_new"
-                class="org.topo.projetp6.action.GestionSiteAction"
+                class="org.topo.projetp6.action.GestionVoieAction"
                 method="doCreate">
             <interceptor-ref name="store">
                 <param name="operationMode">STORE</param>
@@ -160,7 +160,7 @@
             <result name="input">jsp/topo/newvoie.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">voie_detail</param>
-                <param name="idtopo">${topo.id}</param>
+                <param name="idvoie">${voie.id}</param>
             </result>
         </action>
         <action name="voie_detail"

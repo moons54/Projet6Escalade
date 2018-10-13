@@ -118,7 +118,7 @@ return ActionSupport.SUCCESS;
             {
                 this.addFieldError(" topo.nom", "ne peut pas etre vide");
             } else
-                System.out.println("val de secrid"+idsecteur);
+
             {
 
 

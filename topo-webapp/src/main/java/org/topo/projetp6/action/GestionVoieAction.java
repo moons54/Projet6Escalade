@@ -109,7 +109,7 @@ public class GestionVoieAction extends ActionSupport {
     ;
 
 
-    //TODO reste a creer l'action creer une voie
+
     public String doCreate() {
         String vresult = ActionSupport.INPUT;
 
@@ -117,18 +117,22 @@ public class GestionVoieAction extends ActionSupport {
             if (this.voie.getNomvoie() == null) {
                 this.addFieldError("topo.nom", "ne peut pas etre vide");
             } else {
-                System.out.println("ok pour voie");
+              this.voie.setiD(idvoie);
             }
-            if (!this.hasErrors()) {
-                try {
-                    //TODO il manque la creation de la methode creer a appeler
-                    managerFactory.getVoieManager();
+            if (!this.hasErrors())
+            {
+                try
+                {
+
+
+                    managerFactory.getVoieManager().ajoutevoie(this.voie,idvoie);
                     vresult = ActionSupport.SUCCESS;
                     this.addActionMessage("nouvelle voie consultable");
-                } catch (Exception e) {
-                    vresult = ActionSupport.ERROR;
-//                    this.addActionError("probleme technique d'enregistrement");
-                }
+                } catch (Exception e)
+                    {
+                        vresult = ActionSupport.ERROR;
+//                      this.addActionError("probleme technique d'enregistrement");
+                    }
 
             }
         }

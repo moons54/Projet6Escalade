@@ -42,6 +42,16 @@
             </div>
         </span>
 
-<s:a action="voie_new">creer un nouveau Site</s:a>
+</ul>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item"><s:a action="voie_new">creer une nouvelle voie<s:param name="idvoie" value="idsecteur"/></s:a></li>
+
+        </ol>
+
+    </nav>
+
 </body>
 </html>
