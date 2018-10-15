@@ -62,7 +62,7 @@
 
 
         <li class="breadcrumb-item"><s:a action="voie_supp">Supprimer la Voie<s:param name="idvoie" value="idvoie"/></s:a></li>
-        <li class="breadcrumb-item"><s:a action="voie_modif">Modifier la Voie<s:param name="idvoie" value="idvoie"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="mod_voie">Modifier la Voie<s:param name="idvoie" value="idvoie"/></s:a></li>
 
 
     </ol>

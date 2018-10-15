@@ -69,23 +69,45 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public void miseajour(final Topo topo) {
+
         String requetemaj = "UPDATE public.topo SET " +
                 "nom = :Nom, \n" +
-                "description_topo = :descriptionDestopo, \n" +
-                "historique_topo = :Historiquedestopo, \n" +
-                "hauteur_global = :HauteurDuTopo, \n" +
-                "type_roche  = :TypeDeroche, \n" +
-                "nombre_voie = :NombreDevoie, \n" +
-                "description_du_retour = :DescriptionDuRetour, \n" +
-                "type_equipement = :TypeDequipement, \n" +
-                "photo_topo = :photoDutopo" +
-                " WHERE id = :id";
+                "description_topo = :descriptiondestopo, \n" +
+                "historique_topo = :historiquedestopo, \n" +
+                "hauteur_global = :hauteurDuTopo, \n" +
+                "type_roche  = :typeDeroche, \n" +
+                "nombre_voie = :nombreDevoie, \n" +
+                "description_du_retour = :descriptionDuRetour, \n" +
+                "type_equipement = :typeDequipement, \n" +
+                "photo_topo = :photoDuTopo" +
+                " WHERE id = :iD";
+
+
+
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(topo);
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
         int vNbrLigneMaJ = vJdbcTemplate.update(requetemaj, vParams);
 
+     /**
+        LOGGER.debug("Entrée dans la méthode update");
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(getDatasource());
+        jdbcTemplate.update("UPDATE topo SET (nom, description_topo, historique_topo, hauteur_global," +
+                        "type_roche,nombre_voie,description_du_retour,type_equipement,photo_topo) = (?,?,?,?,?,?,?,?,?) WHERE id = ? ;",
+                topo.getNom(),
+                topo.getDescriptiondestopo(),
+                topo.getHistoriquedestopo(),
+                topo.getHauteurDuTopo(),
+                topo.getTypeDeroche(),
+                topo.getNombreDevoie(),
+                topo.getDescriptionDuRetour(),
+                topo.getTypeDequipement(),
+                topo.getPhotoDuTopo(),
+                topo.getiD()
+
+        );
+    */
     }
 
 

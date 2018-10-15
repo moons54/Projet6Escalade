@@ -19,15 +19,13 @@
 <s:actionmessage/>
 <s:actionerror/>
 <h2>Modification du Site</h2>
-<s:form action="site_new">
+<s:form action="mod_site">
 
-    <s:textfield name="site.identifiant" label="Identifiant" requiredLabel="true" ><s:property value="site.identifiant"/></s:textfield>
-    <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" ><s:property value="site.nom"/></s:textfield>
-    <s:textfield name="site.coordonneesGps" label="Coordonnées GPS" requiredLabel="true" ><s:property value="site.coordonneesGps"/></s:textfield>
-
+    <s:textfield name="site.identifiant" label="Identifiant" requiredLabel="true" />
+    <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" />
+    <s:textfield name="site.coordonneesGps" label="Coordonnées GPS" requiredLabel="true" />
  <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
-   <s:hidden name="idsite" label="numéro interne" requiredLabel="true"  ><s:property value="idsite"/></s:hidden>
-
+    <s:hidden name="site.iD"  label="numéro interne" requiredLabel="true" ><s:property value="idsite"></s:property></s:hidden>
 
     <s:submit value="OK"/>
 </s:form>

@@ -1,6 +1,7 @@
 package org.topo.projetp6.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
@@ -11,7 +12,9 @@ import org.topo.projetp6.impl.dao.TopoDaoImpl;
 import org.topo.projetp6.manager.ManagerFactory;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class GestionSecteurAction extends ActionSupport {
 
@@ -172,4 +175,39 @@ String vresult=ActionSupport.INPUT;
     }
 return vresult;
 };
+
+    public String doModif() {
+
+        String resultat = ActionSupport.INPUT;
+
+        if (this.secteur != null) {
+            if (this.secteur.getNom() != null) {
+                try {
+                    // Le formulaire a été envoyé, afin d'éviter la manipulation des données via le navigateur, on instancie un Topo temporaire
+                    // Ainsi l'id est non modifiable.
+                    Secteur tpsecteur = managerFactory.getSecteurManager().getbynid(secteur.getiD());
+                    tpsecteur.setNom(secteur.getNom());
+                    tpsecteur.setNombreVoie(secteur.getNombreDevoie());
+                    tpsecteur.setiD(secteur.getiD());
+
+
+
+
+
+                    managerFactory.getTopoManager().miseajour(tpsecteur);
+                } catch (NoSuchElementException e) {
+                    ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
+                resultat = ActionSupport.SUCCESS;
+            } else {
+                this.addActionError("Id doit être défini");
+                resultat = ActionSupport.ERROR;
+            }
+        } else {
+            // Si topo est null c'est qu'on va entrer sur la jsp update.jsp, il faut embarquer les données sur topo afin de pré-rempir les champs de la page web
+            site = managerFactory.getSecteurManager().getbynid(idsecteur);
+        }
+        return resultat;
+    }
+
 }

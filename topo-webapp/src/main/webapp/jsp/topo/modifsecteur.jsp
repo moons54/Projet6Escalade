@@ -19,12 +19,11 @@
 <s:actionmessage/>
 <s:actionerror/>
 <h2>modification d'un Secteur</h2>
-<s:form action="secteur_new">
-    <s:textfield name="secteur.nomSecteur" label="nom du Secteur" requiredLabel="true" ><s:property value="secteur.nomSecteur"/></s:textfield>
-    <s:textfield name="secteur.nombreVoie" label="Nombre de Voie" requiredLabel="true" ><s:property value="secteur.nombreVoier"/></s:textfield>
-
+<s:form action="mod_secteur">
+    <s:textfield name="secteur.nomSecteur" label="nom du Secteur" requiredLabel="true" />
+    <s:textfield name="secteur.nombreVoie" label="Nombre de Voie" requiredLabel="true" />
     <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idsecteur -->
-    <s:hidden name="idsecteur"  label="numéro interne" requiredLabel="true"><s:property value="idsecteur"/></s:hidden>
+    <s:hidden name="secteur.iD"  label="numéro interne" requiredLabel="true"><s:property value="idsecteur"/></s:hidden>
 
     <s:submit value="OK"/>
 

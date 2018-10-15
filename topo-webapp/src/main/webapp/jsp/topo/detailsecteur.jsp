@@ -53,7 +53,7 @@
 
         <li class="breadcrumb-item"><s:a action="voie_list">Consulter les Voies<s:param name="idsecteur" value="idsecteur"/></s:a></li>
         <li class="breadcrumb-item"><s:a action="secteur_supp">Supprimer ce Secteur<s:param name="idsecteur" value="idsecteur"/></s:a></li>
-        <li class="breadcrumb-item"><s:a action="secteur_modif">Modifier le Secteur<s:param name="idsecteur" value="idsecteur"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="mod_secteur">Modifier le Secteur<s:param name="idsecteur" value="idsecteur"/></s:a></li>
 
 
     </ol>

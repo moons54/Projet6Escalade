@@ -64,7 +64,7 @@
 
                             <li class="breadcrumb-item"><s:a action="site_list">consulter les sites<s:param name="idtopo" value="idtopo"/></s:a></li>
                             <li class="breadcrumb-item"><s:a action="topo_supp">supprimer le Topo<s:param name="idtopo" value="idtopo"/></s:a></li>
-                            <li class="breadcrumb-item"><s:a action="topo_modif">modifier le Topo<s:param name="idtopo" value="idtopo"/></s:a></li>
+                            <li class="breadcrumb-item"><s:a action="mod_topo">modifier le Topo<s:param name="idtopo" value="idtopo"/></s:a></li>
 
 
                         </ol>

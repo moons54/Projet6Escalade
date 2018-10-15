@@ -24,14 +24,14 @@
 
 
 
-<s:form action="voie_new">
-    <s:textfield name="voie.nomvoie" label="Nom de la Voie" requiredLabel="true" ><s:property value="voie.nomvoie"/></s:textfield>
-    <s:textfield name="voie.cotation" label="Cotation connue" requiredLabel="true" ><s:property value="voie.cotation"/></s:textfield>
-    <s:textfield name="voie.longueur" label="Longueur de la Voie" requiredLabel="true" ><s:property value="voie.longueur"/></s:textfield>
-    <s:textfield name="voie.niveau" label="Niveau de difficulté" requiredLabel="true" ><s:property value="voie.niveau"/></s:textfield>
+<s:form action="mod_voie">
+    <s:textfield name="voie.nom" label="Nom de la Voie" requiredLabel="true" />
+    <s:textfield name="voie.cotation" label="Cotation connue" requiredLabel="true" />
+    <s:textfield name="voie.longueur" label="Longueur de la Voie" requiredLabel="true" />
+    <s:textfield name="voie.niveau" label="Niveau de difficulté" requiredLabel="true" />
 
     <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
-    <s:hidden name="idvoie" label="numéro interne" requiredLabel="true"  ><s:property value="idvoie"/></s:hidden>
+    <s:hidden name="voie.iD" value="idvoie" label="numéro interne" requiredLabel="true"  />
 
 
     <s:submit value="OK"/>

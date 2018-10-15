@@ -2,18 +2,23 @@ package org.topo.projetp6.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import javassist.NotFoundException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
 import org.bean.topo.projetp6.*;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.bean.topo.projetp6.Topo;
 import org.topo.projetp6.impl.dao.TopoDaoImpl;
 import org.topo.projetp6.manager.ManagerFactory;
-
+import javax.servlet.http.HttpServletResponse;
 import javax.inject.Inject;
 
 public class GestionTopoAction extends ActionSupport {
 
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
 
 
 
@@ -94,21 +99,27 @@ return ActionSupport.SUCCESS;
             if (this.topo.getNom() == null) {
                 this.addFieldError(" topo.nom", "ne peut pas etre vide");
 
-            } else {
-                System.out.println("ok");
-            }
+            } else
+                    {
+
+                        System.out.println("ok");
+                     }
 
 
-            if (!this.hasErrors()) {
-                try {
-                    managerFactory.getTopoManager().ajoutopo(this.topo);
-                    System.out.println("je suis la");
-                    vresult = ActionSupport.SUCCESS;
-                    this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
-                } catch (Exception e) {
 
-                    vresult = ActionSupport.ERROR;
-                }
+                    if (!this.hasErrors())
+                    {
+                        try
+                        {
+                            managerFactory.getTopoManager().ajoutopo(this.topo);
+
+                            vresult = ActionSupport.SUCCESS;
+                            this.addActionMessage("Nouveau Topo consultable et pret a l'emploi");
+                        } catch (Exception e)
+                            {
+
+                                vresult = ActionSupport.ERROR;
+                            }
 
             }
         }
@@ -145,16 +156,43 @@ String vresult=ActionSupport.INPUT;
     }
 return vresult;
 };
-    public String doModif(){
-        String vresult=ActionSupport.INPUT;
-        if (topo.getNom() == null) {
-            this.addActionError(getText("error.topo.missing.id"));
-        }else  managerFactory.getTopoManager().miseajour(this.topo);
-        vresult= ActionSupport.SUCCESS;
-        this.addActionMessage("topo a bien été supprimé avec succes");
+    public String doModif() {
 
-        {
+        String resultat = ActionSupport.INPUT;
+
+        if (this.topo != null) {
+            if (this.topo.getNom() != null) {
+                try {
+                    // Le formulaire a été envoyé, afin d'éviter la manipulation des données via le navigateur, on instancie un Topo temporaire
+                    // Ainsi l'id est non modifiable.
+                    Topo tmpTopo = managerFactory.getTopoManager().getTopo(topo.getiD());
+                    tmpTopo.setNom(topo.getNom());
+                    tmpTopo.setDescriptiondestopo(topo.getDescriptiondestopo());
+                    tmpTopo.setHistoriquedestopo(topo.getHistoriquedestopo());
+                    tmpTopo.setHauteurDuTopo(topo.getHauteurDuTopo());
+                    tmpTopo.setTypeDeroche(topo.getTypeDeroche());
+                    tmpTopo.setNombreDevoie(topo.getNombreDevoie());
+                    tmpTopo.setDescriptionDuRetour(topo.getDescriptionDuRetour());
+                    tmpTopo.setTypeDequipement(topo.getTypeDequipement());
+                    tmpTopo.setPhotoDuTopo(topo.getPhotoDuTopo());
+                 tmpTopo.setiD(topo.getiD());
+
+
+                    managerFactory.getTopoManager().miseajour(tmpTopo);
+                } catch (NoSuchElementException e) {
+               ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);
+                }
+                resultat = ActionSupport.SUCCESS;
+            } else {
+                this.addActionError("Id doit être défini");
+                resultat = ActionSupport.ERROR;
+            }
+        } else {
+            // Si topo est null c'est qu'on va entrer sur la jsp update.jsp, il faut embarquer les données sur topo afin de pré-rempir les champs de la page web
+            topo = managerFactory.getTopoManager().getTopo(idtopo);
         }
-        return vresult;
-    };
+        return resultat;
+    }
+
 }
+
