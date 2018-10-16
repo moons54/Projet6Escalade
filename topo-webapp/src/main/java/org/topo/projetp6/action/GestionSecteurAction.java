@@ -194,7 +194,7 @@ return vresult;
 
 
 
-                    managerFactory.getTopoManager().miseajour(tpsecteur);
+                    managerFactory.getSecteurManager().miseajour(tpsecteur);
                 } catch (NoSuchElementException e) {
                     ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);
                 }
@@ -205,7 +205,7 @@ return vresult;
             }
         } else {
             // Si topo est null c'est qu'on va entrer sur la jsp update.jsp, il faut embarquer les données sur topo afin de pré-rempir les champs de la page web
-            site = managerFactory.getSecteurManager().getbynid(idsecteur);
+            secteur = managerFactory.getSecteurManager().getbynid(idsecteur);
         }
         return resultat;
     }

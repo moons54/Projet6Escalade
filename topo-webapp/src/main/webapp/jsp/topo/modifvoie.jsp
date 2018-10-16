@@ -31,8 +31,7 @@
     <s:textfield name="voie.niveau" label="Niveau de difficulté" requiredLabel="true" />
 
     <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
-    <s:hidden name="voie.iD" value="idvoie" label="numéro interne" requiredLabel="true"  />
-
+    <s:hidden name="voie.iD" value="idvoie" label="numéro interne" requiredLabel="true"  ><s:property value="idvoie"/></s:hidden>
 
     <s:submit value="OK"/>
     </s:form>

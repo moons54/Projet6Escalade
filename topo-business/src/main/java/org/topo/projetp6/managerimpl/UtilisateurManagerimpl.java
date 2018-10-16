@@ -1,13 +1,24 @@
 package org.topo.projetp6.managerimpl;
 
 import org.bean.topo.projetp6.Utilisateur;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.topo.projetp6.manager.AbstractManager;
 import org.topo.projetp6.manager.UtilisateurManager;
 import org.bean.topo.projetp6.Message;
 
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
-public class UtilisateurManagerimpl implements UtilisateurManager {
+public class UtilisateurManagerimpl extends AbstractManager implements UtilisateurManager {
+
+    @Inject
+    @Named("TXtransactionTOPO")
+    private PlatformTransactionManager platformTransactionManager;
+
+
+
 
     public Utilisateur getUtilisateur(int Id) {
         if (Id == 0) {
@@ -19,6 +30,8 @@ public class UtilisateurManagerimpl implements UtilisateurManager {
 
         return utilisateur;
     }
+
+
 
     public Utilisateur affichemessageUtilisateur(int Id) {
         if (Id == 0) {
@@ -39,5 +52,11 @@ public class UtilisateurManagerimpl implements UtilisateurManager {
     @Override
     public List<Utilisateur> affichelesUtilisateurs() {
         return null;
+    }
+
+    @Override
+    public Utilisateur getuserpassword(String user, String password) {
+        Utilisateur utilisateur=getDaoFactory().getUtilisateurDao().getbyuserpass(user,password);
+        return utilisateur;
     }
 }

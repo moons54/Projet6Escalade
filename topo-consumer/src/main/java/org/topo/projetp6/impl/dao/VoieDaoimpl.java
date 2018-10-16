@@ -22,7 +22,7 @@ import java.util.List;
 
 @Named
 public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
-    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(VoieDaoimpl.class);
 
    // @Inject
    // VoieDAO VoieDAO;

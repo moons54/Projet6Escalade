@@ -66,7 +66,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
                 "nom = :nom, \n" +
                 "coordonnees_gps = :coordonneesGps, \n" +
                 "topoid = :topoid" +
-                " WHERE id = :id";
+                " WHERE id = :iD";
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(site);
 

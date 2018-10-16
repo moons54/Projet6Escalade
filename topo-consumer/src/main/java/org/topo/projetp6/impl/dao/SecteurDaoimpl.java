@@ -20,7 +20,7 @@ import java.util.List;
 
 @Named
 public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
-    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(SiteDaoimpl.class);
 
     @Inject
     private SecteurDAO secteurDAO;

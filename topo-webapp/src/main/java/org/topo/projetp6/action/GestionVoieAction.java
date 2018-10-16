@@ -160,7 +160,7 @@ public class GestionVoieAction extends ActionSupport {
                     tmvoie.setiD(voie.getiD());
 
 
-                    managerFactory.getTopoManager().miseajour(tmvoie);
+                    managerFactory.getVoieManager().miseajour(tmvoie);
                 } catch (NoSuchElementException e) {
                     ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);
                 }

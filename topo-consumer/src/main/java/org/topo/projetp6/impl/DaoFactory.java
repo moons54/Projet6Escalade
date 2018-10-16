@@ -1,9 +1,6 @@
 package org.topo.projetp6.impl;
 
-import org.topo.projetp6.impl.dao.SecteurDAO;
-import org.topo.projetp6.impl.dao.SiteDao;
-import org.topo.projetp6.impl.dao.TopoDao;
-import org.topo.projetp6.impl.dao.VoieDao;
+import org.topo.projetp6.impl.dao.*;
 
 public interface DaoFactory {
 
@@ -15,6 +12,8 @@ public interface DaoFactory {
     SecteurDAO getSecteurDao();
 
     VoieDao getvoieDao();
+
+    UtilisateurDao getUtilisateurDao();
 
 
 

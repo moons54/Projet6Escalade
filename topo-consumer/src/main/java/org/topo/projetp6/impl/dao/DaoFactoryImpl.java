@@ -1,6 +1,7 @@
 package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Secteur;
+
 import org.topo.projetp6.impl.DaoFactory;
 
 import javax.inject.Inject;
@@ -26,6 +27,8 @@ public class DaoFactoryImpl implements DaoFactory {
     @Inject
     private VoieDao voieDao;
 
+    @Inject
+    private UtilisateurDao utilisateurDao;
 
     @Override
     public SiteDao getSiteDao() {
@@ -61,17 +64,12 @@ public class DaoFactoryImpl implements DaoFactory {
         this.secteurDAO = secteurDAO;
     }
 
-    //TODO implementer voiedao
-    /**
     @Override
-    public VoieDao getVoieDao() {
-        return voieDao;
+    public UtilisateurDao getUtilisateurDao() {
+        return utilisateurDao;
     }
 
-    public void setVoieDao(VoieDao voieDao) {
-        this.voieDao = voieDao;
+    public void setUtilisateurDao(UtilisateurDao utilisateurDao) {
+        this.utilisateurDao = utilisateurDao;
     }
-
-    */
-
 }

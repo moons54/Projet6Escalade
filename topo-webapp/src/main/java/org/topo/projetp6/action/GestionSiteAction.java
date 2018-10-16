@@ -183,11 +183,11 @@ return vresult;
                 try {
                     // Le formulaire a été envoyé, afin d'éviter la manipulation des données via le navigateur, on instancie un Topo temporaire
                     // Ainsi l'id est non modifiable.
-                    Site tpsite = managerFactory.getSiteManager().getbyID(topo.getiD());
+                    Site tpsite = managerFactory.getSiteManager().getbyID(site.getiD());
                     tpsite.setIdentifiant(site.getIdentifiant());
                     tpsite.setNom(site.getNom());
                     tpsite.setCoordonneesGps(site.getCoordonneesGps());
-                    tpsite.setiD(site.getiD());
+                 //   tpsite.setiD(site.getiD());
 
 
                     managerFactory.getSiteManager().miseajour(tpsite);
@@ -201,7 +201,7 @@ return vresult;
             }
         } else {
             // Si topo est null c'est qu'on va entrer sur la jsp update.jsp, il faut embarquer les données sur topo afin de pré-rempir les champs de la page web
-            topo = managerFactory.getTopoManager().getTopo(idsite);
+            site = managerFactory.getSiteManager().getbyID(idsite);
         }
         return resultat;
     }

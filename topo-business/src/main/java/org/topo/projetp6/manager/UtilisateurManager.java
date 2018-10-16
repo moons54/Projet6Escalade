@@ -16,4 +16,7 @@ public interface UtilisateurManager {
      */
     List<Utilisateur> affichelesUtilisateurs();
 
+
+    Utilisateur getuserpassword(String user,String password);
+
 }

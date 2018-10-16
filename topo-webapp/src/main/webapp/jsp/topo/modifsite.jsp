@@ -25,7 +25,7 @@
     <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" />
     <s:textfield name="site.coordonneesGps" label="Coordonnées GPS" requiredLabel="true" />
  <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
-    <s:hidden name="site.iD"  label="numéro interne" requiredLabel="true" ><s:property value="idsite"></s:property></s:hidden>
+    <s:hidden name="site.topoid"  label="numéro interne" requiredLabel="true" ><s:property value="idsite"/></s:hidden>
 
     <s:submit value="OK"/>
 </s:form>
