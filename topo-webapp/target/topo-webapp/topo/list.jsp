@@ -54,7 +54,11 @@
     </ul>
 
 </div>
-<s:a action="topo_new">creer un nouveau topo</s:a>
+
+    <s:if test="%{#session.user.nom=='moons'}">
+        <li><s:a action="topo_new">creer un nouveau topo</s:a></li>
+    </s:if>
+
 </body>
 
 </html>

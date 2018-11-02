@@ -46,9 +46,9 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-
+<s:if test="%{#session.user.nom=='moons'}">
             <li class="breadcrumb-item"><s:a action="voie_new">creer une nouvelle voie<s:param name="idvoie" value="idsecteur"/></s:a></li>
-
+</s:if>
         </ol>
 
     </nav>

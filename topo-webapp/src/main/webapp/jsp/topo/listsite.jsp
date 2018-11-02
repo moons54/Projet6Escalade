@@ -46,9 +46,9 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-
+<s:if test="%{#session.user.nom=='moons'}">
                     <li class="breadcrumb-item"><s:a action="site_new">creer un nx<s:param name="idsite" value="idtopo"/></s:a></li>
-
+</s:if>
                 </ol>
 
             </nav>

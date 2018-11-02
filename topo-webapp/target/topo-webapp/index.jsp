@@ -25,8 +25,8 @@
             <li class="nav-item active">
                 <s:a class="nav-link" action="topo_liste"><s:text name="nav.listtopo"/></> <span class="sr-only">(current)</span></s:a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item active">
+                <s:a class="nav-link" action="login"><s:text name="nav.authentification"/></> <span class="sr-only">(current)</span></s:a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -15,6 +15,6 @@ public interface ManagerFactory {
 
    VoieManager getVoieManager();
 
-   UtilisateurManager getUtilisateurManager();
+    UtilisateurManager getUtilisateurManager();
 
 }

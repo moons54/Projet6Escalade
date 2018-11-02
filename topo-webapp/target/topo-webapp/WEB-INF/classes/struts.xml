@@ -9,9 +9,9 @@
     <package name="default" extends="struts-default">
         <!-- Action par défaut -->
         <default-action-ref name="index" />
-        <!-- gestion des result error glabl-->
+        <!-- gestion des result error global-->
         <global-results>
-            <result name="error">jsp/error.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
         </global-results>
 
         <!-- Action "index" -->
@@ -19,6 +19,22 @@
             <!-- gestion de la vue -->
             <result>/jsp/index.jsp</result>
         </action>
+
+        <!-- GESTION DES SESSIONS -->
+
+        <action name="login"
+                class="org.topo.projetp6.action.loginAction"
+                method="doLogin">
+            <result name="input">jsp/topo/login.jsp</result>
+            <result name="success" type="redirectAction">index</result>
+       </action>
+
+        <action name="logout" class="org.topo.projetp6.action.loginAction" method="doLogout">
+            <result type="redirectAction">index</result>
+        </action>
+
+
+
         <!-- action listant la liste des topo-->
         <action name="topo_liste"
                 class="org.topo.projetp6.action.GestionTopoAction"
@@ -42,7 +58,7 @@
                 method="doModif">
 
             <result name="input">/jsp/topo/modiftopo.jsp</result>
-            <result name="success" type="redirectAction">jsp/topo/list.jsp</result>
+            <result name="success" type="redirectAction">topo_liste</result>
         </action>
 
         <action name="topo_supp"
@@ -95,7 +111,7 @@
                 method="doModif">
 
             <result name="input">/jsp/topo/modifsite.jsp</result>
-            <result name="success" type="redirectAction">jsp/topo/listsite.jsp</result>
+            <result name="success" type="redirectAction">site_list</result>
         </action>
         <!-- action permettant de creer un nouveau Site-->
         <action name="site_new"
@@ -146,7 +162,7 @@
                 method="doModif">
 
             <result name="input">/jsp/topo/modifsecteur.jsp</result>
-            <result name="success" type="redirectAction">jsp/topo/listsecteur.jsp</result>
+            <result name="success" type="redirectAction">secteur_list</result>
         </action>
         <!-- action permettant de creer un nouveau secteur-->
         <action name="secteur_new"
@@ -223,7 +239,7 @@
                 method="doModif">
 
             <result name="input">/jsp/topo/modifvoie.jsp</result>
-            <result name="success" type="redirectAction">jsp/topo/listvoie.jsp</result>
+            <result name="success" type="redirectAction">voie_list</result>
         </action>
 
         </package>
