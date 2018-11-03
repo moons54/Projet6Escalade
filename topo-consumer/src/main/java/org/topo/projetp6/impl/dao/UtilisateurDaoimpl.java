@@ -40,10 +40,10 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
         MapperUtilisateur maputil= new MapperUtilisateur();
 
         Utilisateur utilisateur = vJdbcTemplate.queryForObject(vSQL, maputil, Id);
-        LOGGER.info("recherche de la liste de topo "+maputil.toString());
+        LOGGER.info("recherche de la liste des utilisateur "+utilisateur.toString());
 
 
-        return null;
+        return utilisateur;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 .addValue("email",utilisateur.getEmail())
                 .addValue("langue",utilisateur.getLangue())
                 .addValue("motdepasse",utilisateur.getMotDePasse())
-                .addValue("roleid",2);
+               .addValue("roleid",2);
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
@@ -137,7 +137,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
     }
 
     @Override
-    public Utilisateur supprimeutilisateur(int Id) {
+    public Utilisateur supprimeUtilisateur(int Id) {
         LOGGER.info("suppression d'un utilisateur");
         String vSQL = "DELETE FROM public.utilisateur where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

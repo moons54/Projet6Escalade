@@ -17,16 +17,15 @@
 <body>
 <s:actionmessage/>
 <s:actionerror/>
-<h2>Inscription au Site TOPO P6</h2>
-<s:form action="site_new">
+<h2>Inscription au Site Topo P6</h2>
+<s:form action="utilisateur_new">
 
-    <s:textfield name="site.identifiant" label="Identifiant" requiredLabel="true" ></s:textfield>
-    <s:textfield name="site.nom" label="Nom du Site" requiredLabel="true" ></s:textfield>
-    <s:textfield name="site.coordonneesGps" label="Coordonnées GPS" requiredLabel="true" ></s:textfield>
-
-    <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
-    <s:hidden name="idsite" label="numéro interne" requiredLabel="true"  ><s:property value="idsite"/></s:hidden>
-
+    <s:textfield name="utilisateur.identifiant" label="Identifiant de connexion" requiredLabel="true" ></s:textfield>
+    <s:textfield name="utilisateur.motDePasse" label="Mot de passe" requiredLabel="true" ></s:textfield>
+    <s:textfield name="utilisateur.nom" label="Nom" requiredLabel="true" ></s:textfield>
+    <s:textfield name="utilisateur.prenom" label="Prénom" requiredLabel="true" ></s:textfield>
+    <s:textfield name="utilisateur.email" label="Email" requiredLabel="true" ></s:textfield>
+    <s:textfield name="utilisateur.langue" label="Nationalité" requiredLabel="true" ></s:textfield>
 
     <s:submit value="OK"/>
 </s:form>

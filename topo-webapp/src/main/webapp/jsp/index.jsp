@@ -28,6 +28,11 @@
             <li class="nav-item active">
                 <s:a class="nav-link" action="login"><s:text name="nav.authentification"/></> <span class="sr-only">(current)</span></s:a>
             </li>
+            <s:if test="%{#session.user.nom=='moons'}">
+            <li class="nav-item active">
+                <s:a class="nav-link" action="utilisateur_list"><s:text name="nav.utilisateur"/></> <span class="sr-only">(current)</span></s:a>
+            </li>
+            </s:if>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown

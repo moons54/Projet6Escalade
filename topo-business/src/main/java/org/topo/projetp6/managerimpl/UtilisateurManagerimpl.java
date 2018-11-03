@@ -31,13 +31,7 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
     private UtilisateurDao utilisateurDao;
 
     public Utilisateur getUtilisateur(int Id) {
-        if (Id == 0) {
-            System.out.print(" Utilisateur non trouvé " + Id);
-        }
-        Utilisateur utilisateur = new Utilisateur(Id);
-        utilisateur.setNom("nom" + Id);
-
-
+       Utilisateur utilisateur= getDaoFactory().getUtilisateurDao().getbyID(Id);
         return utilisateur;
     }
 
@@ -92,12 +86,12 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
     }
 
     @Override
-    public void supprimeutilisateur(final int Id){
+    public void supprimeUtilisateur(final int Id){
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
-                utilisateurDao.supprimeutilisateur(Id);
+                utilisateurDao.supprimeUtilisateur(Id);
             }
         });
 

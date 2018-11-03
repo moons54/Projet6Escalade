@@ -6,8 +6,9 @@ import org.bean.topo.projetp6.exception.NotFoundException;
 import java.util.List;
 
 public interface UtilisateurManager {
+    //TODO il faut penser a creer des variable et methode sur le principe du camelcase
 
-    Utilisateur getUtilisateur(int Id);
+    public Utilisateur getUtilisateur(int Id);
 
     Utilisateur affichemessageUtilisateur(int Id);
 
@@ -21,7 +22,7 @@ public interface UtilisateurManager {
 
     public void miseajour(final Utilisateur utilisateur);
 
-    public void supprimeutilisateur(final int Id);
+    public void supprimeUtilisateur(final int Id);
 
     public void ajoututilisateur(final Utilisateur utilisateur);
 

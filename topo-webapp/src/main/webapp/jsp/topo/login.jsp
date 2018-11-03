@@ -30,7 +30,7 @@
 
 </s:form>
 <s:if test="%{#session.user==null}">
-<li><s:a action="topo_new">Inscription</s:a></li>
+<li><s:a action="utilisateur_new">Inscription</s:a></li>
 </s:if>
 </body>
 </html>

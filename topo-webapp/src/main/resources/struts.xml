@@ -33,9 +33,61 @@
             <result type="redirectAction">index</result>
         </action>
 
+        <!-- action permettant d'afficher le détail d'un topo-->
+        <action name="utilisateur_detail"
+                class="org.topo.projetp6.action.loginAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailutilisateur.jsp</result>
+        </action>
 
+       <!-- action listant la liste des utilisateurs-->
+        <action name="utilisateur_list"
+                class="org.topo.projetp6.action.loginAction"
+                method="doList">
+            <result>jsp/topo/listutilisateur.jsp</result>
+        </action>
 
-        <!-- action listant la liste des topo-->
+        <!-- action permettant de modifer un utilisateur-->
+        <action name="mod_utilisateur"
+                class="org.topo.projetp6.action.loginAction"
+                method="doModif">
+
+            <result name="input">/jsp/topo/modifutilisateur.jsp</result>
+            <result name="success" type="redirectAction">utilisateur_list</result>
+        </action>
+
+        <action name="utilisateur_supp"
+                class="org.topo.projetp6.action.loginAction"
+                method="doSupp">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailutilisateur.jsp</result>
+        </action>
+        <!-- action permettant de creer un nouveau Topo-->
+        <action name="utilisateur_new"
+                class="org.topo.projetp6.action.loginAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newutilisateur.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">utilisateurdetail</param>
+                <param name="idutilisateur">${utilisateur.id}</param>
+            </result>
+
+        </action>
+        <!-- action listant les topo-->
         <action name="topo_liste"
                 class="org.topo.projetp6.action.GestionTopoAction"
                 method="doList">

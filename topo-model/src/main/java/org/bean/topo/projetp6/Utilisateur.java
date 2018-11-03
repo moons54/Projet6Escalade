@@ -22,10 +22,15 @@ public class Utilisateur {
 	 *
 	 * @param iD
 	 */
+
+
+
 	public Utilisateur(int iD) {
 		this.iD = iD;
 	}
 
+	public Utilisateur() {
+	}
 
 	/**
 	 * LES GETTERS ET LES SETTERS

@@ -18,5 +18,5 @@ public interface UtilisateurDao {
 
     public Utilisateur misajourutilisateur(final Utilisateur utilisateur);
 
-    public Utilisateur supprimeutilisateur(int Id);
+    public Utilisateur supprimeUtilisateur(int Id);
 }
