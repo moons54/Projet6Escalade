@@ -19,4 +19,11 @@ public interface UtilisateurManager {
 
     Utilisateur getuserpassword(String user,String password) throws NotFoundException;
 
+    public void miseajour(final Utilisateur utilisateur);
+
+    public void supprimeutilisateur(final int Id);
+
+    public void ajoututilisateur(final Utilisateur utilisateur);
+
+
 }

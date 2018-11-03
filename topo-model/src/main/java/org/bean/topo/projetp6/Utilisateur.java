@@ -7,12 +7,13 @@ import java.util.Arrays;
 
 public class Utilisateur {
 	private int iD;
-	private Integer identifiant;
+	private String identifiant;
 	private String nom;
 	private String prenom;
 	private String email;
 	private String langue;
 	private String motDePasse;
+
 	public Message[] message = new Message[0];
 	public Reservation[] reservation = new Reservation[0];
 
@@ -38,11 +39,11 @@ public class Utilisateur {
 		this.iD = iD;
 	}
 
-	public Integer getIdentifiant() {
+	public String getIdentifiant() {
 		return identifiant;
 	}
 
-	public void setIdentifiant(Integer identifiant) {
+	public void setIdentifiant(String identifiant) {
 		this.identifiant = identifiant;
 	}
 

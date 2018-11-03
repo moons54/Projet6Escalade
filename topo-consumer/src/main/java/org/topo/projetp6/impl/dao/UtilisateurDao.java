@@ -13,4 +13,10 @@ public interface UtilisateurDao {
     public Utilisateur getbyuserpass(String nom,String motdepasse);
 
     public List<Utilisateur> listutilisateur();
+
+    public Utilisateur ajoututilisateur(final Utilisateur utilisateur);
+
+    public Utilisateur misajourutilisateur(final Utilisateur utilisateur);
+
+    public Utilisateur supprimeutilisateur(int Id);
 }

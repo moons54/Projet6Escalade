@@ -15,14 +15,11 @@ public class Topo {
 	private String descriptionDuRetour;
 	private String typeDequipement;
 
-    //public Site[] site = new Site[0];
+
     private int photoDuTopo;
     public List<Site> site;
 
 
-   // private Site sitev2;
-//	public List Sirte;
-//	public Site stt;
 
 	public Topo_reservable[] topo_reservable = new Topo_reservable[0];
 

@@ -3,6 +3,10 @@ package org.topo.projetp6.managerimpl;
 import org.bean.topo.projetp6.Utilisateur;
 
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
+import org.topo.projetp6.impl.dao.UtilisateurDao;
 import org.topo.projetp6.manager.AbstractManager;
 import org.topo.projetp6.manager.UtilisateurManager;
 import org.bean.topo.projetp6.Message;
@@ -22,6 +26,9 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
 
     private List<Utilisateur> listut=new ArrayList<Utilisateur>();
 
+
+    @Inject
+    private UtilisateurDao utilisateurDao;
 
     public Utilisateur getUtilisateur(int Id) {
         if (Id == 0) {
@@ -68,12 +75,44 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
                 .findFirst()
                 .orElseThrow(()-> new NotFoundException("pas d'utilisateur trouvé"));
 
-
-
-
-      //  Utilisateur utilisateur=getDaoFactory().getUtilisateurDao().getbyuserpass(user,password);
-       // System.out.println("val de ut" +utilisateur);
-        System.out.println("val de getuser"+vutil);
         return vutil;
+    }
+
+    @Override
+    public void miseajour(final Utilisateur utilisateur){
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                utilisateurDao.misajourutilisateur(utilisateur);
+            }
+        });
+
+
+    }
+
+    @Override
+    public void supprimeutilisateur(final int Id){
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                utilisateurDao.supprimeutilisateur(Id);
+            }
+        });
+
+    }
+
+    @Override
+    public void ajoututilisateur(final Utilisateur utilisateur){
+        TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                utilisateurDao.ajoututilisateur(utilisateur);
+            }
+        });
+
+
     }
 }

@@ -5,6 +5,12 @@ import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Utilisateur;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.topo.projetp6.impl.dao.mapper.MapperTopo;
 import org.topo.projetp6.impl.dao.mapper.MapperUtilisateur;
 
@@ -79,4 +85,66 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
         return vutil;
     }
+
+    @Override
+    public Utilisateur ajoututilisateur(Utilisateur utilisateur) {
+        String ajoutsql = "INSERT INTO public.utilisateur" +
+                " (identifiant,\n" +
+                " nom,\n" +
+                " prenom,\n" +
+                " email,\n" +
+                " langue,\n" +
+                " motdepasse,\n" +
+                " roleid)" +
+                "VALUES" +
+                "(:identifiant,:nom,:prenom,:email,:langue,:motdepasse,:roleid)";
+
+
+        SqlParameterSource ajoututil = new MapSqlParameterSource()
+                .addValue("identifiant",utilisateur.getIdentifiant())
+                .addValue("nom",utilisateur.getNom())
+                .addValue("prenom",utilisateur.getPrenom())
+                .addValue("email",utilisateur.getEmail())
+                .addValue("langue",utilisateur.getLangue())
+                .addValue("motdepasse",utilisateur.getMotDePasse())
+                .addValue("roleid",2);
+
+        //Gestion de la clé primaire
+        KeyHolder holder = new GeneratedKeyHolder();
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        vJdbcTemplate.update(ajoutsql, ajoututil, holder, new String[]{"id"});
+        utilisateur.setiD(holder.getKey().intValue());
+        return utilisateur;
+    }
+
+    @Override
+    public Utilisateur misajourutilisateur(Utilisateur utilisateur) {
+
+        String requetemaj = "UPDATE public.utilisateur SET " +
+                "identifiant = :identifiant, \n" +
+                "nom = :nom, \n" +
+                "prenom = :prenom, \n" +
+                "email = :email, \n" +
+                "langue  = :langue, \n" +
+                "motdepasse = :motdepasse" +
+                " WHERE id = :iD";
+        SqlParameterSource vParams = new BeanPropertySqlParameterSource(utilisateur);
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
+        int vNbrLigneMaJ = vJdbcTemplate.update(requetemaj, vParams);
+
+        return utilisateur;
+    }
+
+    @Override
+    public Utilisateur supprimeutilisateur(int Id) {
+        LOGGER.info("suppression d'un utilisateur");
+        String vSQL = "DELETE FROM public.utilisateur where id= ?";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
+        vJdbcTemplate.update(vSQL,Id);
+        return null;
+    }
+
+
 }

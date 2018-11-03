@@ -16,14 +16,15 @@ public class MapperUtilisateur implements RowMapper<Utilisateur> {
         public Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
 
             Utilisateur nutil=new Utilisateur(rs.getInt("id"));
-            nutil.setIdentifiant(rs.getInt("identifiant"));
+            nutil.setIdentifiant(rs.getString("identifiant"));
             nutil.setNom(rs.getString("nom"));
             nutil.setPrenom(rs.getString("prenom"));
             nutil.setEmail(rs.getString("email"));
             nutil.setLangue(rs.getString("langue"));
             nutil.setMotDePasse(rs.getString("motdepasse"));
 
-        //TODO mettre ldans le mapper la relation des listes utilisateur/adresse
+
+
 
             return nutil;
         }
