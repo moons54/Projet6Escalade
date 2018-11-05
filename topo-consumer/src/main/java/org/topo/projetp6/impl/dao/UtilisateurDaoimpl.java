@@ -95,9 +95,9 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 " email,\n" +
                 " langue,\n" +
                 " motdepasse,\n" +
-                " roleid)" +
+                " role)" +
                 "VALUES" +
-                "(:identifiant,:nom,:prenom,:email,:langue,:motdepasse,:roleid)";
+                "(:identifiant,:nom,:prenom,:email,:langue,:motdepasse,:role)";
 
 
         SqlParameterSource ajoututil = new MapSqlParameterSource()
@@ -107,7 +107,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 .addValue("email",utilisateur.getEmail())
                 .addValue("langue",utilisateur.getLangue())
                 .addValue("motdepasse",utilisateur.getMotDePasse())
-               .addValue("roleid",2);
+               .addValue("role",utilisateur.getRole());
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
@@ -126,7 +126,8 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 "prenom = :prenom, \n" +
                 "email = :email, \n" +
                 "langue  = :langue, \n" +
-                "motdepasse = :motdepasse" +
+                "motdepasse = :motDePasse, \n" +
+                "role  = :role" +
                 " WHERE id = :iD";
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(utilisateur);
 
@@ -146,5 +147,17 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
         return null;
     }
 
+
+
+    public Utilisateur find(Integer id) {
+        String vsql ="SELECT * FROM public.utilisateur WHERE id=?";
+
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+        Utilisateur utilisateur=(Utilisateur)vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new MapperUtilisateur());
+        if(utilisateur==null) {
+            return null;
+        }
+        return utilisateur;
+    }
 
 }

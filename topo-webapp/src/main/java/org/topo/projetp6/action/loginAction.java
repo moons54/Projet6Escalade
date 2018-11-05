@@ -13,6 +13,7 @@ import org.bean.topo.projetp6.exception.NotFoundException;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -48,6 +49,19 @@ public class loginAction extends ActionSupport implements SessionAware {
     private String password;
     private Utilisateur utilisateur;
     private Integer idutilisateur;
+    private List<String> searchEngine;
+    private String yourSearchEngine;
+
+    public List getRrole() {
+        return rrole;
+    }
+
+    public void setRrole(List rrole) {
+        this.rrole = rrole;
+    }
+
+    private List rrole;
+
 
 
     private List<Utilisateur> afficheutil;
@@ -77,6 +91,8 @@ public class loginAction extends ActionSupport implements SessionAware {
         this.afficheutil = afficheutil;
     }
 
+
+
     public String getUser() {
         return user;
     }
@@ -93,6 +109,15 @@ public class loginAction extends ActionSupport implements SessionAware {
         this.password = password;
     }
 
+    public List<String> getSearchEngine() {
+        return searchEngine;
+    }
+
+    public void listerrole(){
+        rrole.add(1);
+        rrole.add(2);
+        rrole.add(3);
+    }
     //Methodes associés
 
 
@@ -200,7 +225,7 @@ public class loginAction extends ActionSupport implements SessionAware {
         String vresult=ActionSupport.INPUT;
         if (idutilisateur == null) {
             this.addActionError(getText("error.topo.missing.id"));
-        }else  managerFactory.getUtilisateurManager().supprimeutilisateur(this.idutilisateur);
+        }else  managerFactory.getUtilisateurManager().supprimeUtilisateur(this.idutilisateur);
         vresult= ActionSupport.SUCCESS;
         this.addActionMessage("topo a bien été supprimé avec succes");
 
@@ -221,11 +246,12 @@ public class loginAction extends ActionSupport implements SessionAware {
                     // Ainsi l'id est non modifiable.
                     Utilisateur tmputil = managerFactory.getUtilisateurManager().getUtilisateur(utilisateur.getiD());
                     tmputil.setIdentifiant(utilisateur.getIdentifiant());
+                    tmputil.setMotDePasse(utilisateur.getMotDePasse());
                     tmputil.setNom(utilisateur.getNom());
                     tmputil.setPrenom(utilisateur.getPrenom());
                     tmputil.setEmail(utilisateur.getEmail());
                     tmputil.setLangue(utilisateur.getLangue());
-                    tmputil.setMotDePasse(utilisateur.getMotDePasse());
+                   tmputil.setRole(utilisateur.getRole());
                     tmputil.setiD(utilisateur.getiD());
 
 
@@ -244,4 +270,7 @@ public class loginAction extends ActionSupport implements SessionAware {
         }
         return resultat;
     }
+
+
+
 }

@@ -22,9 +22,7 @@ public class MapperUtilisateur implements RowMapper<Utilisateur> {
             nutil.setEmail(rs.getString("email"));
             nutil.setLangue(rs.getString("langue"));
             nutil.setMotDePasse(rs.getString("motdepasse"));
-
-
-
+            nutil.setRole(rs.getString("role"));
 
             return nutil;
         }

@@ -30,6 +30,9 @@ public class DaoFactoryImpl implements DaoFactory {
     @Inject
     private UtilisateurDao utilisateurDao;
 
+    @Inject
+    private TopoReservableDao topoReservableDao;
+
     @Override
     public SiteDao getSiteDao() {
         return siteDao;
@@ -71,5 +74,25 @@ public class DaoFactoryImpl implements DaoFactory {
 
     public void setUtilisateurDao(UtilisateurDao utilisateurDao) {
         this.utilisateurDao = utilisateurDao;
+    }
+
+    public SecteurDAO getSecteurDAO() {
+        return secteurDAO;
+    }
+
+    public VoieDao getVoieDao() {
+        return voieDao;
+    }
+
+    public void setVoieDao(VoieDao voieDao) {
+        this.voieDao = voieDao;
+    }
+    @Override
+    public TopoReservableDao getTopoReservableDao() {
+        return topoReservableDao;
+    }
+
+    public void setTopoReservableDao(TopoReservableDao topoReservableDao) {
+        this.topoReservableDao = topoReservableDao;
     }
 }

@@ -21,6 +21,8 @@
 
 
 <h2>modification d'une inscription</h2>
+
+Role : <s:property value="utilisateur.role"/>
 <s:form action="mod_utilisateur">
 
 
@@ -30,11 +32,14 @@
     <s:textfield name="utilisateur.prenom" label="Prénom" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.email" label="Email" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.langue" label="Nationalité" requiredLabel="true" ></s:textfield>
+    <s:select list="utilisateur.role" />
 
 
 
 
-    <s:hidden name="utilisateur.iD" ><s:property value="idutilisateur"/></s:hidden><
+
+
+    <s:hidden name="utilisateur.iD"/>
 
     <s:submit value="OK"/>
 </s:form>

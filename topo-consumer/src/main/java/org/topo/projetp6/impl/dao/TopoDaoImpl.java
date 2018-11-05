@@ -41,7 +41,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
         RowMapper<Topo> montops = new MapperTopo(this.siteDao);
        List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
-        System.out.println("valeur de vlist" + vListStatut);
+
 
         return vListStatut;
     }
@@ -169,6 +169,20 @@ vJdbcTemplate.update(vSQL,Id);
 //vJdbcTemplate.update("delete from topo where id = ?",Id);
         return null;
     }
+
+
+
+    public Topo find(Integer id) {
+        String vsql ="SELECT * FROM public.topo WHERE id=?";
+
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+        Topo tops=(Topo) vJdbcTemplate.queryForObject(vsql, new Object[] { id }, new MapperTopo(siteDao));
+        if(tops==null) {
+            return null;
+        }
+        return tops;
+    }
+
 }
 
 

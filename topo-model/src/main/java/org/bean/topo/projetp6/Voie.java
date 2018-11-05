@@ -12,7 +12,7 @@ public class Voie extends Secteur {
 	private String niveau;
 	private List secteur;
 	private List <Voie> voie;
-	public Topo_reservable[] voie_reservable = new Topo_reservable[0];
+
 	public Message_voie[] Message_voie = new Message_voie[0];
 
 
@@ -69,13 +69,7 @@ public Voie(int iD){
 		this.niveau = niveau;
 	}
 
-	public Topo_reservable[] getVoie_reservable() {
-		return voie_reservable;
-	}
 
-	public void setVoie_reservable(Topo_reservable[] voie_reservable) {
-		this.voie_reservable = voie_reservable;
-	}
 
 	public org.bean.topo.projetp6.Message_voie[] getMessage_voie() {
 		return Message_voie;
@@ -107,7 +101,7 @@ public Voie(int iD){
 				", niveau='" + niveau + '\'' +
 				", secteur=" + secteur +
 				", voie=" + voie +
-				", voie_reservable=" + Arrays.toString(voie_reservable) +
+
 				", Message_voie=" + Arrays.toString(Message_voie) +
 				'}';
 	}

@@ -79,6 +79,7 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
                 utilisateurDao.misajourutilisateur(utilisateur);
+
             }
         });
 

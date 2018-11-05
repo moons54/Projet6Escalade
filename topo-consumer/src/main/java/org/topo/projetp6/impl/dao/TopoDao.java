@@ -25,6 +25,7 @@ public void miseajour(Topo topo);
     //Supprimer un topo
     public Topo supprimetopo(int Id);
 
+    public Topo find(Integer id);
 
 
 }

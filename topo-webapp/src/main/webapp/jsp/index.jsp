@@ -52,6 +52,9 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <s:if test="#session.user">
+            <s:property value="#session.user.identifiant"/>
+        </s:if>
     </div>
 </div>
 

@@ -13,6 +13,7 @@ public class Utilisateur {
 	private String email;
 	private String langue;
 	private String motDePasse;
+	private String role;
 
 	public Message[] message = new Message[0];
 	public Reservation[] reservation = new Reservation[0];
@@ -30,7 +31,10 @@ public class Utilisateur {
 	}
 
 	public Utilisateur() {
+
 	}
+
+
 
 	/**
 	 * LES GETTERS ET LES SETTERS
@@ -108,23 +112,30 @@ public class Utilisateur {
 		this.reservation = reservation;
 	}
 
+	public String getRole() {
+		return role;
+	}
 
-    /**
-     * redefinition de la methode tostring
-     *
-     */
-    @Override
-    public String toString() {
-        return "Utilisateur{" +
-                "iD=" + iD +
-                ", identifiant=" + identifiant +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", email='" + email + '\'' +
-                ", langue='" + langue + '\'' +
-                ", motDePasse='" + motDePasse + '\'' +
-                ", message=" + Arrays.toString(message) +
-                ", reservation=" + Arrays.toString(reservation) +
-                '}';
-    }
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	/**
+	 * redefinition de la methode tostring
+	 */
+	@Override
+	public String toString() {
+		return "Utilisateur{" +
+				"iD=" + iD +
+				", identifiant='" + identifiant + '\'' +
+				", nom='" + nom + '\'' +
+				", prenom='" + prenom + '\'' +
+				", email='" + email + '\'' +
+				", langue='" + langue + '\'' +
+				", motDePasse='" + motDePasse + '\'' +
+				", role=" + role +
+				", message=" + Arrays.toString(message) +
+				", reservation=" + Arrays.toString(reservation) +
+				'}';
+	}
 }

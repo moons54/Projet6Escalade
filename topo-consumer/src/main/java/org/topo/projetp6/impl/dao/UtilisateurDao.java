@@ -19,4 +19,7 @@ public interface UtilisateurDao {
     public Utilisateur misajourutilisateur(final Utilisateur utilisateur);
 
     public Utilisateur supprimeUtilisateur(int Id);
+
+
+    public Utilisateur find(Integer id);
 }

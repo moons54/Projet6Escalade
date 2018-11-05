@@ -26,6 +26,7 @@
     <s:textfield name="utilisateur.prenom" label="Prénom" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.email" label="Email" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.langue" label="Nationalité" requiredLabel="true" ></s:textfield>
+    <s:select list="{Utilisateur,Proprietaire,Administrateur}"  name="utilisateur.role" multiple="false" label="Role"></s:select>
 
     <s:submit value="OK"/>
 </s:form>

@@ -26,9 +26,9 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private UtilisateurManager utilisateurManager;
 
-    public org.topo.projetp6.manager.VoieManager getVoieManager() {
-        return VoieManager;
-    }
+    @Inject
+    private ToporeservableManager toporeservableManager;
+
 
     public void setVoieManager(org.topo.projetp6.manager.VoieManager voieManager) {
         VoieManager = voieManager;
@@ -66,8 +66,24 @@ public class ManagerFactoryimpl implements ManagerFactory {
         return utilisateurManager;
     }
 
+
+
     public void setUtilisateurManager(UtilisateurManager utilisateurManager) {
         this.utilisateurManager = utilisateurManager;
+    }
+
+    @Override
+    public ToporeservableManager getToporeservableManager() {
+        return toporeservableManager;
+    }
+
+    public void setToporeservableManager(ToporeservableManager toporeservableManager) {
+        this.toporeservableManager = toporeservableManager;
+    }
+
+    @Override
+    public org.topo.projetp6.manager.VoieManager getVoieManager() {
+        return VoieManager;
     }
 }
 

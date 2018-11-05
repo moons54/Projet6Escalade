@@ -21,7 +21,6 @@ public class Topo {
 
 
 
-	public Topo_reservable[] topo_reservable = new Topo_reservable[0];
 
 	/**
 	 * mis en place du constructeur Topo avec le parametre id *************************************
@@ -159,15 +158,6 @@ public class Topo {
 */
 
 
-
-    public Topo_reservable[] getTopo_reservable() {
-        return topo_reservable;
-    }
-
-    public void setTopo_reservable(Topo_reservable[] topo_reservable) {
-        this.topo_reservable = topo_reservable;
-    }
-
     /**
      * ********************************** La méthode to string *****************************************
      *
@@ -187,7 +177,6 @@ public class Topo {
                 ", typeDequipement='" + typeDequipement + '\'' +
                 ", photoDuTopo=" + photoDuTopo +
                 ", site=" + site +
-                ", topo_reservable=" + Arrays.toString(topo_reservable) +
                 '}';
     }
 }

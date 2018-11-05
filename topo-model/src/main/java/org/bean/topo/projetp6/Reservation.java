@@ -6,7 +6,7 @@ public class Reservation {
 	private Date dateReservationDebut;
 	private Date dateReservationFin;
 	public Utilisateur utilisateur;
-	public Topo_reservable voie_reservable;
+	public TopoReservable voie_reservable;
 
 	public Reservation(int iD) {
 		this.iD = iD;
@@ -44,11 +44,11 @@ public class Reservation {
 		this.utilisateur = utilisateur;
 	}
 
-	public Topo_reservable getVoie_reservable() {
+	public TopoReservable getVoie_reservable() {
 		return voie_reservable;
 	}
 
-	public void setVoie_reservable(Topo_reservable voie_reservable) {
+	public void setVoie_reservable(TopoReservable voie_reservable) {
 		this.voie_reservable = voie_reservable;
 	}
 

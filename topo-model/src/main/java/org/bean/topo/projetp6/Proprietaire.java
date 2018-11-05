@@ -11,7 +11,7 @@ public class Proprietaire {
 	private String langue;
 	private String motDePasse;
 	public Adresse adresse;
-	public Topo_reservable[] voie_reservable = new Topo_reservable[0];
+
 
 	public Proprietaire(int iD) {
 		this.iD = iD;
@@ -81,11 +81,5 @@ public class Proprietaire {
 		this.adresse = adresse;
 	}
 
-	public Topo_reservable[] getVoie_reservable() {
-		return voie_reservable;
-	}
 
-	public void setVoie_reservable(Topo_reservable[] voie_reservable) {
-		this.voie_reservable = voie_reservable;
-	}
 }

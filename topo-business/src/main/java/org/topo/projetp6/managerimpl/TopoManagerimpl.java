@@ -116,10 +116,7 @@ listtopo=getDaoFactory().getTopoDao().affiche();
                 topoDao.supprimetopo(Id);
             }
         });
-        //  Topo tops=  topoDao.supprimetopo(Id);
 
-        //return tops;
-        //}
         return null;
     }
 }
