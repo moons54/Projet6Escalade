@@ -33,6 +33,9 @@ public class DaoFactoryImpl implements DaoFactory {
     @Inject
     private TopoReservableDao topoReservableDao;
 
+    @Inject
+    private ReservationDao reservationDao;
+
     @Override
     public SiteDao getSiteDao() {
         return siteDao;
@@ -94,5 +97,14 @@ public class DaoFactoryImpl implements DaoFactory {
 
     public void setTopoReservableDao(TopoReservableDao topoReservableDao) {
         this.topoReservableDao = topoReservableDao;
+    }
+
+    @Override
+    public ReservationDao getReservationDao() {
+        return reservationDao;
+    }
+
+    public void setReservationDao(ReservationDao reservationDao) {
+        this.reservationDao = reservationDao;
     }
 }

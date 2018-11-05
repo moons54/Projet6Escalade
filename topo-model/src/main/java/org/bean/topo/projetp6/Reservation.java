@@ -6,7 +6,7 @@ public class Reservation {
 	private Date dateReservationDebut;
 	private Date dateReservationFin;
 	public Utilisateur utilisateur;
-	public TopoReservable voie_reservable;
+	public TopoReservable topoReservable;
 
 	public Reservation(int iD) {
 		this.iD = iD;
@@ -44,12 +44,12 @@ public class Reservation {
 		this.utilisateur = utilisateur;
 	}
 
-	public TopoReservable getVoie_reservable() {
-		return voie_reservable;
+	public TopoReservable getTopoReservable() {
+		return topoReservable;
 	}
 
-	public void setVoie_reservable(TopoReservable voie_reservable) {
-		this.voie_reservable = voie_reservable;
+	public void setTopoReservable(TopoReservable topoReservable) {
+		this.topoReservable = topoReservable;
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class Reservation {
 				", dateReservationDebut=" + dateReservationDebut +
 				", dateReservationFin=" + dateReservationFin +
 				", utilisateur=" + utilisateur +
-				", voie_reservable=" + voie_reservable +
+				", topoReservable=" + topoReservable +
 				'}';
 	}
 }

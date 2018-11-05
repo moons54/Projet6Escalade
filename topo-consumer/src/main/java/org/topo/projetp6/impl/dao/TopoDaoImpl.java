@@ -34,6 +34,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public List<Topo> affiche() {
+        LOGGER.info("dans la methode affiche");
 
         //requete SQL dans bd pour recupperer liste topo
         String vSQL = "SELECT * FROM public.topo";
@@ -48,6 +49,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public Topo getbyiD(int Id) {
+        LOGGER.info("dans la methode getbyid du topo");
 
 
         //creation d'une requete avec pour resultat un parametre iD
@@ -58,7 +60,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         RowMapper<Topo> montops = new MapperTopo(this.siteDao);
 
         Topo topo = vJdbcTemplate.queryForObject(vSQL, montops, Id);
-        LOGGER.info("recherche de la liste de topo ");
+
         return topo;
 
 
@@ -69,6 +71,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public void miseajour(final Topo topo) {
+        LOGGER.info(" methode mise a jour du topo");
 
         String requetemaj = "UPDATE public.topo SET " +
                 "nom = :Nom, \n" +
@@ -90,24 +93,6 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
         int vNbrLigneMaJ = vJdbcTemplate.update(requetemaj, vParams);
 
-     /**
-        LOGGER.debug("Entrée dans la méthode update");
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(getDatasource());
-        jdbcTemplate.update("UPDATE topo SET (nom, description_topo, historique_topo, hauteur_global," +
-                        "type_roche,nombre_voie,description_du_retour,type_equipement,photo_topo) = (?,?,?,?,?,?,?,?,?) WHERE id = ? ;",
-                topo.getNom(),
-                topo.getDescriptiondestopo(),
-                topo.getHistoriquedestopo(),
-                topo.getHauteurDuTopo(),
-                topo.getTypeDeroche(),
-                topo.getNombreDevoie(),
-                topo.getDescriptionDuRetour(),
-                topo.getTypeDequipement(),
-                topo.getPhotoDuTopo(),
-                topo.getiD()
-
-        );
-    */
     }
 
 
@@ -119,7 +104,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public Topo ajoutopo(final Topo topo) {
-
+    LOGGER.info("dans la methode creation d'untopo ");
         String ajoutsql = "INSERT INTO public.topo" +
                 " (nom,\n " +
                 " description_topo,\n " +
@@ -157,7 +142,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
     }
 
     public Topo supprimetopo(int Id) {
-        LOGGER.info("suppression d'un topo");
+        LOGGER.info("dans la methode suppression d'un topo");
         String vSQL = "DELETE FROM public.topo where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
@@ -173,6 +158,7 @@ vJdbcTemplate.update(vSQL,Id);
 
 
     public Topo find(Integer id) {
+        LOGGER.info("dans la methode find topo");
         String vsql ="SELECT * FROM public.topo WHERE id=?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

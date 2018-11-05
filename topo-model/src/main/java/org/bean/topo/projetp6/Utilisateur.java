@@ -14,7 +14,7 @@ public class Utilisateur {
 	private String langue;
 	private String motDePasse;
 	private String role;
-
+//TODO mettre une var avec niveau d'escalade et frequence d 'activité
 	public Message[] message = new Message[0];
 	public Reservation[] reservation = new Reservation[0];
 

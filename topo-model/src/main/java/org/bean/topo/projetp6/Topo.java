@@ -120,42 +120,15 @@ public class Topo {
         this.photoDuTopo = photoDuTopo;
     }
 
-    /**
-    public Site[] getSite() {
-        return site;
-    }
 
-    public void setSite(Site[] site) {
-        this.site = site;
-    }
-
-     */
     public List<Site> getSite() {
         return site;
     }
 
-    /**
-    public List<Site> getSite() {
-        if ( site==null){
-            return null;
-        }else
-        return site;
-    }
-*/
     public void setSite(List<Site> site) {
         this.site = site;
     }
 
-    /**
-   public Site getStt() {
-        return stt;
-    }
-
-    public void setStt(Site stt) {
-        this.stt = stt;
-    }
-
-*/
 
 
     /**

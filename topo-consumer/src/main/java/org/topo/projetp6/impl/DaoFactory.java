@@ -18,5 +18,5 @@ public interface DaoFactory {
 
     TopoReservableDao getTopoReservableDao();
 
-
+    ReservationDao getReservationDao();
 }

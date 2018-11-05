@@ -29,6 +29,8 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private ToporeservableManager toporeservableManager;
 
+    @Inject
+    private ReservationManager reservationManager;
 
     public void setVoieManager(org.topo.projetp6.manager.VoieManager voieManager) {
         VoieManager = voieManager;
@@ -79,6 +81,15 @@ public class ManagerFactoryimpl implements ManagerFactory {
 
     public void setToporeservableManager(ToporeservableManager toporeservableManager) {
         this.toporeservableManager = toporeservableManager;
+    }
+
+    @Override
+    public ReservationManager getReservationManager() {
+        return reservationManager;
+    }
+
+    public void setReservationManager(ReservationManager reservationManager) {
+        this.reservationManager = reservationManager;
     }
 
     @Override
