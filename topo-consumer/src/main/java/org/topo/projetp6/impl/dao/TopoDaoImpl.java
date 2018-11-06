@@ -34,7 +34,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public List<Topo> affiche() {
-        LOGGER.info("dans la methode affiche");
+        LOGGER.info("Methode affiche");
 
         //requete SQL dans bd pour recupperer liste topo
         String vSQL = "SELECT * FROM public.topo";
@@ -49,7 +49,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public Topo getbyiD(int Id) {
-        LOGGER.info("dans la methode getbyid du topo");
+        LOGGER.info("Methode getbyid du topo");
 
 
         //creation d'une requete avec pour resultat un parametre iD
@@ -71,7 +71,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public void miseajour(final Topo topo) {
-        LOGGER.info(" methode mise a jour du topo");
+        LOGGER.info("Methode mise a jour du topo");
 
         String requetemaj = "UPDATE public.topo SET " +
                 "nom = :Nom, \n" +
@@ -104,7 +104,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
     @Override
     public Topo ajoutopo(final Topo topo) {
-    LOGGER.info("dans la methode creation d'untopo ");
+    LOGGER.info("Methode creation d'untopo ");
         String ajoutsql = "INSERT INTO public.topo" +
                 " (nom,\n " +
                 " description_topo,\n " +
@@ -142,7 +142,7 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
     }
 
     public Topo supprimetopo(int Id) {
-        LOGGER.info("dans la methode suppression d'un topo");
+        LOGGER.info("Methode suppression d'un topo");
         String vSQL = "DELETE FROM public.topo where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
@@ -158,7 +158,7 @@ vJdbcTemplate.update(vSQL,Id);
 
 
     public Topo find(Integer id) {
-        LOGGER.info("dans la methode find topo");
+        LOGGER.info("Mthode find topo");
         String vsql ="SELECT * FROM public.topo WHERE id=?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

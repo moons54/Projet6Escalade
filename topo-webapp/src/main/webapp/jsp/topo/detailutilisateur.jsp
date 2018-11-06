@@ -41,6 +41,8 @@
             <p>
             <div class="d-flex bd-highlight mb-1">
                 <div class="d-flex p-2 bd-highlight">mot de passe : <s:property value="utilisateur.motDePasse"/></div>
+                <div class="d-flex p-2 bd-highlight">Role : <s:property value="utilisateur.role"/></div>
+
             </div>
             </p>
             <div class="d-flex bd-highlight mb-2">
