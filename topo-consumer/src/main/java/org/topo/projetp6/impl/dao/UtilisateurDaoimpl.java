@@ -69,6 +69,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public List<Utilisateur> listutilisateur() {
+        LOGGER.info("Methode listutilisateur");
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.utilisateur ";
 
@@ -80,7 +81,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
         MapperUtilisateur maputil= new MapperUtilisateur();
 
         List<Utilisateur> vutil = vJdbcTemplate.query(vSQL, maputil);
-        LOGGER.info("recherche de la liste des utilisateur "+vutil.toString());
+
 
 
         return vutil;
@@ -150,6 +151,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
 
     public Utilisateur find(Integer id) {
+        LOGGER.info("Methode find de utilisateur");
         String vsql ="SELECT * FROM public.utilisateur WHERE id=?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

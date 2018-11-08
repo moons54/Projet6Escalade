@@ -7,7 +7,7 @@ import java.util.List;
 public interface ToporeservableManager {
 
 
-    List<TopoReservable> affichelestoposempruntable(int Id);
+    List<TopoReservable> affichelestoposempruntable();
 
     TopoReservable getTopoByid(int Id);
 

@@ -33,8 +33,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
 
     @Override
     public List<TopoReservable> affichedisponbile() {
-
-
+        LOGGER.info("Methode affiche liste toporeservable");
         //Requete SQL dans bd recupperer la liste des topos reservable
         String vSql ="SELECT * FROM public.topo_reservable";
         JdbcTemplate vjdbcTemplate = new JdbcTemplate(getDatasource());

@@ -28,7 +28,7 @@
 <ul class="list-group">
 
 
-    <li class="list-group-item active">iste des Secteurs Disponibles</li>
+    <li class="list-group-item active">Liste des Secteurs Disponibles</li>
     <span class="border border-primary">
             <div class="container">
                 <div class="row">

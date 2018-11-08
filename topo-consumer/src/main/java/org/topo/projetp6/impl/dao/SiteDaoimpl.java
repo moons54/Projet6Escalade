@@ -144,7 +144,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
        Site site = vJdbcTemplate.queryForObject(vSQL, monmapsite, Id);
        List<Secteur> secteurs = secteurDAO.affiche(Id);
-        System.out.println("dans la dao " + secteurs.toString());
+
        site.setSecteurs(secteurs);
 
         return site;

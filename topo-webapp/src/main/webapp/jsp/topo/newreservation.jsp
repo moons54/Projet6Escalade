@@ -1,0 +1,38 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: aurelienmimouni
+  Date: 10/10/2018
+  Time: 23:41
+  To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<html>
+<head>
+
+    <%@ include file="../_include/header.jsp"%>
+
+
+</head>
+<body>
+<s:actionmessage/>
+<s:actionerror/>
+<h2>Creation d'une reservation pour le topo</h2>
+
+
+<s:form action="reservation_check">
+
+    <s:textfield name="reservation.dateReservationDebut" label="datedebut"></s:textfield>
+    <s:textfield name="reservation.dateReservationFin" label="datefin" ></s:textfield>
+
+ <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
+   <s:hidden name="idreservation" label="numéro interne" requiredLabel="true"  ><s:property value="idsite"/></s:hidden>
+
+
+    <s:submit value="OK"/>
+
+</s:form>
+
+</body>
+</html>

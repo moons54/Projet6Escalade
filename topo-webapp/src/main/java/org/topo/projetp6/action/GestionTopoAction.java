@@ -18,7 +18,7 @@ import javax.inject.Inject;
 
 public class GestionTopoAction extends ActionSupport {
 
-    private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(GestionTopoAction.class);
 
 
 

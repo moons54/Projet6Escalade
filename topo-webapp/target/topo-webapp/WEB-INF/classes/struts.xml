@@ -294,5 +294,56 @@
             <result name="success" type="redirectAction">voie_list</result>
         </action>
 
-        </package>
+
+        <!-- action permettant de d'afficher le détail d'un topo reservable-->
+        <action name="topreservable_detail"
+                class="org.topo.projetp6.action.GestionTopoReservableAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailtopreservable.jsp</result>
+        </action>
+        <!-- action listant les operations concernant les topo reservable -->
+        <action name="topreservable_list"
+                class="org.topo.projetp6.action.GestionTopoReservableAction"
+                method="doList">
+            <result>jsp/topo/listtopreservable.jsp</result>
+        </action>
+
+        <!-- action permettant de d'afficher le détail d'une reservation-->
+        <action name="reservation_detail"
+                class="org.topo.projetp6.action.GestionReservationAction"
+                method="doDetail">
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <!--   <result name="success">jsp/topo/detail.jsp</result> -->
+            <result>jsp/topo/detailreservation.jsp</result>
+        </action>
+        <!-- action listant les reservations -->
+        <action name="reservation_list"
+                class="org.topo.projetp6.action.GestionReservationAction"
+                method="doList">
+            <result>jsp/topo/listreservation.jsp</result>
+        </action>
+
+        <action name="reservation_check"
+                class="org.topo.projetp6.action.GestionReservationAction"
+                method="doverification">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newreservation.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">detailreservation</param>
+                <param name="idreservation">${idreservation.id}</param>
+            </result>
+        </action>
+
+    </package>
 </struts>

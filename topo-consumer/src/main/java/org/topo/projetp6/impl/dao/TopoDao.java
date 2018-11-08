@@ -1,8 +1,11 @@
 package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Topo;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
+
+@Scope("Prototype")
 
 public interface TopoDao  {
 

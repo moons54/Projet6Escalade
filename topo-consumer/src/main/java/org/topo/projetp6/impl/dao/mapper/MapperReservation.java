@@ -11,19 +11,21 @@ import org.topo.projetp6.impl.dao.UtilisateurDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class MapperReservation implements RowMapper<Reservation> {
 
     UtilisateurDao utilisateurDao;
 
     TopoReservableDao topoReservableDao;
 
+    @Override
     public Reservation mapRow(ResultSet rs,int rowNum) throws SQLException {
 
         Reservation maresa = new Reservation(rs.getInt("id"));
         maresa.setDateReservationDebut(rs.getDate("datereservationdebut"));
         maresa.setDateReservationFin(rs.getDate("datereservationfin"));
-        maresa.setUtilisateur(utilisateurDao.find(rs.getInt("utilisateurid")));
-        maresa.setTopoReservable(topoReservableDao.find(rs.getInt("topo_reservableid")));
+        maresa.setUtilisateur(new Utilisateur(rs.getInt("utilisateurid")));
+        maresa.setTopoReservable(new TopoReservable(rs.getInt("topo_reservableid")));
     return maresa;
 
     }

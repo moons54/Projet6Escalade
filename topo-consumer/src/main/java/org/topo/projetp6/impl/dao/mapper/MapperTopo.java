@@ -10,11 +10,13 @@ import org.topo.projetp6.impl.dao.SiteDaoimpl;
 import org.topo.projetp6.impl.*;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Named
 public class MapperTopo implements RowMapper<Topo> {
 
 

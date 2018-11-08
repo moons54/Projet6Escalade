@@ -2,6 +2,7 @@ package org.topo.projetp6.impl.dao;
 
 import org.bean.topo.projetp6.Site;
 import org.bean.topo.projetp6.Topo;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -10,6 +11,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.topo.projetp6.impl.DaoFactory;
 import org.topo.projetp6.impl.dao.mapper.MapperTopo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,14 +22,20 @@ import javax.inject.Named;
 import java.lang.reflect.Array;
 import java.util.List;
 
-@Named
+@Named("topodao")
+@Scope("prototype")
 public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
 
-    @Inject
-    private TopoDao topoDao;
+
 
     @Inject
     private SiteDao siteDao;
+
+    @Inject
+    MapperTopo mapperTopo;
+
+
+
 
 
     private static final Logger LOGGER=(Logger) LogManager.getLogger(TopoDaoImpl.class);
@@ -40,8 +48,8 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
         String vSQL = "SELECT * FROM public.topo";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-        RowMapper<Topo> montops = new MapperTopo(this.siteDao);
-       List<Topo> vListStatut = vJdbcTemplate.query(vSQL, montops);
+       // RowMapper<Topo> montops = new MapperTopo(this.siteDao);
+       List<Topo> vListStatut = vJdbcTemplate.query(vSQL, mapperTopo);
 
 
         return vListStatut;
@@ -168,6 +176,7 @@ vJdbcTemplate.update(vSQL,Id);
         }
         return tops;
     }
+
 
 }
 

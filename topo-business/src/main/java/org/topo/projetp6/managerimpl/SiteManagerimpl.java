@@ -68,7 +68,7 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
         });
 
     }
-
+    @Override
     public void miseajour(final Site site) {
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
