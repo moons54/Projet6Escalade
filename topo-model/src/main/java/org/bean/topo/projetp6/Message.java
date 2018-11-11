@@ -1,5 +1,6 @@
 package org.bean.topo.projetp6;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Message {
@@ -7,7 +8,8 @@ public class Message {
 	private Integer identifiant;
 	private String message;
 	private Date dateEcriture;
-	public Message_voie[] Message_voie_ = new Message_voie[0];
+	private Topo topo;
+	private Integer note;
 	public Utilisateur utilisateur;
 
 	public Message(int iD) {
@@ -46,13 +48,6 @@ public class Message {
 		this.dateEcriture = dateEcriture;
 	}
 
-	public Message_voie[] getMessage_voie_() {
-		return Message_voie_;
-	}
-
-	public void setMessage_voie_(Message_voie[] message_voie_) {
-		Message_voie_ = message_voie_;
-	}
 
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
@@ -60,5 +55,33 @@ public class Message {
 
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
+	}
+
+    public Integer getNote() {
+        return note;
+    }
+
+    public void setNote(Integer note) {
+        this.note = note;
+    }
+
+    public Topo getTopo() {
+		return topo;
+	}
+
+	public void setTopo(Topo topo) {
+		this.topo = topo;
+	}
+
+	@Override
+	public String toString() {
+		return "Message{" +
+				"iD=" + iD +
+				", identifiant=" + identifiant +
+				", message='" + message + '\'' +
+				", dateEcriture=" + dateEcriture +
+				", topo=" + topo +
+				", utilisateur=" + utilisateur +
+				'}';
 	}
 }
