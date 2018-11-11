@@ -18,7 +18,9 @@ import org.topo.projetp6.manager.ToporeservableManager;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +28,7 @@ import java.util.List;
 public class ReservationManagerimpl extends AbstractManager implements ReservationManager {
     private static final Logger LOGGER=(Logger) LogManager.getLogger(ReservationManagerimpl.class);
 
-   // private List<Reservation> listresa= new ArrayList<Reservation>();
+  private List<Reservation> listresa= new ArrayList<Reservation>();
 
     @Inject
     private TopoReservableDao topoReservableDao;
@@ -135,10 +137,10 @@ List<TopoReservable> topoReservableList=toporeservableManager.affichelestoposemp
 
     }
 
-    @Override
-    public Reservation affichepardate(Date debut, Date fin, Integer toporeverableid) {
+
+    public List<Reservation> affichepardate(Date debut, Date fin, Integer toporeverableid) {
         LOGGER.info("Mehtode controle des date sur untopo manager");
-        Reservation reservation=getDaoFactory().getReservationDao().affichepardate(debut,fin,toporeverableid);
+        List<Reservation> reservation=  getDaoFactory().getReservationDao().affichepardate(debut,fin,toporeverableid);
         return reservation;
     }
 }

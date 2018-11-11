@@ -13,7 +13,6 @@ public class Voie extends Secteur {
 	private List secteur;
 	private List <Voie> voie;
 
-	public Message_voie[] Message_voie = new Message_voie[0];
 
 
 public Voie(){
@@ -28,9 +27,6 @@ public Voie(int iD){
 		return iD;
 	}
 
-	public void setMessage_voie(org.bean.topo.projetp6.Message_voie[] message_voie) {
-		Message_voie = message_voie;
-	}
 
 	public void setiD(int iD) {
 		this.iD = iD;
@@ -71,9 +67,6 @@ public Voie(int iD){
 
 
 
-	public org.bean.topo.projetp6.Message_voie[] getMessage_voie() {
-		return Message_voie;
-	}
 
 	public List getSecteur() {
 		return secteur;
@@ -101,8 +94,6 @@ public Voie(int iD){
 				", niveau='" + niveau + '\'' +
 				", secteur=" + secteur +
 				", voie=" + voie +
-
-				", Message_voie=" + Arrays.toString(Message_voie) +
 				'}';
 	}
 }

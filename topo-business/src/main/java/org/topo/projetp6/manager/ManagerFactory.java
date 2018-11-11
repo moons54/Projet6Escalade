@@ -20,4 +20,6 @@ public interface ManagerFactory {
    ToporeservableManager getToporeservableManager();
 
    ReservationManager getReservationManager();
+
+   MessageManager getMessageManager();
 }

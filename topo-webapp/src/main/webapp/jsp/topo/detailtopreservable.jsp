@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <html>
 <head>
     <%@ include file="../_include/header.jsp"%>
@@ -31,27 +32,47 @@
             <p class="lead">
             <div class="d-flex bd-highlight mb-1">
 
-                <div class="d-flex p-2 bd-highlight">Disponible du : <s:property value="topoReservable.datedispodebut"/></div>
-
-                <div class="d-flex p-2 bd-highlight">au : <s:property value="topoReservable.datedispofin"/></div>
-
+                <div class="container-fluid">
+                    <div class="card border-light mb-3" style="max-width: 20rem;">
+                        <div class="card-header"><s:property value="topoReservable.topo.nom"/></div>
+                        <div class="card-body">
+                            <h4 class="card-title">Proriétaire :<s:property value="topoReservable.utilisateur.nom"/> </h4>
+            <p class="card-text">Disponible du : <s:property value="topoReservable.datedispodebut"/>au : <s:property value="topoReservable.datedispofin"/> </p>
         </div>
-            <div class="d-flex bd-highlight mb-1">
-
-                <div class="d-flex p-2 bd-highlight">Appartenant a : <s:property value="topoReservable.utilisateur.nom"/></div>
-
-                <div class="d-flex p-2 bd-highlight">nombre de voie : <s:property value="topoReservable.topo.nombreDevoie"/></div>
-
-            </div>
-
     </div>
 </div>
+
+<table class="table">
+    <thead>
+    <tr>
+
+        <th>Date de début</th>
+        <th>Date de fin </th>
+
+    </tr>
+    </thead>
+
+    <tbody><s:iterator value="affichereservation">
+        <s:if test="topoReservable.id==idtoporeservable">
+           <tr>
+
+        <td scope="row"><s:property value="dateReservationDebut" /></td>
+        <td><s:property value="dateReservationFin" /></td>
+    </tr> </s:if><
+
+
+
+    </s:iterator>
+    </tbody>
+</table>
+
 </div>
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
 
         <li class="breadcrumb-item"><s:a action="topreservable_list">consulter les autre topos disponibles</s:a></li>
-        <li class="breadcrumb-item"><s:a action="reservation_check">affectuer une demande de reservation<s:param name="idreservation" value="topoReservable.topo.id"/></s:a></li>
+        <li class="breadcrumb-item"><s:a action="reservation_new">affectuer une demande de reservation<s:param name="idreservation" value="topoReservable.topo.id"/></s:a></li>
         <li class="breadcrumb-item"><s:a action="mod_utilisateur">modifier le topo<s:param name="idutilisateur" value="idutilisateur"/></s:a></li>
 
 

@@ -18,7 +18,7 @@ public interface ReservationDao {
 
     public Reservation find(Integer Id);
 
-    public Reservation affichepardate(Date debut, Date fin, Integer toporeverableid);
+    public List<Reservation> affichepardate(Date debut, Date fin, Integer toporeverableid);
 
 
 

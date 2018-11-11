@@ -3,7 +3,6 @@ package org.topo.projetp6.impl.dao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Reservation;
-import org.bean.topo.projetp6.Utilisateur;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -16,6 +15,7 @@ import org.topo.projetp6.impl.dao.mapper.MapperReservation;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import java.util.Date;
 import java.util.List;
 
@@ -27,11 +27,12 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
     @Inject
     private UtilisateurDao utilisateurDao;
 
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     private static final Logger LOGGER=(Logger) LogManager.getLogger(ReservationDaoImpl.class);
 
 
-    @Override
+   // @Override
     public List<Reservation> listedesreservation() {
         LOGGER.info("Methode lise des reservations");
 
@@ -40,6 +41,7 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
         JdbcTemplate vjdbcTemplate = new JdbcTemplate(getDatasource());
 
         RowMapper<Reservation> maresa = new MapperReservation();
+
         List<Reservation> vlistStatut = vjdbcTemplate.query(vSQL,maresa);
 
         return vlistStatut;
@@ -116,7 +118,6 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
         int vNbrLigneMaJ = vJdbcTemplate.update(requetemaj, vParams);
 
 
-
     }
 
     @Override
@@ -132,18 +133,27 @@ public class ReservationDaoImpl extends AbstractDaoImpl implements ReservationDa
         return reservation;
     }
 
-    public Reservation affichepardate(Date debut, Date fin,Integer toporeverableid){
+    public List<Reservation> affichepardate(Date debut, Date fin, Integer toporeverableid){
         LOGGER.info("Methode de comparaison des dates de reservation");
-        String vsql ="SELECT * FROM public.reservation WHERE topo_reservableid=? AND datereservationdebut  BETWEEN : debut AND :fin Or datereservationfin BETWEEN : debut AND : fin";
+        // String vsql ="SELECT * FROM public.reservation WHERE topo_reservableid = :toporeverableid AND ((datereservationdebut BETWEEN  :debut AND  :fin) OR (datereservationfin BETWEEN  :debut AND  :fin) OR (datereservationdebut <  :debut AND datereservationfin < :fin))";
+        String vsql ="SELECT * FROM public.reservation WHERE topo_reservableid = ? AND ((datereservationdebut  BETWEEN ?  AND ?) Or (datereservationfin BETWEEN ? AND ?) OR (datereservationdebut <= ?  AND datereservationfin  > ?))";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
-        Reservation reservation=(Reservation) vJdbcTemplate.queryForObject(vsql, new Object[] { debut,fin,toporeverableid }, new MapperReservation());
-        if(reservation==null) {
+        RowMapper<Reservation> maresa = new MapperReservation();
+
+
+      //    List<Reservation> vliste= vJdbcTemplate.query(vsql, toporeverableid,debut,fin,debut,fin,debut,fin,maresa);
+     List<Reservation> reservation= vJdbcTemplate.query(vsql,maresa,toporeverableid,debut,fin,debut,fin,debut,fin);
+
+
+/**
+        if(vliste==null) {
             System.out.println("topo disponible");
             return null;
         }
-        return reservation;
-
+        return vliste;
+*/
+ return reservation;
     }
 
 }

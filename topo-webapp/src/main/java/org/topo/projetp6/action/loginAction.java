@@ -28,7 +28,7 @@ public class loginAction extends ActionSupport implements SessionAware {
 
 
     //Elements Struts
-    private Map<String,Object> session;
+    static Map<String,Object> session;
 
 
     public Map<String, Object> getSession() {
@@ -135,6 +135,8 @@ public class loginAction extends ActionSupport implements SessionAware {
 
 
                 this.session.put("user",utilisateur);
+                this.session.put("id",utilisateur.getiD());
+                this.session.put("login",utilisateur.getIdentifiant());
                 this.addActionMessage("vous etes connecté");
                 vResult=ActionSupport.SUCCESS;
             } catch (NotFoundException pEx){

@@ -98,6 +98,7 @@
           <scope>import</scope>
       </dependency>
 
+
       <!--dependance pour la mise en place de spring-->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -150,6 +151,8 @@
           <version>2.9.1</version>
           <scope>runtime</scope>
       </dependency>
+
+
 
   </dependencies>
 

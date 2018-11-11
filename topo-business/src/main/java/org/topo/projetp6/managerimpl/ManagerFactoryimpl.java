@@ -32,6 +32,10 @@ public class ManagerFactoryimpl implements ManagerFactory {
     @Inject
     private ReservationManager reservationManager;
 
+    @Inject
+    private MessageManager messageManager;
+
+
     public void setVoieManager(org.topo.projetp6.manager.VoieManager voieManager) {
         VoieManager = voieManager;
     }
@@ -90,6 +94,15 @@ public class ManagerFactoryimpl implements ManagerFactory {
 
     public void setReservationManager(ReservationManager reservationManager) {
         this.reservationManager = reservationManager;
+    }
+
+    @Override
+    public MessageManager getMessageManager() {
+        return messageManager;
+    }
+
+    public void setMessageManager(MessageManager messageManager) {
+        this.messageManager = messageManager;
     }
 
     @Override

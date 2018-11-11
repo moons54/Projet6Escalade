@@ -10,7 +10,9 @@
 <html>
 <header>
     <s:if test="#session.user">
-        <s:property value="#session.user.identifiant"/>
+       --- <s:property value="#session.user.identifiant"/>
+       --- <s:property value="#session.user.id"/>
+
 
 
         <s:a action="logout">Deconnexion</s:a>

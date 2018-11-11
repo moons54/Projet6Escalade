@@ -8,6 +8,9 @@ public class Reservation {
 	public Utilisateur utilisateur;
 	public TopoReservable topoReservable;
 
+	public Reservation() {
+	}
+
 	public Reservation(int iD) {
 		this.iD = iD;
 	}
