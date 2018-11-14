@@ -45,6 +45,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public List<Site> affiche(int idtopo) {
+        LOGGER.info("Methode Affiche DAO");
         //requete SQL dans bd pour recupperer liste des sites
         String vSQL = "SELECT * FROM public.site where topoid= ?";
       // String vSQL = "SELECT * FROM public.site ";
@@ -61,8 +62,8 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public void miseajour(final Site site) {
+        LOGGER.info("Methode miseajour DAO");
         String maj = "UPDATE public.site SET " +
-                "identifiant = :identifiant, \n" +
                 "nom = :nom, \n" +
                 "coordonnees_gps = :coordonneesGps, \n" +
                 "topoid = :topoid" +
@@ -78,15 +79,15 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public Site ajoutesite(Site site,Integer idtopo) {
-
+        LOGGER.info("Methode ajoutesite DAO");
       String ajoutsql = "INSERT INTO public.site " +
-                " (identifiant,\n " +
-                " nom,\n " +
+
+                " (nom,\n " +
                 " coordonnees_gps" +
                ",\n " +
               " topoid) " +
                 "VALUES" +
-                "(:identifiant,:nom,:coordonneesGps,:topoid)";
+                "(:nom,:coordonneesGps,:topoid)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
                 .addValue("identifiant", site.getIdentifiant())
@@ -100,32 +101,6 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         vJdbcTemplate.update(ajoutsql, ajoutparam, holder, new String[]{"id"});
         site.setiD(holder.getKey().intValue());
 
-
-/**
-           String vsql = "INSERT INTO public.site (id,identifiant,nom,coordonnees_gps,topoid) VALUES (DEFAULT ,?,?,?,?)";
-           JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
-           System.out.println("valeur de id  =" + site.getiD());
-           vJdbcTemplate.update(vsql,site.getIdentifiant(),site.getNom(),site.getCoordonneesGps(),site.getiD());
-*/
-/**
-        String vSQL = "INSERT INTO site (identifiant, nom, coordonnees_gps,topoid) VALUES (:identifiant,:nom,:coordonnees,:idtopo)";
-        //String vSQL = "INSERT INTO site_escalade (nom_site, id_topo, description) VALUES ('"+ name +"',"+ id_topo +",'"+ description +"')";
-        MapSqlParameterSource vParams = new MapSqlParameterSource();
-
-        vParams.addValue("identifiant", site.getIdentifiant(), Types.VARCHAR);
-        vParams.addValue("nom",site.getNom() , Types.VARCHAR);
-        vParams.addValue("id_topo", idtopo, Types.INTEGER);
-        vParams.addValue("coordonnees", site.getCoordonneesGps(), Types.VARCHAR);
-
-        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
-
-        try {
-            vJdbcTemplate.update(vSQL, vParams);
-            System.out.println("Le site "+ site+" est bien ajouté !");
-        } catch (Exception e) {
-            System.out.println("Le site "+ site +" existe déjà !");
-        }
- */
         return site;
 
 
@@ -133,6 +108,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public Site getbyiD(int Id) {
+        LOGGER.info("Methode getbyid DAO");
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.site where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
@@ -154,6 +130,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
     @Override
     public List<Site> recherche(int Id ){
+        LOGGER.info("Methode recherche DAO");
         String vsql ="SELECT * FROM public.site WHERE topoid= ?";
         //requete SQL dans bd pour recupperer liste des sites
 

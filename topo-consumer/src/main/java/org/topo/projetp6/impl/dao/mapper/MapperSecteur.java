@@ -27,7 +27,8 @@ public class MapperSecteur implements RowMapper<Secteur> {
             nmap.setNomSecteur(rs.getString("nomsecteur"));
             nmap.setNombreVoie(rs.getInt("nombrevoie"));
             nmap.setiD(rs.getInt("id"));
-          //  nmap.setSite(rs.getObject(site.affiche(site.getbyiD(Id))));
+            nmap.setDifficulte(rs.getString("difficulte"));
+
 
             nmap.setVoies(voieDao.affiche(rs.getInt("id")));
 

@@ -33,7 +33,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
 
     @Override
     public List<TopoReservable> affichedisponbile() {
-        LOGGER.info("Methode affiche liste toporeservable");
+        LOGGER.info("Methode affiche liste");
         //Requete SQL dans bd recupperer la liste des topos reservable
         String vSql ="SELECT * FROM public.topo_reservable";
         JdbcTemplate vjdbcTemplate = new JdbcTemplate(getDatasource());
@@ -46,7 +46,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
 
     @Override
     public TopoReservable getByiD(int Id) {
-
+        LOGGER.info("Methode getbyid");
     //Requete avec resultat en param id
     String vSql ="SELECT * FROM public.topo_reservable where id=?";
 
@@ -63,7 +63,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
 
     @Override
     public TopoReservable retiredesreservables(int Id) {
-        LOGGER.info("Suppression d'un topo reservable");
+        LOGGER.info("Methode Suppression d'un topo reservable");
         //Requete pour supprimer un topo reservable
         String vSQL="DELETE from public.topo_reservable where id=?";
 
@@ -75,6 +75,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
 
     @Override
     public TopoReservable ajoutdesreservables(TopoReservable topoReservable) {
+        LOGGER.info("Methode ajouttopreservable");
         String ajoutsql = "INSERT INTO public.topo_reservable" +
                 " (datedispodebut,\n" +
                 " datedispofin,\n" +
@@ -88,7 +89,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
                 .addValue("datedispodebut",topoReservable.getDatedispodebut())
                 .addValue("datedispofin",topoReservable.getDatedispofin())
                 .addValue("topoid",topoReservable.getTopo().getiD())
-                .addValue("email",topoReservable.getUtilisateur().getiD());
+                .addValue("utilisateurid",topoReservable.getUtilisateur().getiD());
 
 
         //Gestion de la clé primaire
@@ -99,6 +100,7 @@ public class TopoReservableDaoimpl extends AbstractDaoImpl implements TopoReserv
         return topoReservable;
     }
     public TopoReservable find(Integer id) {
+        LOGGER.info("Methode find");
         String vsql ="SELECT * FROM public.topo_reservable WHERE id=?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

@@ -17,12 +17,8 @@ public class MapperVoie implements RowMapper<Voie> {
             Voie nmap = new Voie(rs.getInt("secteurid"));
             nmap.setNom(rs.getString("nom"));
             nmap.setCotation(rs.getString("cotation"));
-        nmap.setiD(rs.getInt("id"));
-        nmap.setLongueur(rs.getString("longueur"));
-        nmap.setNiveau(rs.getString("niveau"));
-
-
-        //TODO mettre ldans le mapper la relation des listes message//reservation
+            nmap.setiD(rs.getInt("id"));
+            nmap.setLongueur(rs.getString("longueur"));
 
             return nmap;
         }

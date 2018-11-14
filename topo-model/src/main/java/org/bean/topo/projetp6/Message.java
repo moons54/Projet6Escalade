@@ -5,57 +5,61 @@ import java.util.Date;
 
 public class Message {
 	private int iD;
-	private Integer identifiant;
-	private String message;
-	private Date dateEcriture;
-	private Topo topo;
-	private Integer note;
+	private String reference;
+	private String commentaire;
 	public Utilisateur utilisateur;
+    public Topo topo;
+	private Integer note;
+	private Date messageDate;
 
-	public Message(int iD) {
+    public Message() {
+    }
+
+    public Message(int iD) {
 		this.iD = iD;
 	}
 
-	public int getiD() {
-		return iD;
-	}
+    public int getiD() {
+        return iD;
+    }
 
-	public void setiD(int iD) {
-		this.iD = iD;
-	}
+    public void setiD(int iD) {
+        this.iD = iD;
+    }
 
-	public Integer getIdentifiant() {
-		return identifiant;
-	}
+    public String getReference() {
+        return reference;
+    }
 
-	public void setIdentifiant(Integer identifiant) {
-		this.identifiant = identifiant;
-	}
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public String getCommentaire() {
+        return commentaire;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Date getDateEcriture() {
-		return dateEcriture;
-	}
-
-	public void setDateEcriture(Date dateEcriture) {
-		this.dateEcriture = dateEcriture;
-	}
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
 
 
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
 
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public Topo getTopo() {
+        return topo;
+    }
+
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
 
     public Integer getNote() {
         return note;
@@ -65,23 +69,24 @@ public class Message {
         this.note = note;
     }
 
-    public Topo getTopo() {
-		return topo;
-	}
+    public Date getMessageDate() {
+        return messageDate;
+    }
 
-	public void setTopo(Topo topo) {
-		this.topo = topo;
-	}
+    public void setMessageDate(Date messageDate) {
+        this.messageDate = messageDate;
+    }
 
-	@Override
-	public String toString() {
-		return "Message{" +
-				"iD=" + iD +
-				", identifiant=" + identifiant +
-				", message='" + message + '\'' +
-				", dateEcriture=" + dateEcriture +
-				", topo=" + topo +
-				", utilisateur=" + utilisateur +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "Message{" +
+                "iD=" + iD +
+                ", reference='" + reference + '\'' +
+                ", commentaire='" + commentaire + '\'' +
+                ", utilisateur=" + utilisateur +
+                ", topo=" + topo +
+                ", note=" + note +
+                ", messageDate=" + messageDate +
+                '}';
+    }
 }

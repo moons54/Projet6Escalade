@@ -20,7 +20,7 @@ import java.util.List;
 
 @Named
 public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
-    private static final Logger LOGGER=(Logger) LogManager.getLogger(SiteDaoimpl.class);
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(SecteurDaoimpl.class);
 
     @Inject
     private SecteurDAO secteurDAO;
@@ -30,6 +30,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
     @Override
     public List<Secteur> affiche(int idsite) {
+        LOGGER.info("Methode Affiche DAO");
         //requete SQL dans bd pour recupperer liste des sites
         String vSQL = "SELECT * FROM public.secteur where siteid= ?";
         //String vSQL = "SELECT * FROM public.secteur";
@@ -50,18 +51,21 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
 
     public Secteur ajoutesecteur(Secteur secteur,Integer idsite) {
+        LOGGER.info("Methode ajoutesecteur DAO");
+
         String ajoutsql = "INSERT INTO public.secteur " +
                 " (nomsecteur,\n " +
                 " nombrevoie,\n " +
-                " siteid) " +
+                " siteid, \n " +
+                " difficulte) " +
                 "VALUES" +
-                "(:nomsecteur,:nombrevoie,:siteid)";
+                "(:nomsecteur,:nombrevoie,:siteid,:difficulte)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
                 .addValue("nomsecteur", secteur.getNomSecteur())
                 .addValue("nombrevoie", secteur.getNombreVoie())
-                .addValue("siteid",secteur.getiD());
-
+                .addValue("siteid",secteur.getiD())
+                .addValue("difficulte",secteur.getDifficulte());
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDatasource());
@@ -74,10 +78,13 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
     @Override
     public void misajour(Secteur secteur) {
+        LOGGER.info("Methode miseajour DAO");
+
         String maj = "UPDATE public.secteur SET " +
                 "nomsecteur = :nomSecteur, \n" +
                 "nombrevoie = :nombreVoie, \n" +
-                "siteid = :siteid" +
+                "siteid = :siteid, \n" +
+                "difficulte = :difficulte" +
                 " WHERE id = :id";
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(secteur);
@@ -89,6 +96,8 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
     @Override
     public Secteur getbyiD(int Id) {
+        LOGGER.info("Methode getbyID DAO");
+
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.secteur where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
@@ -117,7 +126,7 @@ public class SecteurDaoimpl extends AbstractDaoImpl implements SecteurDAO  {
 
 
     public Secteur supprimesecteur(int Id) {
-        LOGGER.info("suppression d'un secteur");
+        LOGGER.info("Methode suppression d'un secteur DAO");
         String vSQL = "DELETE FROM public.secteur where id= ?";
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 

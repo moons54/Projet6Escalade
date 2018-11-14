@@ -14,9 +14,8 @@ public class Utilisateur {
 	private String langue;
 	private String motDePasse;
 	private String role;
-//TODO mettre une var avec niveau d'escalade et frequence d 'activité
-	public Message[] message = new Message[0];
-	public Reservation[] reservation = new Reservation[0];
+	private int experience;
+
 
 	/**
 	 * constructeur sur l'ID utilisateur
@@ -96,20 +95,12 @@ public class Utilisateur {
 		this.motDePasse = motDePasse;
 	}
 
-	public Message[] getMessage() {
-		return message;
+	public int getExperience() {
+		return experience;
 	}
 
-	public void setMessage(Message[] message) {
-		this.message = message;
-	}
-
-	public Reservation[] getReservation() {
-		return reservation;
-	}
-
-	public void setReservation(Reservation[] reservation) {
-		this.reservation = reservation;
+	public void setExperience(int experience) {
+		this.experience = experience;
 	}
 
 	public String getRole() {
@@ -133,9 +124,8 @@ public class Utilisateur {
 				", email='" + email + '\'' +
 				", langue='" + langue + '\'' +
 				", motDePasse='" + motDePasse + '\'' +
-				", role=" + role +
-				", message=" + Arrays.toString(message) +
-				", reservation=" + Arrays.toString(reservation) +
+				", role='" + role + '\'' +
+				", experience=" + experience +
 				'}';
 	}
 }

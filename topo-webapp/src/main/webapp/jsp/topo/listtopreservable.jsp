@@ -66,7 +66,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <s:if test="%{#session.user.nom=='moons'}">
-            <li class="breadcrumb-item"><s:a action="secteur_new">creer un nouveau Secteur<s:param name="idsecteur" value="idsite"/></s:a></li>
+            <li class="breadcrumb-item"><s:a action="toporeservable_new">Proposer un TOPO a l'emprunt<s:param name="topoid" value="topoid"/></s:a></li>
         </s:if>
     </ol>
 </nav>

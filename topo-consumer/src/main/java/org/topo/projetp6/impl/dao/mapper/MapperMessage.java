@@ -7,9 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 import org.topo.projetp6.impl.dao.UtilisateurDao;
 
 
+import javax.inject.Named;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Named
 public class MapperMessage implements RowMapper<Message> {
 
     UtilisateurDao utilisateurDao;
@@ -18,12 +20,13 @@ public class MapperMessage implements RowMapper<Message> {
     public Message mapRow(ResultSet rs,int rowNum) throws SQLException {
 
         Message monmessage = new Message(rs.getInt("id"));
-        monmessage.setDateEcriture(rs.getDate("dateecriture"));
-        monmessage.setMessage(rs.getString("message"));
-        monmessage.setIdentifiant(rs.getInt("identifiant"));
+        monmessage.setReference(rs.getString("reference"));
+        monmessage.setCommentaire(rs.getString("commentaire"));
         monmessage.setUtilisateur(new Utilisateur(rs.getInt("utilisateurid")));
         monmessage.setTopo(new Topo(rs.getInt("topoid")));
         monmessage.setNote(rs.getInt("note"));
+        monmessage.setMessageDate(rs.getDate("date_message"));
+
    return monmessage;
     }
 }

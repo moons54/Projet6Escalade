@@ -330,11 +330,24 @@
                 method="doList">
             <result>jsp/topo/listreservation.jsp</result>
         </action>
+        <!-- Creation d'un topo empruntable -->
+        <action name="toporeservable_new"
+                class="org.topo.projetp6.action.GestionTopoReservableAction"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newtoporeservable.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">detailtopreservable</param>
+                <param name="idtoporeservable">${topoReservable.id}</param>
+            </result>
+        </action>
 
 
 
-
-
+        <!-- Creation d'une reservations -->
         <action name="reservation_new"
                 class="org.topo.projetp6.action.GestionReservationAction"
                 method="doCreate">
@@ -347,8 +360,55 @@
                 <param name="actionName">detailreservation</param>
                 <param name="idreservation">${reservation.id}</param>
             </result>
+         </action>
 
+        <!-- Creation d'un message -->
+        <action name="message_new"
+                class="org.topo.projetp6.action.GestionCommentaire"
+                method="doCreate">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/newmessage.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">jsp/topo/list.jsp</param>
+
+            </result>
+        </action>
+        <!-- action permettant de d'afficher le détail d'un topo reservable-->
+        <action name="message_detail"
+                class="org.topo.projetp6.action.GestionCommentaire"
+                method="doDetail">
+        <interceptor-ref name="store">
+            <param name="operationMode">RETRIEVE</param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result>jsp/topo/detailmessage.jsp</result>
+        </action>
+        <!-- action permettant de synchroniser topo via ajax-->
+        <action name="reloadtopo_ajax"
+                class="org.topo.projetp6.action.GestionTopAjaxAction">
+           <result name="success">jsp/topo/ajax.jsp</result>
         </action>
 
+
+
     </package>
+    <!-- package des actions de base-->
+    <package name="ajax" extends="json-default">
+        <!-- Action renvoyant la liste des topos-->
+        <action name="reload_ajax_listtopo"
+
+                class="org.topo.projetp6.action.GestionTopAjaxAction"
+                method="doAjaxGetlistTopo">
+            <result name="success" type="json">
+                <param name="root">topoList</param>
+            </result>
+        </action>
+    </package>
+
+
+
+
 </struts>

@@ -83,17 +83,16 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
                 " (nom,\n " +
                 " cotation,\n " +
                 " longueur,\n " +
-                " secteurid,\n " +
-                " niveau) " +
+                " secteurid)"+
                 "VALUES" +
-                "(:nom,:cotation,:longueur,:secteurid,:niveau)";
+                "(:nom,:cotation,:longueur,:secteurid)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
                 .addValue("nom", voie.getNomvoie())
                 .addValue("cotation", voie.getCotation())
                 .addValue("longueur",voie.getLongueur())
-                .addValue("secteurid",voie.getiD())
-                .addValue("niveau",voie.getNiveau());
+                .addValue("secteurid",voie.getiD());
+
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
@@ -111,8 +110,7 @@ public class VoieDaoimpl extends AbstractDaoImpl implements VoieDao  {
                 "nom = :nomVoie, \n" +
                 "cotation = :cotation, \n" +
                 "longueur = :longueur, \n" +
-                "secteurid = :secteurid, \n" +
-                "niveau = :niveau" +
+                "secteurid = :secteurid"+
                 " WHERE id = :id";
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(voie);

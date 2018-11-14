@@ -29,18 +29,18 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public Utilisateur getbyID(int Id) {
+        LOGGER.info("Methode utilisateurDAOimp getbyid");
         //creation d'une requete avec pour resultat un parametre iD
         String vSQL = "SELECT * FROM public.utilisateur where id= ?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
 
-       //RowMapper<Utilisateur> montops = new MapperUtilisateur(this.utilisateurDao);
 
         MapperUtilisateur maputil= new MapperUtilisateur();
 
         Utilisateur utilisateur = vJdbcTemplate.queryForObject(vSQL, maputil, Id);
-        LOGGER.info("recherche de la liste des utilisateur "+utilisateur.toString());
+
 
 
         return utilisateur;
@@ -48,9 +48,8 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public Utilisateur getbyuserpass(String nom,String motdepasse) {
-        System.out.println("methode getbyuser");
-        //creation d'une requete avec pour resultat un parametre iD
-      //  String vSQL = "SELECT * FROM public.utilisateur where nom= :nom and motdepasse= :motdepasse";
+        System.out.println("Methode getbyuser ");
+
         String vSQL = "SELECT * FROM public.utilisateur where nom= :nom";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
@@ -60,8 +59,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
         MapperUtilisateur maputil= new MapperUtilisateur();
 
         Utilisateur utilisateur = vJdbcTemplate.queryForObject(vSQL, maputil,nom);
-        System.out.println("val utilisateur"+utilisateur);
-        LOGGER.info("recherche l'utilisateur avec login et mdp "+utilisateur.toString());
+
 
 
         return utilisateur;
@@ -75,9 +73,6 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
 
-
-        //RowMapper<Utilisateur> montops = new MapperUtilisateur(this.utilisateurDao);
-
         MapperUtilisateur maputil= new MapperUtilisateur();
 
         List<Utilisateur> vutil = vJdbcTemplate.query(vSQL, maputil);
@@ -89,6 +84,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public Utilisateur ajoututilisateur(Utilisateur utilisateur) {
+        LOGGER.info("Methode ajoututilisateur DAOimpl");
         String ajoutsql = "INSERT INTO public.utilisateur" +
                 " (identifiant,\n" +
                 " nom,\n" +
@@ -96,9 +92,10 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 " email,\n" +
                 " langue,\n" +
                 " motdepasse,\n" +
-                " role)" +
+                " role,\n" +
+                " experience)" +
                 "VALUES" +
-                "(:identifiant,:nom,:prenom,:email,:langue,:motdepasse,:role)";
+                "(:identifiant,:nom,:prenom,:email,:langue,:motdepasse,:role,:experience)";
 
 
         SqlParameterSource ajoututil = new MapSqlParameterSource()
@@ -108,7 +105,8 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 .addValue("email",utilisateur.getEmail())
                 .addValue("langue",utilisateur.getLangue())
                 .addValue("motdepasse",utilisateur.getMotDePasse())
-               .addValue("role",utilisateur.getRole());
+               .addValue("role",utilisateur.getRole())
+                .addValue("experience",utilisateur.getExperience());
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
@@ -120,6 +118,7 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public Utilisateur misajourutilisateur(Utilisateur utilisateur) {
+        LOGGER.info("Methode miseajour DAOimpl");
 
         String requetemaj = "UPDATE public.utilisateur SET " +
                 "identifiant = :identifiant, \n" +
@@ -128,7 +127,8 @@ public class UtilisateurDaoimpl extends AbstractDaoImpl implements UtilisateurDa
                 "email = :email, \n" +
                 "langue  = :langue, \n" +
                 "motdepasse = :motDePasse, \n" +
-                "role  = :role" +
+                "role  = :role, \n" +
+                "experience  = :experience" +
                 " WHERE id = :iD";
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(utilisateur);
 

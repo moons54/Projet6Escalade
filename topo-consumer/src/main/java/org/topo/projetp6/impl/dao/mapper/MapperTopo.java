@@ -42,6 +42,7 @@ public MapperTopo(SiteDao siteDao){
             montopo.setDescriptionDuRetour(rs.getString("description_du_retour"));
             montopo.setTypeDequipement(rs.getString("type_equipement"));
             montopo.setPhotoDuTopo(rs.getInt("photo_topo"));
+            montopo.setNiveau(rs.getInt("niveau"));
 
 
 

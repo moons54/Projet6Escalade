@@ -58,7 +58,10 @@
 
         <td scope="row"><s:property value="dateReservationDebut" /></td>
         <td><s:property value="dateReservationFin" /></td>
-    </tr> </s:if><
+               <td><s:property value="utilisateur.nom" /></td>
+               <td><s:property value="topoReservable.nom" /></td>
+
+           </tr> </s:if><
 
 
 

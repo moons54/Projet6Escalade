@@ -9,6 +9,8 @@ public class Secteur extends Site {
 	private String nomSecteur;
 	private Integer nombreVoie;
 	private List<Voie> voies;
+	private String difficulte;
+	private int experience;
 
 	public Secteur(int iD) {
 		super(iD);
@@ -38,6 +40,14 @@ public class Secteur extends Site {
 		this.nombreVoie = nombreVoie;
 	}
 
+	public String getDifficulte() {
+		return difficulte;
+	}
+
+	public void setDifficulte(String difficulte) {
+		this.difficulte = difficulte;
+	}
+
 	public List<Voie> getVoies() {
 		return voies;
 	}
@@ -49,6 +59,15 @@ public class Secteur extends Site {
 	public Secteur() {
 	}
 
+	public int getExperience() {
+		return experience;
+	}
+
+	public void setExperience(int experience) {
+		this.experience = experience;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Secteur{" +
@@ -56,8 +75,8 @@ public class Secteur extends Site {
 				", nomSecteur='" + nomSecteur + '\'' +
 				", nombreVoie=" + nombreVoie +
 				", voies=" + voies +
-				", topo=" + topo +
-				", site=" + site +
+				", difficulte='" + difficulte + '\'' +
+				", experience=" + experience +
 				'}';
 	}
 }

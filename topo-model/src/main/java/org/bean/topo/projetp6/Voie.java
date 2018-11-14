@@ -9,9 +9,9 @@ public class Voie extends Secteur {
 	private String nomvoie;
 	private String cotation;
 	private String longueur;
-	private String niveau;
+	private String difficulte;
 	private List secteur;
-	private List <Voie> voie;
+
 
 
 
@@ -57,15 +57,16 @@ public Voie(int iD){
 		this.longueur = longueur;
 	}
 
-	public String getNiveau() {
-		return niveau;
+
+	@Override
+	public String getDifficulte() {
+		return difficulte;
 	}
 
-	public void setNiveau(String niveau) {
-		this.niveau = niveau;
+	@Override
+	public void setDifficulte(String difficulte) {
+		this.difficulte = difficulte;
 	}
-
-
 
 
 	public List getSecteur() {
@@ -76,26 +77,10 @@ public Voie(int iD){
 		this.secteur = secteur;
 	}
 
-	public List<Voie> getVoie() {
-		return voie;
-	}
 
-	public void setVoie(List<Voie> voie) {
-		this.voie = voie;
-	}
 
-	@Override
-	public String toString() {
-		return "Voie{" +
-				"iD=" + iD +
-				", nomvoie='" + nomvoie + '\'' +
-				", cotation='" + cotation + '\'' +
-				", longueur='" + longueur + '\'' +
-				", niveau='" + niveau + '\'' +
-				", secteur=" + secteur +
-				", voie=" + voie +
-				'}';
-	}
+
+
 }
 
 

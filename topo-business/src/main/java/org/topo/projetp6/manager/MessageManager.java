@@ -17,9 +17,9 @@ public interface MessageManager {
 
    public void supprimemessage(final int Id);
 
-   public List<Reservation> afficheparutilisateur(int userid);
+   public List<Message> afficheparutilisateur(int userid);
 
-   public List<Reservation> affichepartopo(int topoid);
+   public List<Message> affichepartopo(int topoid);
 
 
 }

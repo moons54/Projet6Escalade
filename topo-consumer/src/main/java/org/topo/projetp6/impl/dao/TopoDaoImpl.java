@@ -90,7 +90,8 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
                 "nombre_voie = :nombreDevoie, \n" +
                 "description_du_retour = :descriptionDuRetour, \n" +
                 "type_equipement = :typeDequipement, \n" +
-                "photo_topo = :photoDuTopo" +
+                "photo_topo = :photoDuTopo, \n" +
+                "niveau = :niveau" +
                 " WHERE id = :iD";
 
 
@@ -122,10 +123,11 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
                 " nombre_voie,\n " +
                 " description_du_retour,\n" +
                 " type_equipement,\n" +
-                " photo_topo)" +
+                " photo_topo,\n" +
+                " niveau)" +
                 "VALUES" +
                 "(:nom,:descriptionDutopo,:historiquedestopo,:hauteurDutopo,:typeDeroche,:nombreDevoie,:descriptionDuretour," +
-                ":typeDequipement,:photoDuTopo)";
+                ":typeDequipement,:photoDuTopo,:niveau)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
                 .addValue("nom", topo.getNom())
@@ -136,8 +138,8 @@ public class TopoDaoImpl extends AbstractDaoImpl implements TopoDao {
                 .addValue("nombreDevoie", topo.getNombreDevoie())
                 .addValue("descriptionDuretour", topo.getDescriptionDuRetour())
                 .addValue("typeDequipement", topo.getTypeDequipement())
-                .addValue("photoDuTopo", topo.getPhotoDuTopo());
-
+                .addValue("photoDuTopo", topo.getPhotoDuTopo())
+                .addValue("niveau", topo.getNiveau());
 
         //Gestion de la clé primaire
         KeyHolder holder = new GeneratedKeyHolder();
@@ -166,7 +168,7 @@ vJdbcTemplate.update(vSQL,Id);
 
 
     public Topo find(Integer id) {
-        LOGGER.info("Mthode find topo");
+        LOGGER.info("Methode find topo");
         String vsql ="SELECT * FROM public.topo WHERE id=?";
 
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());

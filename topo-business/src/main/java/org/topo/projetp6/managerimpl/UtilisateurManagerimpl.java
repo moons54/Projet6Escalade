@@ -42,7 +42,7 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
             System.out.print("pas d'utilsateur selectionné");
         }
         Utilisateur utilisateur=new Utilisateur(Id);
-        utilisateur.getMessage().toString().indexOf(Id);
+
 
 
         {

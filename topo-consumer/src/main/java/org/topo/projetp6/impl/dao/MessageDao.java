@@ -11,9 +11,11 @@ public interface MessageDao {
 
     public Message getbyId(int Id);
 
-    public Message supprimemessage(Message message);
+    public Message supprimemessage(int Id);
 
-    public Message ajoutemessage(Message message);
+    public Message ajoutemessage(final Message message);
 
     public void modifiemessage(final Message message);
+
+    public List<Message> affichemessagebyTopo(int topoid);
 }

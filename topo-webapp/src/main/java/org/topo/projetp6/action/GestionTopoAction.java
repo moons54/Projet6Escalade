@@ -43,7 +43,9 @@ public class GestionTopoAction extends ActionSupport {
     //Les sorties
     private List<Topo> affichelistetopo;
 
+    private List<Message> affichecommentaire;
 
+private Message message;
 
     private Topo topo;
 
@@ -74,6 +76,21 @@ public class GestionTopoAction extends ActionSupport {
         this.topo = topo;
     }
 
+    public List<Message> getAffichecommentaire() {
+        return affichecommentaire;
+    }
+
+    public void setAffichecommentaire(List<Message> affichecommentaire) {
+        this.affichecommentaire = affichecommentaire;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
 //Les Methodes
 
     /**
@@ -133,6 +150,8 @@ return ActionSupport.SUCCESS;
         if(idtopo==null){
             this.addActionError(getText("error.topo.missing.id."));
         }else topo = managerFactory.getTopoManager().getTopo(idtopo);
+        affichecommentaire=managerFactory.getMessageManager().affichepartopo(idtopo);
+        System.out.println("voir si ça apparait"+affichecommentaire.toString());
         {
              // this.addActionError("il n'y a pas de projet pour ce numéro "+idtopo );
 

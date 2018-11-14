@@ -28,15 +28,13 @@ private SecteurDAO secteurDAO;
         public Site mapRow(ResultSet rs, int rowNum) throws SQLException {
 
             Site nmap = new Site(rs.getInt("topoid"));
-            nmap.setIdentifiant(rs.getInt("identifiant"));
+
             nmap.setNom(rs.getString("nom"));
             nmap.setCoordonneesGps(rs.getString("coordonnees_gps"));
-        nmap.setiD(rs.getInt("id"));
+            nmap.setiD(rs.getInt("id"));
 
-        nmap.setSecteurs(secteurDAO.affiche(rs.getInt("topoid")));
+            nmap.setSecteurs(secteurDAO.affiche(rs.getInt("topoid")));
 
-    //      List<Secteur> secteurs=secteurDAO.affiche(rs.getInt("id"));
-    //nmap.setSecteurs(secteurs);
 
 
             return nmap;

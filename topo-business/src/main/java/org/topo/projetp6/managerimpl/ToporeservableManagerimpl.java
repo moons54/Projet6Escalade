@@ -48,9 +48,8 @@ public class ToporeservableManagerimpl extends AbstractManager implements Topore
     public List<TopoReservable> affichelestoposempruntable() {
 
         listdispo=getDaoFactory().getTopoReservableDao().affichedisponbile();
-      //  System.out.println("valeur de resa"+listdispo);
         List<Topo> tops=getDaoFactory().getTopoDao().affiche();
-        System.out.println("valeur de tops"+tops);
+
         List<Utilisateur> utilisateurList=getDaoFactory().getUtilisateurDao().listutilisateur();
 
         for(TopoReservable r: listdispo){
@@ -71,20 +70,8 @@ public class ToporeservableManagerimpl extends AbstractManager implements Topore
 
         }
 
-        /**
-        for (int i = 0; i <=listdispo.size(); i++) {
-            listdispo.stream().filter(listdispo -> listdispo.getTopo() = Tops.stream()
-            .filter(topo -> topo.getNom());
 
 
-        }
-      /**
-        TopoReservable reservable = reservableslist.stream()
-                .forEach(p-> p.getTopo().setiD(Tops.get(p.getiD())))
-                .filter(p->p.getMotDePasse().equals(password))
-                .findFirst()
-*/
-        System.out.println(listdispo.toString());
         return listdispo;
     }
 

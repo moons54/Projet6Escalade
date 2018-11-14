@@ -1,6 +1,8 @@
 package org.topo.projetp6.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.bean.topo.projetp6.Secteur;
 import org.bean.topo.projetp6.Site;
@@ -18,6 +20,7 @@ import java.util.NoSuchElementException;
 
 public class GestionSecteurAction extends ActionSupport {
 
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(GestionSecteurAction.class);
 
 
 
@@ -110,7 +113,7 @@ return ActionSupport.SUCCESS;
     };
     //methode permettant de crée un nouveau TOPO
     public String doCreate(){
-
+LOGGER.info("Methode doCreate de sectaction");
         String vresult = ActionSupport.INPUT;
 
         //condition validant l'ajout de formulaire

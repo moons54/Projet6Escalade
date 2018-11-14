@@ -25,11 +25,16 @@ public class GestionTopoReservableAction extends ActionSupport {
     //LES ENTREES
     private List<TopoReservable> affichelistetoporeservable;
     private List<Reservation> affichereservation;
+    private List<Topo> affichetopo;
     private Topo topo;
 
     private TopoReservable topoReservable;
+    private TopoReservable controletopo;
+
 
     private Utilisateur utilisateur;
+
+    private int numuser;
 
     private Integer idtoporeservable;
 
@@ -38,6 +43,9 @@ public class GestionTopoReservableAction extends ActionSupport {
     private Date dat1;
 
     private Date date2;
+
+    private Integer topoid;
+
 
 
 
@@ -119,6 +127,30 @@ public class GestionTopoReservableAction extends ActionSupport {
         this.date2 = date2;
     }
 
+    public int getNumuser() {
+        return numuser;
+    }
+
+    public void setNumuser(int numuser) {
+        this.numuser = numuser;
+    }
+
+    public Integer getTopoid() {
+        return topoid;
+    }
+
+    public void setTopoid(Integer topoid) {
+        this.topoid = topoid;
+    }
+
+    public List<Topo> getAffichetopo() {
+        return affichetopo;
+    }
+
+    public void setAffichetopo(List<Topo> affichetopo) {
+        this.affichetopo = affichetopo;
+    }
+
     /**
      * CREATION DES CLASSES D'ACTIONS
      *
@@ -156,6 +188,67 @@ public class GestionTopoReservableAction extends ActionSupport {
         return (this.hasErrors())? ActionSupport.ERROR : ActionSupport.SUCCESS;
 
     };
+
+    public String doCreate() {
+        LOGGER.info("dans le docreate de toporeservable");
+affichetopo=managerFactory.getTopoManager().affichelistedestopos();
+        numuser=Integer.parseInt(loginAction.session.get("id").toString());
+        utilisateur = managerFactory.getUtilisateurManager().getUtilisateur(numuser);
+
+
+        String vresult = ActionSupport.INPUT;
+
+
+        //condition validant l'ajout de formulaire
+        System.out.println("par la 1");
+        if (this.topoReservable != null) {
+
+
+            System.out.println("ici");
+            if (this.topoReservable.getDatedispodebut() == null) {
+                this.addFieldError(" topo.nom", "ne peut pas etre vide");
+                System.out.println("par la");
+            } else {
+               // topoReservable = managerFactory.getToporeservableManager().getTopoByid(this);
+               controletopo=managerFactory.getToporeservableManager().getTopoByid(topoid);
+              //  reservation.setTopoReservable(topoReservable);
+                // utilisateur = managerFactory.getUtilisateurManager().getUtilisateur(numuser);
+                System.out.println("valeur de topoid "+topoid);
+                topoReservable.setUtilisateur(utilisateur);
+                topo = managerFactory.getTopoManager().getTopo(topoid);
+                topoReservable.setTopo(topo);
+                System.out.println("ok");
+              }
+
+            if (controletopo==null) {
+                System.out.println("ok pas de conflit ");
+            } else {
+                System.out.println("pas bon");
+                this.addFieldError("topo.nom", "vide impossible");
+            }
+
+
+
+            if (!this.hasErrors()) {
+                try {
+                    System.out.println(" est ce allé jusque la?"+topoReservable);
+                    managerFactory.getToporeservableManager().ajoutopodisponible(topoReservable);
+
+                    vresult = ActionSupport.SUCCESS;
+                    this.addActionMessage("Reservation ok consultable et pret a l'emploi");
+                } catch (Exception e) {
+
+                    vresult = ActionSupport.ERROR;
+                }
+
+            }
+        }
+
+        return vresult;
+
+
+    }
+
 
 
 }

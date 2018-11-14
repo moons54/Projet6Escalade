@@ -207,10 +207,12 @@ public class GestionReservationAction extends ActionSupport {
     public String doCreate() {
         LOGGER.info("dans le docreate de reservation");
 
-
-        System.out.println("val de login"+loginAction.session.get("id"));
         numuser=Integer.parseInt(loginAction.session.get("id").toString());
+        utilisateur = managerFactory.getUtilisateurManager().getUtilisateur(numuser);
+
+
         String vresult = ActionSupport.INPUT;
+
 
         //condition validant l'ajout de formulaire
         System.out.println("par la 1");
@@ -225,7 +227,7 @@ public class GestionReservationAction extends ActionSupport {
                 topoReservable = managerFactory.getToporeservableManager().getTopoByid(this.idreservation);
 
                 reservation.setTopoReservable(topoReservable);
-                utilisateur = managerFactory.getUtilisateurManager().getUtilisateur(numuser);
+               // utilisateur = managerFactory.getUtilisateurManager().getUtilisateur(numuser);
                 reservation.setUtilisateur(utilisateur);
                 System.out.println("ok");
            //    dateDebut=  parse(reservation.getDateReservationDebut().toString());
@@ -244,7 +246,7 @@ public class GestionReservationAction extends ActionSupport {
 
             if (!this.hasErrors()) {
                 try {
-                    System.out.println(" est ce allé jusque la?");
+                    System.out.println(" est ce allé jusque la?"+reservation);
                     managerFactory.getReservationManager().nouvellereservation(reservation);
 
                     vresult = ActionSupport.SUCCESS;
@@ -261,4 +263,5 @@ public class GestionReservationAction extends ActionSupport {
 
 
     }
+
 }

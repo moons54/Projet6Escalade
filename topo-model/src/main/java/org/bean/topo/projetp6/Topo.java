@@ -14,6 +14,7 @@ public class Topo {
 	private Integer nombreDevoie;
 	private String descriptionDuRetour;
 	private String typeDequipement;
+	private int niveau;
 
 
     private int photoDuTopo;
@@ -120,6 +121,13 @@ public class Topo {
         this.photoDuTopo = photoDuTopo;
     }
 
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
+    }
 
     public List<Site> getSite() {
         return site;
@@ -136,6 +144,7 @@ public class Topo {
      *
      * @return
      */
+
     @Override
     public String toString() {
         return "Topo{" +
@@ -148,6 +157,7 @@ public class Topo {
                 ", nombreDevoie=" + nombreDevoie +
                 ", descriptionDuRetour='" + descriptionDuRetour + '\'' +
                 ", typeDequipement='" + typeDequipement + '\'' +
+                ", niveau=" + niveau +
                 ", photoDuTopo=" + photoDuTopo +
                 ", site=" + site +
                 '}';
