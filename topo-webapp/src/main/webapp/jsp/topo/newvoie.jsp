@@ -28,7 +28,6 @@
     <s:textfield name="voie.nomvoie" label="Nom de la Voie" requiredLabel="true" ></s:textfield>
     <s:textfield name="voie.cotation" label="Cotation connue" requiredLabel="true" ></s:textfield>
     <s:textfield name="voie.longueur" label="Longueur de la Voie" requiredLabel="true" ></s:textfield>
-    <s:textfield name="voie.niveau" label="Niveau de difficulté" requiredLabel="true" ></s:textfield>
 
     <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idtopo -->
     <s:hidden name="idvoie" label="numéro interne" requiredLabel="true"  ><s:property value="idvoie"/></s:hidden>

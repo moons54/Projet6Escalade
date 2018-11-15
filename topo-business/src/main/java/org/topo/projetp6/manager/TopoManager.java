@@ -16,5 +16,5 @@ public interface TopoManager {
 
     public Topo supprimetopo(final int Id);
 
-
+    public List<Topo> recherchemulticritere(String troche,int note);
 }

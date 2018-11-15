@@ -119,4 +119,9 @@ listtopo=getDaoFactory().getTopoDao().affiche();
 
         return null;
     }
+
+    public List<Topo> recherchemulticritere(String troche,int note){
+        listtopo=getDaoFactory().getTopoDao().recherchemulticritere(troche,note);
+    return listtopo;
+    }
 }

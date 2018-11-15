@@ -44,11 +44,8 @@
                     <p class="d-flex p-2 bd-highlight">Longueur<s:property value="voie.longueur"/></p>
                 </div>
 
-                <hr class="my-4">
-                <p>
-                <div class="d-flex bd-highlight mb-1">
-                <div class="d-flex p-2 bd-highlight">Niveau :<s:property value="voie.niveau"/></div>
-                </div>
+
+
             </div>
           </div>
 

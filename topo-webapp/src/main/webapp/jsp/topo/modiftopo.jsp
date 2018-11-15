@@ -31,6 +31,9 @@
     <s:textfield name="topo.descriptionDuRetour" label="description du retour" requiredLabel="true" />
     <s:textfield name="topo.typeDequipement" label="type d'equipement" requiredLabel="true" />
     <s:textfield name="topo.photoDuTopo" label="photo du topo" requiredLabel="false" />
+    <s:select list="{'1','2','3','4','5'}" listValue="{'tres difficile','difficile','moyen','facile','tres facile'}" name="topo.niveau" multiple="false" label="Niveau global de difficulte"></s:select>
+
+
     <s:hidden name="topo.iD" ><s:property value="idtopo"/></s:hidden><
 
     <s:submit value="OK"/>

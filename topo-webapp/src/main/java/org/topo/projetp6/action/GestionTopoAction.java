@@ -51,7 +51,9 @@ private Message message;
 
     private TopoDaoImpl tpdao;
 
-    //les Getters et les Setters
+    private String voienb;
+
+        //les Getters et les Setters
 
         //affiche la liste des topos
     public List<Topo> getAffichelistetopo() {
@@ -91,7 +93,15 @@ private Message message;
     public void setMessage(Message message) {
         this.message = message;
     }
-//Les Methodes
+
+    public String getVoienb() {
+        return voienb;
+    }
+
+    public void setVoienb(String voienb) {
+        this.voienb = voienb;
+    }
+    //Les Methodes
 
     /**
      * création des classes d'actions
@@ -212,6 +222,47 @@ return vresult;
         }
         return resultat;
     }
+
+
+    //methode permettant de crée un nouveau TOPO
+    public String doRecherche(){
+        String vresult = ActionSupport.INPUT;
+
+        //condition validant l'ajout de formulaire
+
+        if (this.topo !=null) {
+
+            if (this.topo.getTypeDeroche() == null) {
+                this.addFieldError(" topo.nom", "ne peut pas etre vide");
+
+            } else
+            {
+
+                System.out.println("ok");
+            }
+
+
+
+            if (!this.hasErrors())
+            {
+                try
+                {
+                  affichelistetopo=  managerFactory.getTopoManager().recherchemulticritere(topo.getTypeDeroche(),topo.getNiveau());
+
+                    vresult = ActionSupport.SUCCESS;
+                    this.addActionMessage("liste des topo concernés");
+                } catch (Exception e)
+                {
+
+                    vresult = ActionSupport.ERROR;
+                }
+
+            }
+        }
+
+        return vresult;
+    };
+
 
 }
 

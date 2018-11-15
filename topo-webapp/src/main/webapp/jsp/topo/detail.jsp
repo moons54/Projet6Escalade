@@ -44,7 +44,8 @@
 
                       <hr class="my-4">
                         <p>
-                         <div class="d-flex bd-highlight small-1">
+                         <div class="d-flex bd-highlight small-2">
+                             <div class="d-flex p-2 bd-highlight">Difficulté Global sur 5 : <s:property value="topo.niveau"/></div>
                              <div class="d-flex p-2 bd-highlight">Hauteur : <s:property value="topo.hauteurDuTopo"/></div>
                         </div>
                         </p>

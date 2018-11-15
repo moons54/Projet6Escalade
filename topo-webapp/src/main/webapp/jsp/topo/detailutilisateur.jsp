@@ -58,6 +58,14 @@
                 <div class="d-flex p-2 bd-highlight">Email : <s:property value="utilisateur.email"/></div>
 
             </div>
+        </div>
+        <hr class="my-4">
+        <p>
+
+        <div class="d-flex bd-highlight mb-2">
+            <div class="d-flex p-2 bd-highlight">Niveau d'activité : <s:property value="utilisateur.experience"/></div>
+
+        </div>
             </p>
         </div>
 

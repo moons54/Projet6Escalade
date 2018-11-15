@@ -42,6 +42,12 @@
                     <div class="d-flex p-2 bd-highlight">Nombre de Voie : <s:property value="secteur.nombreVoie"/></div>
             </div>
 
+                <hr class="my-4">
+                <p>
+                <div class="d-flex bd-highlight mb-1">
+                    <div class="d-flex p-2 bd-highlight">Difficulté du secteur : <s:property value="secteur.difficulte"/></div>
+                </div>
+
 
 
             </div>

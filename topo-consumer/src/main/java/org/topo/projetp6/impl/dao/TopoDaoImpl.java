@@ -179,7 +179,19 @@ vJdbcTemplate.update(vSQL,Id);
         return tops;
     }
 
+    public List<Topo> recherchemulticritere(String troche,int note) {
+        LOGGER.info("Methode affiche");
 
+        //requete SQL dans bd pour recupperer liste topo
+        String vSQL = "SELECT * FROM public.topo where type_roche= ? and niveau= ?" ;
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDatasource());
+
+        // RowMapper<Topo> montops = new MapperTopo(this.siteDao);
+        List<Topo> vListStatut = vJdbcTemplate.query(vSQL, mapperTopo,troche,note);
+
+
+        return vListStatut;
+    }
 }
 
 

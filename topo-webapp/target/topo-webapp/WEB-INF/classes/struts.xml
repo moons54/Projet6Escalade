@@ -392,6 +392,18 @@
            <result name="success">jsp/topo/ajax.jsp</result>
         </action>
 
+        <!-- action permettant de creer un nouveau Site-->
+        <action name="recherche_new"
+                class="org.topo.projetp6.action.GestionTopoAction"
+                method="doRecherche">
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">jsp/topo/multicriteretopo.jsp</result>
+            <result name="success">jsp/topo/listmulticritere.jsp</result>
+        </action>
+
 
 
     </package>

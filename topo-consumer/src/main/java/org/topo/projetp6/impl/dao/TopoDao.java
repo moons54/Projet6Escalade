@@ -30,5 +30,6 @@ public void miseajour(Topo topo);
 
     public Topo find(Integer id);
 
+    public List<Topo> recherchemulticritere(String troche,int note);
 
 }

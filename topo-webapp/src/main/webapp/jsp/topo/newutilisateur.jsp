@@ -27,6 +27,7 @@
     <s:textfield name="utilisateur.email" label="Email" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.langue" label="Nationalité" requiredLabel="true" ></s:textfield>
     <s:select list="{'Utilisateur','Proprietaire','Administrateur'}"  name="utilisateur.role" multiple="false" label="Role"></s:select>
+    <s:select list="{'1','2','3','4','5'}" listValue="{'Tres bon niveau','bon niveau','moyen','debutant','novice'}" name="utilisateur.experience" multiple="false" label="Votre niveau d'escalade"></s:select>
 
     <s:submit value="OK"/>
 </s:form>

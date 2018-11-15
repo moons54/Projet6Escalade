@@ -22,7 +22,10 @@
 <s:form action="mod_secteur">
     <s:textfield name="secteur.nomSecteur" label="nom du Secteur" requiredLabel="true" />
     <s:textfield name="secteur.nombreVoie" label="Nombre de Voie" requiredLabel="true" />
+    <s:select list="{'Facile','Moyen','Difficile'}"  name="secteur.difficulte" multiple="false" label="Niveau global de difficulte"></s:select>
+
     <!-- pour info nous utilisons ici un hidden pour reprendre la valeur d'idsecteur -->
+
     <s:hidden name="secteur.iD"  label="numéro interne" requiredLabel="true"><s:property value="idsecteur"/></s:hidden>
 
     <s:submit value="OK"/>

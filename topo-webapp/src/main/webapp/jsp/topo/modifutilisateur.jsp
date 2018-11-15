@@ -33,6 +33,7 @@ Role : <s:property value="utilisateur.role"/>
     <s:textfield name="utilisateur.email" label="Email" requiredLabel="true" ></s:textfield>
     <s:textfield name="utilisateur.langue" label="Nationalité" requiredLabel="true" ></s:textfield>
     <s:select list="{'Utilisateur','Proprietaire','Administrateur'}" name="utilisateur.role"/>
+    <s:select list="{'1','2','3','4','5'}"  name="utilisateur.experience" multiple="false" label="Votre niveau d'escalade"></s:select>
 
 
 
