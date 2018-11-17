@@ -1,6 +1,7 @@
 package org.topo.projetp6.manager;
 
 import org.bean.topo.projetp6.Reservation;
+import org.bean.topo.projetp6.exception.FunctionalException;
 
 
 import java.util.Date;
@@ -12,7 +13,7 @@ public interface ReservationManager {
 
     Reservation getReservatinbyId(int Id);
 
-    public void nouvellereservation(final Reservation reservation);
+    public void nouvellereservation(final Reservation reservation) throws FunctionalException;
 
     public void misajour(final Reservation reservation);
 

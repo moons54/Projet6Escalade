@@ -21,14 +21,6 @@
 
 
 <h2>Creation d'un nouveau Topo </h2>
-<select data-inputs="myListInput" >
-
-    <option value="1" >tres facile</option>
-    <option value="2" >facile</option>
-    <option value="3" >moyen</option>
-    <option value="4" >difficile</option>
-    <option value="5" >tres difficile</option>
-</select>
 
 <s:form action="topo_new">
     <s:textfield name="topo.nom" label="nom" requiredLabel="true" ></s:textfield>
@@ -39,23 +31,20 @@
     <s:textfield name="topo.nombreDevoie" label="nombre de voie" requiredLabel="true" ></s:textfield>
     <s:textfield name="topo.descriptionDuRetour" label="description du retour" requiredLabel="true" ></s:textfield>
     <s:textfield name="topo.typeDequipement" label="type d'equipement" requiredLabel="true" ></s:textfield>
-    <s:textfield name="topo.photoDuTopo" label="photo du topo" requiredLabel="false" ></s:textfield>
     <s:select list="{'1','2','3','4','5'}"  name="topo.niveau" multiple="false" label="Niveau global de difficulte"></s:select>
 
 
+
     <s:submit value="OK"/>
+
+
 </s:form>
+<s:if test="fileUploadContentType==null">
+    <s:a action="fileUploadAction">inserer une photo</s:a>
 
-<div class="container-fluid">
-    <div class="form-group">
-        <label for=""></label>
-        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-        <small id="helpId" class="form-text text-muted">Help text</small>
+</s:if>
 
 
-        <button type="button" class="btn btn-primary|secondary|success|info|warning|danger|link"></button>
-    </div>
-</div>
 
 </body>
 </html>

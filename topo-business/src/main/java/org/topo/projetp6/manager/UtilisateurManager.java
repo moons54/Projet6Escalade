@@ -1,6 +1,7 @@
 package org.topo.projetp6.manager;
 
 import org.bean.topo.projetp6.Utilisateur;
+import org.bean.topo.projetp6.exception.FunctionalException;
 import org.topo.projetp6.managerimpl.UtilisateurManagerimpl;
 import org.bean.topo.projetp6.exception.NotFoundException;
 import java.util.List;
@@ -24,7 +25,7 @@ public interface UtilisateurManager {
 
     public void supprimeUtilisateur(final int Id);
 
-    public void ajoututilisateur(final Utilisateur utilisateur);
+    public void ajoututilisateur(final Utilisateur utilisateur) throws FunctionalException;
 
 
 }

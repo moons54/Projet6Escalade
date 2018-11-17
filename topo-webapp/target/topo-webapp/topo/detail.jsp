@@ -33,21 +33,45 @@
         <div class="jumbotron jumbotron m-sm-3">
             <div class="container">
                 <p class="lead">
-                <div class="d-flex bd-highlight small-2">
-                <div class="d-flex p-2 bd-highlight" >Historique : <s:property value="topo.historiquedestopo"/></div>
+                <div class="d-flex bd-highlight m-sm-3">
+                <div class="d-flex p-2 bd-highlight" >Historique : <s:property value="topo.historiquedestopo"/>
+                    <div class="d-flex p-2 bd-highlight">
+                        .
+                        <div class="card">
+                            <div class="card-header">
+                                Header
+                            </div>
+                            <div class="card-block">
+                                <h4 class="card-title">Header</h4>
+                <p class="card-text"><img src="<s:property value="topo.photoDuTopo"/>"
+                                         alt="photo topo" width=250px height=250px">r</p>
+            </div>
+            <div class="card-footer text-muted">
+                Header
+            </div>
+        </div>
 
-
-
+                   <!-- <img src="<s:property value="topo.photoDuTopo"/>" width=200px height=200px > -->
+                </div>
+                </div>
                  </div>
+    </div>
+
+
+
 
             </div>
 
                       <hr class="my-4">
                         <p>
-                         <div class="d-flex bd-highlight small-2">
+                         <div class="d-flex bd-highlight small-3">
                              <div class="d-flex p-2 bd-highlight">Difficulté Global sur 5 : <s:property value="topo.niveau"/></div>
                              <div class="d-flex p-2 bd-highlight">Hauteur : <s:property value="topo.hauteurDuTopo"/></div>
-                        </div>
+                        .
+
+        </div>
+    </div>
+</div>
                         </p>
                         <div class="d-flex bd-highlight small-2">
                             <div class="d-flex p-2 bg-highlight">Type de roche : <s:property value="topo.typeDeroche"/></div>
@@ -107,6 +131,8 @@
 
         </table>
     </div></div>
+
+<img src="topo/images/zone1.jpeg" class="img-fluid" alt="Responsive image">
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">

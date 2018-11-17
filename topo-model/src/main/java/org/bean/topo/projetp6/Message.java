@@ -2,14 +2,30 @@ package org.bean.topo.projetp6;
 
 import java.util.Arrays;
 import java.util.Date;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 
 public class Message {
 	private int iD;
+
+	@NotEmpty(message="Model = Renseigner l'objet de votre Commentaire")
+    @NotBlank(message ="Model =Renseigner l'objet de votre Commentaire")
+    @Size(min = 1,max = 30,message = "Model , ne dot pas depasser 30 charactere")
 	private String reference;
+
+    @NotEmpty(message="Model = Renseigner l'objet de votre Commentaire")
+    @NotBlank(message ="Model =Renseigner l'objet de votre Commentaire")
+    @Size(min = 1,max = 400,message = "Model , ne dot pas depasser 400 charactere")
 	private String commentaire;
+
 	public Utilisateur utilisateur;
-    public Topo topo;
+
+	public Topo topo;
+
 	private Integer note;
+
 	private Date messageDate;
 
     public Message() {

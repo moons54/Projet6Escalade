@@ -6,6 +6,7 @@
 
 
 <struts>
+ <constant name="struts.multipart.saveDir" value="/Users/aurelienmimouni/wk1/TopoP6/topo-webapp/src/main/webapp/jsp/images"/>
     <package name="default" extends="struts-default">
         <!-- Action par défaut -->
         <default-action-ref name="index" />
@@ -13,6 +14,7 @@
         <global-results>
             <result name="error">/jsp/error.jsp</result>
         </global-results>
+
 
         <!-- Action "index" -->
         <action name="index">
@@ -403,7 +405,35 @@
             <result name="input">jsp/topo/multicriteretopo.jsp</result>
             <result name="success">jsp/topo/listmulticritere.jsp</result>
         </action>
+        
+        <!-- action de traitement des photos upload -->
+<action name="fileUploadAction"
+        class="org.topo.projetp6.action.FileUploadAction" method="display">
+    <result name="none">topo/fileUploadAction.jsp</result>
+</action>
 
+
+        <action name="resultAction" class="org.topo.projetp6.action.FileUploadAction">
+            <interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/png,image/gif,image/jpeg</param>
+                <param name="maximumSize">1024000000</param>
+            </interceptor-ref>
+
+            <interceptor-ref name="params">
+              <param name="excludeParams">dojo\..*,^struts\..*</param>
+          </interceptor-ref>
+            <interceptor-ref name="validation">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+            </interceptor-ref>
+            <interceptor-ref name="workflow">
+                <param name="excludeMethods">input,back,cancel,browse</param>
+          </interceptor-ref>
+
+            <result name="success">topo/new.jsp</result>
+            <result name="input">topo/fileUploadAction.jsp</result>
+        </action>
 
 
     </package>

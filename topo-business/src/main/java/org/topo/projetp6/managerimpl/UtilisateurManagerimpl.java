@@ -1,7 +1,10 @@
 package org.topo.projetp6.managerimpl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Utilisateur;
 
+import org.bean.topo.projetp6.exception.FunctionalException;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
@@ -14,11 +17,14 @@ import org.bean.topo.projetp6.exception.NotFoundException;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.ConstraintViolation;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Named
 public class UtilisateurManagerimpl extends AbstractManager implements UtilisateurManager {
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(UtilisateurManagerimpl.class);
 
     @Inject
     @Named("TXtransactionTOPO")
@@ -99,7 +105,14 @@ public class UtilisateurManagerimpl extends AbstractManager implements Utilisate
     }
 
     @Override
-    public void ajoututilisateur(final Utilisateur utilisateur){
+    public void ajoututilisateur(final Utilisateur utilisateur) throws FunctionalException {
+        Set<ConstraintViolation<Utilisateur>> vViolations = getConstraintValidator().validate(utilisateur);
+        if(!vViolations.isEmpty()) {
+            for (ConstraintViolation<Utilisateur> violation : vViolations) {
+                LOGGER.info((violation.getMessage()));
+            }
+            throw new FunctionalException("Element a completer.");
+        }
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override

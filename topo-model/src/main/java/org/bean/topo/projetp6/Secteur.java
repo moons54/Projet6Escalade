@@ -1,15 +1,35 @@
 package org.bean.topo.projetp6;
 
 
+import javax.validation.constraints.NegativeOrZero;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.List;
 
 public class Secteur extends Site {
 	private int iD;
+
+
+
+	@NotEmpty(message="Model = Renseigner le nom")
+	@NotBlank(message ="Model =Renseigner le nom")
+	@Size(min = 1,max = 20,message = "Model , ne dot pas depasser 20 charactere")
 	private String nomSecteur;
+
+
+	@NotEmpty(message="Model = Renseigner l'objet de votre Commentaire")
+	@NotBlank(message ="Model =Renseigner l'objet de votre Commentaire")
+	@Size(min = 1,max = 400,message = "Model , ne dot pas depasser 400 charactere")
+	@NegativeOrZero(message = "model doit et positif")
 	private Integer nombreVoie;
+
 	private List<Voie> voies;
+
+
 	private String difficulte;
+
 	private int experience;
 
 	public Secteur(int iD) {
@@ -24,6 +44,7 @@ public class Secteur extends Site {
 		this.iD = iD;
 	}
 
+
 	public String getNomSecteur() {
 		return nomSecteur;
 	}
@@ -31,6 +52,7 @@ public class Secteur extends Site {
 	public void setNomSecteur(String nomSecteur) {
 		this.nomSecteur = nomSecteur;
 	}
+
 
 	public Integer getNombreVoie() {
 		return nombreVoie;

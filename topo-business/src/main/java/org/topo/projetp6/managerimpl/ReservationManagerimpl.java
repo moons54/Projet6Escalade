@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.bean.topo.projetp6.Reservation;
 import org.bean.topo.projetp6.TopoReservable;
 import org.bean.topo.projetp6.Utilisateur;
+import org.bean.topo.projetp6.exception.FunctionalException;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
@@ -18,11 +19,13 @@ import org.topo.projetp6.manager.ToporeservableManager;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.ConstraintViolation;
 
 import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Named
 public class ReservationManagerimpl extends AbstractManager implements ReservationManager {
@@ -99,8 +102,15 @@ List<TopoReservable> topoReservableList=toporeservableManager.affichelestoposemp
     }
 
     @Override
-    public void nouvellereservation(Reservation reservation) {
+    public void nouvellereservation(Reservation reservation) throws FunctionalException {
         LOGGER.info("Methode Creation d'une reservation manager");
+        Set<ConstraintViolation<Reservation>> vViolations = getConstraintValidator().validate(reservation);
+        if(!vViolations.isEmpty()) {
+            for (ConstraintViolation<Reservation> violation : vViolations) {
+                LOGGER.info((violation.getMessage()));
+            }
+            throw new FunctionalException("Element a completer.");
+        }
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override

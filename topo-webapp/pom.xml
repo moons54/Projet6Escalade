@@ -77,8 +77,18 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
         </dependency>
+        <!-- Dépendances liées à la gestion de l'upload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-dojo-plugin -->
         <dependency>
             <groupId>org.apache.struts</groupId>

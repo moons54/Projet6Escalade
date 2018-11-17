@@ -137,6 +137,9 @@ public class loginAction extends ActionSupport implements SessionAware {
                 this.session.put("user",utilisateur);
                 this.session.put("id",utilisateur.getiD());
                 this.session.put("login",utilisateur.getIdentifiant());
+                this.session.put("nom",utilisateur.getNom());
+                this.session.put("experience",utilisateur.getExperience());
+                this.session.put("nuser",utilisateur.getRole());
                 this.addActionMessage("vous etes connecté");
                 vResult=ActionSupport.SUCCESS;
             } catch (NotFoundException pEx){

@@ -15,10 +15,13 @@ import org.topo.projetp6.impl.dao.TopoDao;
 import org.topo.projetp6.impl.dao.UtilisateurDao;
 import org.topo.projetp6.manager.AbstractManager;
 import org.topo.projetp6.manager.MessageManager;
+import org.bean.topo.projetp6.exception.FunctionalException;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.ConstraintViolation;
 import java.util.List;
+import java.util.Set;
 
 @Named
 public class MessageManagerimpl extends AbstractManager implements MessageManager {
@@ -84,12 +87,22 @@ private MessageDao messageDao;
     }
 
     @Override
-    public void nouveaumessage(final Message nmessage) {
+    public void nouveaumessage(final Message nmessage) throws FunctionalException {
         LOGGER.info("Methode Nouveau Commentaire manager");
+
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
+        Set<ConstraintViolation<Message>> vViolations = getConstraintValidator().validate(nmessage);
+        if(!vViolations.isEmpty()) {
+            for (ConstraintViolation<Message> violation : vViolations) {
+                LOGGER.info((violation.getMessage()));
+            }
+            throw new FunctionalException("Element a completer.");
+        }
+
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
+
                messageDao.ajoutemessage(nmessage);
             }
         });

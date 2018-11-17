@@ -18,8 +18,9 @@
     <%@ include file="../_include/head.jsp"%>
 </head>
 <body>
-<s:actionmessage/>
+
 <s:actionerror/>
+
 <h2>Laisser un commentaire sur le topo</h2>
 <s:form action="message_new">
 
@@ -36,4 +37,5 @@
 </s:form>
 
 </body>
+
 </html>

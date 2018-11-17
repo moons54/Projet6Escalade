@@ -6,6 +6,9 @@ import org.topo.projetp6.impl.DaoFactory;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 
 public abstract class AbstractManager {
@@ -34,4 +37,11 @@ public abstract class AbstractManager {
     public void setPlatformTransactionManager(PlatformTransactionManager platformTransactionManager) {
         this.platformTransactionManager = platformTransactionManager;
     }
+
+    protected Validator getConstraintValidator() {
+        ValidatorFactory vFactory = Validation.buildDefaultValidatorFactory();
+        Validator vValidator = vFactory.getValidator();
+        return vValidator;
+    }
+
 }

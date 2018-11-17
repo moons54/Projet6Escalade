@@ -1,11 +1,19 @@
 package org.bean.topo.projetp6;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Past;
 import java.util.Date;
 public class Reservation {
 	private int iD;
+
+	@Future(message = "pas de date inferieur a la date du jour")
 	private Date dateReservationDebut;
+
+	@Future(message = "pas de date inferieur a la date du jour")
 	private Date dateReservationFin;
+
 	public Utilisateur utilisateur;
+
 	public TopoReservable topoReservable;
 
 	public Reservation() {

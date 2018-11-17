@@ -1,23 +1,60 @@
 package org.bean.topo.projetp6;
 
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.List;
 
 public class Topo {
+
 	private int iD;
-	private String nom;
-	private String descriptiondestopo;
+/**
+    @NotEmpty(message="Model = Renseigner le nom")
+    @NotBlank(message ="Model =Renseigner le nom")
+    @Size(min = 1,max = 30,message = "Model , ne dot pas depasser 30 charactere")
+	*/
+    private String nom;
+
+ /**   @NotEmpty(message="Model = Renseigner la description")
+    @NotBlank(message ="Model =Renseigner la description")
+    @Size(min = 1,max = 70,message = "Model , ne dot pas depasser 70 charactere")
+	*/
+    private String descriptiondestopo;
+/**
+    @NotEmpty(message="Model = Renseigner l'historique du topo")
+    @NotBlank(message ="Model =Renseigner l'historique du topo")
+    @Size(min = 1,max = 30,message = "Model , ne doit pas depasser 20 charactere")
+*/
 	private String historiquedestopo;
+
+ //   @NotBlank(message="Model = Renseigner la hauteur du topo")
 	private String hauteurDuTopo;
+
 	private String typeDeroche;
+
+//	@NotBlank(message="Model = Renseigner le nombre de voie")
 	private Integer nombreDevoie;
-	private String descriptionDuRetour;
-	private String typeDequipement;
+/**
+	@NotEmpty(message="Model = Renseigner le retour")
+    @NotBlank(message="Model = Renseigner le retour")
+    @Size(min = 1,max = 70,message = "Model , ne dot pas depasser 70 charactere")
+   */
+    private String descriptionDuRetour;
+/**
+    @NotEmpty(message="Model = Renseigner le type d'equipement")
+    @NotBlank(message="Model = Renseigner le type d'equipement")
+    @Size(min = 1,max = 70,message = "Model , ne dot pas depasser 70 charactere")
+   */
+    private String typeDequipement;
+
+
 	private int niveau;
 
 
-    private int photoDuTopo;
+    private String photoDuTopo;
+
     public List<Site> site;
 
 
@@ -113,11 +150,11 @@ public class Topo {
         this.typeDequipement = typeDequipement;
     }
 
-    public int getPhotoDuTopo() {
+    public String getPhotoDuTopo() {
         return photoDuTopo;
     }
 
-    public void setPhotoDuTopo(int photoDuTopo) {
+    public void setPhotoDuTopo(String photoDuTopo) {
         this.photoDuTopo = photoDuTopo;
     }
 

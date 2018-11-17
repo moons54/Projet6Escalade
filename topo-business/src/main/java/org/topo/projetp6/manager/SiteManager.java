@@ -1,6 +1,7 @@
 package org.topo.projetp6.manager;
 
 import org.bean.topo.projetp6.Site;
+import org.bean.topo.projetp6.exception.FunctionalException;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface SiteManager {
 
     public Site supprimesite(final int Id);
 
-    public void ajoutsite(final Site nsite,Integer topoid);
+    public void ajoutsite(final Site nsite,Integer topoid) throws FunctionalException;
 
     void miseajour(final Site site);
 }

@@ -6,6 +6,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.bean.topo.projetp6.*;
+
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -14,6 +19,7 @@ import org.bean.topo.projetp6.Topo;
 import org.topo.projetp6.impl.dao.TopoDaoImpl;
 import org.topo.projetp6.manager.ManagerFactory;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.struts2.ServletActionContext;
 import javax.inject.Inject;
 
 public class GestionTopoAction extends ActionSupport {
@@ -34,6 +40,12 @@ public class GestionTopoAction extends ActionSupport {
 
     // les entrées
     private Integer idtopo;
+
+    private File fileUpload;
+    private String fileUploadContentType;
+    private String fileUploadFileName;
+
+
 
 
     public void setAffichelistetopo(List<Topo> affichelistetopo) {
@@ -101,6 +113,34 @@ private Message message;
     public void setVoienb(String voienb) {
         this.voienb = voienb;
     }
+
+    public File getFileUpload() {
+        return fileUpload;
+    }
+
+    public void setFileUpload(File fileUpload) {
+        this.fileUpload = fileUpload;
+    }
+
+
+
+    public String getFileUploadContentType() {
+        return fileUploadContentType;
+    }
+
+    public void setFileUploadContentType(String fileUploadContentType) {
+        this.fileUploadContentType = fileUploadContentType;
+    }
+
+    public String getFileUploadFileName() {
+        return fileUploadFileName;
+    }
+
+    public void setFileUploadFileName(String fileUploadFileName) {
+        this.fileUploadFileName = fileUploadFileName;
+    }
+
+
     //Les Methodes
 
     /**
@@ -115,8 +155,9 @@ private Message message;
 return ActionSupport.SUCCESS;
     };
 
-    //methode permettant de crée un nouveau TOPO
+
     public String doCreate(){
+
         String vresult = ActionSupport.INPUT;
 
      //condition validant l'ajout de formulaire
@@ -128,8 +169,10 @@ return ActionSupport.SUCCESS;
 
             } else
                     {
+                        System.out.println(loginAction.session.get("lienphoto").toString());
+                        fileUploadContentType=loginAction.session.get("lienphoto").toString();
+                        topo.setPhotoDuTopo(fileUploadContentType.toString());
 
-                        System.out.println("ok");
                      }
 
 
@@ -261,7 +304,15 @@ return vresult;
         }
 
         return vresult;
-    };
+    }
+
+    public String execute() throws Exception{
+        return SUCCESS;
+    }
+
+    public String display(){
+        return NONE;
+    }
 
 
 }

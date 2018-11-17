@@ -3,17 +3,43 @@ package org.bean.topo.projetp6;
 import org.bean.topo.projetp6.Message;
 import org.bean.topo.projetp6.Reservation;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 
 public class Utilisateur {
 	private int iD;
+
+	@NotEmpty(message="Model = Renseigner votre identifiant de connexion")
+	@NotBlank(message ="Model = Renseigner votre identifiant de connexion")
+	@Size(min = 1,max = 10,message = "Model , ne dot pas depasser 10 charactere")
 	private String identifiant;
+
+	@NotEmpty(message="Model = Renseigner votre nom")
+	@NotBlank(message ="Model =Renseigner votre nom")
+	@Size(min = 1,max = 30,message = "Model , ne dot pas depasser 30 charactere")
 	private String nom;
+
+	@NotEmpty(message="Model = Renseigner renseigner votre prenom")
+	@NotBlank(message ="Model =Renseigner renseigner votre prenom")
+	@Size(min = 1,max = 400,message = "Model , ne dot pas depasser 400 charactere")
 	private String prenom;
+
+
 	private String email;
+
 	private String langue;
+
+	@NotEmpty(message="Model = Renseigner l'objet de votre Commentaire")
+	@NotBlank(message ="Model =Renseigner l'objet de votre Commentaire")
+	@Size(min = 1,max = 400,message = "Model , ne dot pas depasser 400 charactere")
 	private String motDePasse;
+
+
 	private String role;
+
+
 	private int experience;
 
 

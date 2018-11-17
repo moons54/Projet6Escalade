@@ -2,6 +2,7 @@ package org.topo.projetp6.manager;
 
 import org.bean.topo.projetp6.Message;
 import org.bean.topo.projetp6.Reservation;
+import org.bean.topo.projetp6.exception.FunctionalException;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface MessageManager {
 
    Message getMessageById(int Id);
 
-   public void nouveaumessage(final Message message);
+   public void nouveaumessage(final Message message) throws FunctionalException;
 
    public void misajour(final Message message);
 
