@@ -65,8 +65,8 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         LOGGER.info("Methode miseajour DAO");
         String maj = "UPDATE public.site SET " +
                 "nom = :nom, \n" +
-                "coordonnees_gps = :coordonneesGps, \n" +
-                "topoid = :topoid" +
+                "coordonnees_gps = :coordonneesGps" +
+              //  "topoid = :topoid" +
                 " WHERE id = :iD";
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(site);
@@ -90,7 +90,6 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
                 "(:nom,:coordonneesGps,:topoid)";
 
         SqlParameterSource ajoutparam = new MapSqlParameterSource()
-                .addValue("identifiant", site.getIdentifiant())
                 .addValue("nom", site.getNom())
                 .addValue("coordonneesGps", site.getCoordonneesGps())
             .addValue("topoid",site.getiD());
@@ -119,10 +118,12 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
 
 
        Site site = vJdbcTemplate.queryForObject(vSQL, monmapsite, Id);
-       List<Secteur> secteurs = secteurDAO.affiche(Id);
+       if (secteurDAO.affiche(Id)!=null) {
+           System.out.println("la ou pas la ?");
+           List<Secteur> secteurs = secteurDAO.affiche(Id);
 
-       site.setSecteurs(secteurs);
-
+           site.setSecteurs(secteurs);
+       }
         return site;
     }
 

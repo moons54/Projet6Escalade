@@ -18,4 +18,6 @@ public interface SiteManager {
     public void ajoutsite(final Site nsite,Integer topoid) throws FunctionalException;
 
     void miseajour(final Site site);
+
+    public Site recherche (int Id);
 }

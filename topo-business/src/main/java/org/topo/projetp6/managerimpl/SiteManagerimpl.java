@@ -49,6 +49,11 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
         Site site= siteDao.getbyiD(Id);
      return site;
     }
+    @Override
+    public Site recherche (int Id) {
+        Site site= siteDao.getbyiD(Id);
+        return site;
+    }
 
     @Override
     public Site supprimesite(final int Id) {
@@ -83,6 +88,7 @@ public class SiteManagerimpl extends AbstractManager implements SiteManager {
     }
     @Override
     public void miseajour(final Site site) {
+        LOGGER.info("Methode mise a jour manager");
         TransactionTemplate rtransactionTemplate = new TransactionTemplate(platformTransactionManager);
         rtransactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override

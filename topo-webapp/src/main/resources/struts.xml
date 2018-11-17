@@ -6,8 +6,7 @@
 
 
 <struts>
- <constant name="struts.multipart.saveDir" value="/Users/aurelienmimouni/wk1/TopoP6/topo-webapp/src/main/webapp/jsp/images"/>
-    <package name="default" extends="struts-default">
+    <constant name="struts.multipart.saveDir" value="/Library/Tomcat/webapps/Topo/topo/images"/>   <package name="default" extends="struts-default">
         <!-- Action par défaut -->
         <default-action-ref name="index" />
         <!-- gestion des result error global-->

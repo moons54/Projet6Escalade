@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Site extends Topo {
 	private int iD;
-	private Integer identifiant;
+
 
 
 	@NotEmpty(message="Model = Renseigner le nom")
@@ -22,7 +22,8 @@ public class Site extends Topo {
 	@NotBlank(message ="Model =Renseigner les coordonnées GPS")
 	private String coordonneesGps;
 
-	public Topo topo;
+
+//	public Topo topo;
 
 	private List<Secteur> secteurs;
 
@@ -40,13 +41,7 @@ public class Site extends Topo {
 		this.iD = iD;
 	}
 
-	public Integer getIdentifiant() {
-		return identifiant;
-	}
 
-	public void setIdentifiant(Integer identifiant) {
-		this.identifiant = identifiant;
-	}
 
 	@Override
 	public String getNom() {
@@ -65,7 +60,7 @@ public class Site extends Topo {
 	public void setCoordonneesGps(String coordonneesGps) {
 		this.coordonneesGps = coordonneesGps;
 	}
-
+/**
 	public Topo getTopo() {
 		return topo;
 	}
@@ -73,7 +68,7 @@ public class Site extends Topo {
 	public void setTopo(Topo topo) {
 		this.topo = topo;
 	}
-
+*/
 	public List<Secteur> getSecteurs() {
 		return secteurs;
 	}
@@ -85,18 +80,15 @@ public class Site extends Topo {
 	public Site() {
 	}
 
+
 	@Override
 	public String toString() {
 		return "Site{" +
 				"iD=" + iD +
-				", identifiant=" + identifiant +
 				", nom='" + nom + '\'' +
 				", coordonneesGps='" + coordonneesGps + '\'' +
-				", topo=" + topo +
+//				", topo=" + topo +
 				", secteurs=" + secteurs +
-
-				", site=" + site +
 				'}';
 	}
-
 }

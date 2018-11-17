@@ -197,6 +197,7 @@ return vresult;
 
 
 
+
                     managerFactory.getSecteurManager().miseajour(tpsecteur);
                 } catch (NoSuchElementException e) {
                     ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);

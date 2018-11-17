@@ -97,15 +97,16 @@ public class GestionSiteAction extends ActionSupport {
      *
      */
     public String doList(){
-
-        affichelistesite= managerFactory.getSiteManager().affichelessite(getIdtopo());
+        System.out.println("val de idtopo"+idtopo);
+        System.out.println("val de idsite"+idsite);
+        affichelistesite= managerFactory.getSiteManager().affichelessite(idtopo);
 
 return ActionSupport.SUCCESS;
     };
 
     //methode permettant de crée un nouveau Site
     public String doCreate(){
-        site = managerFactory.getSiteManager().getbyID(idsite);
+
 
         String vresult = ActionSupport.INPUT;
 
@@ -180,14 +181,20 @@ return vresult;
 
         if (this.site != null) {
             if (this.site.getNom() != null) {
+
                 try {
+
                     // Le formulaire a été envoyé, afin d'éviter la manipulation des données via le navigateur, on instancie un Topo temporaire
                     // Ainsi l'id est non modifiable.
-                    Site tpsite = managerFactory.getSiteManager().getbyID(site.getiD());
-                    tpsite.setIdentifiant(site.getIdentifiant());
+                    System.out.println("val ____de idsite"+idsite);
+                    Site tpsite = managerFactory.getSiteManager().getbyID(idsite);
+                    System.out.println("val de____ tpsite"+tpsite.toString());
                     tpsite.setNom(site.getNom());
                     tpsite.setCoordonneesGps(site.getCoordonneesGps());
-                 //   tpsite.setiD(site.getiD());
+                   //tpsite.setSecteurs(site.getiD());
+                  //  tpsite.setiD(site.getiD());
+                //   tpsite.setSecteurs(managerFactory.getSecteurManager().affichelesecteur(idsite));
+
 
 
                     managerFactory.getSiteManager().miseajour(tpsite);

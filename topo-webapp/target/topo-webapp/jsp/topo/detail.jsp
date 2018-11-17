@@ -33,7 +33,7 @@
         <div class="jumbotron jumbotron m-sm-3">
             <div class="container">
                 <p class="lead">
-                <div class="d-flex bd-highlight m-sm-3">
+                <div class="d-flex bd-highlight mr-sm-2">
                 <div class="d-flex p-2 bd-highlight" >Historique : <s:property value="topo.historiquedestopo"/>
                     <div class="d-flex p-2 bd-highlight">
                         .
@@ -52,8 +52,7 @@
         </div>
 
                    <!-- <img src="<s:property value="topo.photoDuTopo"/>" width=200px height=200px > -->
-                </div>
-                </div>
+
                  </div>
     </div>
 

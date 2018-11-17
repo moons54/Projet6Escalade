@@ -21,6 +21,7 @@
         <s:a action="login">Connexion</s:a>
     </s:else>
 
+
 </header>
 <body>
 

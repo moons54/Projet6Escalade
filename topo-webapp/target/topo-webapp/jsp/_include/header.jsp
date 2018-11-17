@@ -22,6 +22,45 @@
 <!--TODO faire le dl des librairies cdn-->
 </html>
 
+<div class="container">
+
+
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Topo OC Projet 6</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <s:a class="nav-link" action="topo_liste"><s:text name="Liste des topos"/></> <span class="sr-only">(current)</span></s:a>
+                </li>
+                <li class="nav-item active">
+                    <s:a class="nav-link" action="login"><s:text name="Authentification"/></> <span class="sr-only">(current)</span></s:a>
+                </li>
+                <s:if test="%{#session.user.nom=='moons'}">
+                    <li class="nav-item active">
+                    <s:a class="nav-link" action="utilisateur_list"><s:text name="Gestion des utilisateursr"/></> <span class="sr-only">(current)</span></s:a>
+                    </li>
+
+                    <li class="nav-item active">
+                    <s:a class="nav-link" action="topreservable_list"><s:text name="Location de Topo"/></> <span class="sr-only">(current)</span></s:a>
+                    </li>
+                    <li class="nav-item active">
+                    <s:a class="nav-link" action="recherche_new"><s:text name="Recherche multicritere"/></> <span class="sr-only">(current)</span></s:a>
+                    </li>
+                </s:if>
+
+
+            </ul>
+
+            <s:if test="#session.user">
+                <s:property value="#session.user.identifiant"/>
+            </s:if>
+        </div>
+    </div>
+</div>
 
 <s:head />
 

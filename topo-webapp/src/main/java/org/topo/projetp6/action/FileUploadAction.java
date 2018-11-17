@@ -11,11 +11,13 @@ import java.util.Random;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
 public class FileUploadAction extends ActionSupport {
-
+    private static final Logger LOGGER=(Logger) LogManager.getLogger(FileUploadAction.class);
     private File fileUpload;
     private String fileUploadContentType;
     private String fileUploadFileName;
@@ -47,6 +49,8 @@ public class FileUploadAction extends ActionSupport {
     }
 
     public String execute() throws Exception{
+        LOGGER.info("methode execute "+fileUploadFileName + " scd val "+fileUpload+ " 3 " +fileUploadFileName);
+
         String nomImg="";
         System.out.println("val de "+fileUploadContentType);
         System.out.println("val de "+fileUpload);
@@ -62,7 +66,7 @@ public class FileUploadAction extends ActionSupport {
         String renameph = "photo"+loginAction.session.get("nom").toString()+loginAction.session.get("experience")+valeur+loginAction.session.get("id")+".jpeg";
         fileUploadFileName = renameph;
 
-        String filePath = getText("/Users/aurelienmimouni/wk1/TopoP6/topo-webapp/src/main/webapp/jsp/topo/images/");
+        String filePath = getText("/Library/Tomcat/webapps/Topo/topo/images");
         File fileToCreate = new File(filePath,fileUploadFileName);
         try {
             System.out.println("la "+fileToCreate.toString());
