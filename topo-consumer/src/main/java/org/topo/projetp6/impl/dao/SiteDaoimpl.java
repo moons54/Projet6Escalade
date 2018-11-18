@@ -66,7 +66,7 @@ public class SiteDaoimpl extends AbstractDaoImpl implements SiteDao {
         String maj = "UPDATE public.site SET " +
                 "nom = :nom, \n" +
                 "coordonnees_gps = :coordonneesGps" +
-              //  "topoid = :topoid" +
+       //       "topoid = :" +
                 " WHERE id = :iD";
 
         SqlParameterSource vParams = new BeanPropertySqlParameterSource(site);

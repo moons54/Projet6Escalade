@@ -23,7 +23,7 @@ public class Site extends Topo {
 	private String coordonneesGps;
 
 
-//	public Topo topo;
+	public Topo topo;
 
 	private List<Secteur> secteurs;
 
@@ -60,7 +60,7 @@ public class Site extends Topo {
 	public void setCoordonneesGps(String coordonneesGps) {
 		this.coordonneesGps = coordonneesGps;
 	}
-/**
+
 	public Topo getTopo() {
 		return topo;
 	}
@@ -68,7 +68,7 @@ public class Site extends Topo {
 	public void setTopo(Topo topo) {
 		this.topo = topo;
 	}
-*/
+
 	public List<Secteur> getSecteurs() {
 		return secteurs;
 	}
@@ -87,7 +87,7 @@ public class Site extends Topo {
 				"iD=" + iD +
 				", nom='" + nom + '\'' +
 				", coordonneesGps='" + coordonneesGps + '\'' +
-//				", topo=" + topo +
+				", topo=" + topo +
 				", secteurs=" + secteurs +
 				'}';
 	}

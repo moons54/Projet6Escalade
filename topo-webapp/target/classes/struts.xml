@@ -162,10 +162,13 @@
         <action name="mod_site"
                 class="org.topo.projetp6.action.GestionSiteAction"
                 method="doModif">
-
             <result name="input">/jsp/topo/modifsite.jsp</result>
-            <result name="success" type="redirectAction">site_list</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">site_detail</param>
+                <param name="idsite">${site.id}</param>
+            </result>
         </action>
+
         <!-- action permettant de creer un nouveau Site-->
         <action name="site_new"
                 class="org.topo.projetp6.action.GestionSiteAction"

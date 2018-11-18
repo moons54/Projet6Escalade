@@ -131,8 +131,6 @@
         </table>
     </div></div>
 
-<img src="topo/images/zone1.jpeg" class="img-fluid" alt="Responsive image">
-
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
 

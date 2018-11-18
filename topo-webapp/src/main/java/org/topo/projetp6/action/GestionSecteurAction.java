@@ -191,7 +191,8 @@ return vresult;
                     Secteur tpsecteur = managerFactory.getSecteurManager().getbynid(secteur.getiD());
                     tpsecteur.setNom(secteur.getNom());
                     tpsecteur.setNombreVoie(secteur.getNombreDevoie());
-                    tpsecteur.setiD(secteur.getiD());
+                    tpsecteur.setiD(idsecteur);
+                    tpsecteur.setDifficulte(secteur.getDifficulte());
 
 
 

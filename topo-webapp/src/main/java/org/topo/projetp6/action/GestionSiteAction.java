@@ -80,7 +80,29 @@ public class GestionSiteAction extends ActionSupport {
         //recherche par id
 
 
+    public Topo getTopo() {
+        return topo;
+    }
 
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
+
+    public TopoDaoImpl getTpdao() {
+        return tpdao;
+    }
+
+    public void setTpdao(TopoDaoImpl tpdao) {
+        this.tpdao = tpdao;
+    }
+
+    public SiteDaoimpl getSitedao() {
+        return sitedao;
+    }
+
+    public void setSitedao(SiteDaoimpl sitedao) {
+        this.sitedao = sitedao;
+    }
 
     public Integer getIdsite() {
         return idsite;
@@ -186,18 +208,22 @@ return vresult;
 
                     // Le formulaire a été envoyé, afin d'éviter la manipulation des données via le navigateur, on instancie un Topo temporaire
                     // Ainsi l'id est non modifiable.
-                    System.out.println("val ____de idsite"+idsite);
-                    Site tpsite = managerFactory.getSiteManager().getbyID(idsite);
+                   Site tpsite = managerFactory.getSiteManager().getbyID(idsite);
                     System.out.println("val de____ tpsite"+tpsite.toString());
                     tpsite.setNom(site.getNom());
                     tpsite.setCoordonneesGps(site.getCoordonneesGps());
-                   //tpsite.setSecteurs(site.getiD());
-                  //  tpsite.setiD(site.getiD());
-                //   tpsite.setSecteurs(managerFactory.getSecteurManager().affichelesecteur(idsite));
+                    System.out.println("valeur de topo"+idtopo);
+                    tpsite.setTopo(site.getTopo());
+                    tpsite.setiD(idsite);
+                    tpsite.setSecteurs(site.getSecteurs());
 
+                    setIdtopo(site.topo.getiD());
 
+                    System.out.println("valeur de tpsitte ====="+tpsite);
+                    System.out.println("val de idtopo====="+idtopo);
 
                     managerFactory.getSiteManager().miseajour(tpsite);
+
                 } catch (NoSuchElementException e) {
                     ServletActionContext.getResponse().setStatus(HttpServletResponse.SC_NOT_FOUND);
                 }
@@ -209,6 +235,7 @@ return vresult;
         } else {
             // Si topo est null c'est qu'on va entrer sur la jsp update.jsp, il faut embarquer les données sur topo afin de pré-rempir les champs de la page web
             site = managerFactory.getSiteManager().getbyID(idsite);
+            System.out.println("valeur de site dnas else"+site.toString());
         }
         return resultat;
     }

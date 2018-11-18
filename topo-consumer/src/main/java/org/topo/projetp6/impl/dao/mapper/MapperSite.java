@@ -32,6 +32,7 @@ private SecteurDAO secteurDAO;
             nmap.setNom(rs.getString("nom"));
             nmap.setCoordonneesGps(rs.getString("coordonnees_gps"));
             nmap.setiD(rs.getInt("id"));
+            nmap.setTopo(new Topo(rs.getInt("topoid")));
 
             nmap.setSecteurs(secteurDAO.affiche(rs.getInt("topoid")));
 

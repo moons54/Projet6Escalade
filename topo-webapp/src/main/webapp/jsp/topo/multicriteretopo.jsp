@@ -26,12 +26,10 @@
     <s:select list="{'1','2','3','4','5'}"  name="topo.niveau" multiple="false" label="Niveau global de difficulte"></s:select>
 
 
-    <s:select list="{'roche','volcanique','gleiss','granite'}"  name="topo.typeDeroche" multiple="false" label="Niveau global de difficulte"></s:select>
+    <s:select list="{'roche','volcanique','gleiss','granite'}"  name="topo.typeDeroche" multiple="false" label="Type de Roche"></s:select>
 
 
 
-
-    <s:select list="{'<=5','6 et 10','>11'}" name="voienb" multiple="false" label="nb de voie"></s:select>
 
 
 <s:submit value="OK"/>
